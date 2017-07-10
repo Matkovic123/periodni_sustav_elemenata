@@ -32,7 +32,7 @@ CREATE TABLE periodic_system.chemical_element (
   state_at_20C            VARCHAR(15) NOT NULL,
   electron_configuration  VARCHAR(50) NOT NULL,
   melting_point           VARCHAR(30) NOT NULL,
-  bolining_point          VARCHAR(30) NOT NULL,
+  boiling_point          VARCHAR(30) NOT NULL,
   atomic_mass             FLOAT8      NOT NULL,
   atomic_radius           VARCHAR(50) NOT NULL,
   electronegativity       FLOAT8      NOT NULL,
