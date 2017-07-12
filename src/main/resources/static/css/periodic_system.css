@@ -1,0 +1,15 @@
+.element-cell{
+    height: 65px;
+    width: 60px;
+}
+.filler-cell{
+    border: none;
+}
+
+.period-number{
+    border: none;
+}
+group-number{
+    border: none;
+
+}
