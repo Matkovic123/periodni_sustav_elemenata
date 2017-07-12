@@ -1,0 +1,28 @@
+table, tr, td{
+    border: none;
+}
+
+.element-cell{
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    height: 65px;
+    width: 60px;
+}
+.filler-cell{
+    border: none;
+}
+
+.period-number{
+    border: none;
+    padding-right: 5px;
+}
+group-number{
+    border: none;
+    padding-top: 5px;
+
+
+}
+#lanthanides, #actinides{
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}

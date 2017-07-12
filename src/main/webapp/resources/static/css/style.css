@@ -1,17 +1,14 @@
 body{
-    background-image: url(../images/main-background.jpg);
+    background-image: url(../../images/main-background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
+
 .pull-left {
     float: left;
 }
 
 .pull-right {
     float: right;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
 }
