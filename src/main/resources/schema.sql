@@ -31,23 +31,17 @@ CREATE TABLE periodic_system.chemical_element (
   block                   CHAR(1)     NOT NULL,
   state_at_20C            VARCHAR(15) NOT NULL,
   electron_configuration  VARCHAR(50) NOT NULL,
-  melting_point           VARCHAR(30) NOT NULL,
-  boiling_point          VARCHAR(30) NOT NULL,
-  atomic_mass             FLOAT8      NOT NULL,
+  melting_point_in_C            FLOAT8 NOT NULL,
+  boiling_point_in_C           FLOAT8 NOT NULL,
+  atomic_mass             FLOAT8 NOT NULL,
   atomic_radius           FLOAT8 NOT NULL,
   electronegativity       FLOAT8,
   common_oxidation_states VARCHAR(15)
 );
 
 CREATE TABLE periodic_system.isotope (
-  id                  BIGINT PRIMARY KEY ,
+  id                  SERIAL UNIQUE ,
   symbol                VARCHAR(25) NOT NULL,
   chemical_element_id BIGINT      NOT NULL,
   FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element(id)
 );
--- CREATE TABLE periodic_system.isotope (
---   id                  BIGINT NOT NULL nextval('isotope_seq'::regclass),
---   chemical_element_id BIGINT      NOT NULL,
---   CONSTRAINT isotope_pk PRIMARY KEY (id),
---   FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element(id)
--- );
