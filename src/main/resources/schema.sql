@@ -20,28 +20,28 @@ CREATE TABLE periodic_system.user (
   password   VARCHAR(100) NOT NULL,
   enabled    BOOL         NOT NULL DEFAULT TRUE,
   role_id    BIGINT       NOT NULL,
-  FOREIGN KEY (role_id) REFERENCES periodic_system.user_role(id)
+  FOREIGN KEY (role_id) REFERENCES periodic_system.user_role (id)
 );
 
 CREATE TABLE periodic_system.chemical_element (
-  id                      SERIAL PRIMARY KEY,
+  id                      SERIAL UNIQUE PRIMARY KEY,
   name                    VARCHAR(25) NOT NULL,
   symbol                  CHAR(2)     NOT NULL,
   atomic_number           INT         NOT NULL,
   block                   CHAR(1)     NOT NULL,
   state_at_20C            VARCHAR(15) NOT NULL,
-  electron_configuration  VARCHAR(50) NOT NULL,
-  melting_point_in_C            FLOAT8 NOT NULL,
-  boiling_point_in_C           FLOAT8 NOT NULL,
-  atomic_mass             FLOAT8 NOT NULL,
-  atomic_radius           FLOAT8 NOT NULL,
+  electron_configuration  VARCHAR(50),
+  melting_point_in_C      FLOAT8,
+  boiling_point_in_C      FLOAT8,
+  atomic_mass             FLOAT8,
+  atomic_radius           FLOAT8,
   electronegativity       FLOAT8,
   common_oxidation_states VARCHAR(15)
 );
 
 CREATE TABLE periodic_system.isotope (
-  id                  SERIAL UNIQUE ,
-  symbol                VARCHAR(25) NOT NULL,
+  id                  SERIAL UNIQUE PRIMARY KEY,
+  symbol              VARCHAR(25) NOT NULL,
   chemical_element_id BIGINT      NOT NULL,
-  FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element(id)
+  FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element (id)
 );
