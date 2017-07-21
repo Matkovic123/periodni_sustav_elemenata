@@ -257,6 +257,8 @@ VALUES ('Yttrium', 'Y', 39, 'd', 'Solid', U&'[Kr]4d\00B95s\00B2', 1525.85, 3335.
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_id)
 VALUES (U&'\2078\2079Y',39 );
 
+-- TODO: dalje dodavati izotope.
+
 INSERT INTO periodic_system.chemical_element (name, symbol, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES ('Zirconium', 'Zr', 40, 'd', 'Solid', U&'[Kr]4d\00B25s\00B2', 1854.85, 4408.85, 91.224, 223, 1.33, '4');
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_id)
