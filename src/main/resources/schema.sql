@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS periodic_system.user;
 DROP TABLE IF EXISTS periodic_system.user_role;
-DROP TABLE IF EXISTS periodic_system.isotope;
+DROP TABLE IF EXISTS periodic_system.key_isotope;
 DROP TABLE IF EXISTS periodic_system.chemical_element;
 
 DROP SCHEMA IF EXISTS periodic_system;
@@ -25,11 +25,11 @@ CREATE TABLE periodic_system.user (
 
 CREATE TABLE periodic_system.chemical_element (
   id                      SERIAL UNIQUE PRIMARY KEY,
-  name                    VARCHAR(25) NOT NULL,
-  symbol                  CHAR(2)     NOT NULL,
-  atomic_number           INT         NOT NULL,
-  block                   CHAR(1)     NOT NULL,
-  state_at_20C            VARCHAR(15) NOT NULL,
+  name                    VARCHAR(25) UNIQUE NOT NULL,
+  symbol                  CHAR(2) UNIQUE     NOT NULL,
+  atomic_number           INT UNIQUE         NOT NULL,
+  block                   CHAR(1)            NOT NULL,
+  state_at_20C            VARCHAR(15)        NOT NULL,
   electron_configuration  VARCHAR(50),
   melting_point_in_C      FLOAT8,
   boiling_point_in_C      FLOAT8,
@@ -39,9 +39,9 @@ CREATE TABLE periodic_system.chemical_element (
   common_oxidation_states VARCHAR(15)
 );
 
-CREATE TABLE periodic_system.isotope (
+CREATE TABLE periodic_system.key_isotope(
   id                  SERIAL UNIQUE PRIMARY KEY,
-  symbol              VARCHAR(25) NOT NULL,
-  chemical_element_id BIGINT      NOT NULL,
+  symbol              VARCHAR(25) UNIQUE NOT NULL,
+  chemical_element_id BIGINT             NOT NULL,
   FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element (id)
 );
