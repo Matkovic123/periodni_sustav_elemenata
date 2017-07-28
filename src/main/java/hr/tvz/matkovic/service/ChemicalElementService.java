@@ -11,7 +11,7 @@ public interface ChemicalElementService {
 
     List<ChemicalElement> findAll();
 
-    ChemicalElement  findById(Long id);
+    ChemicalElement  findById(Integer id);
 
     ChemicalElement findByatomic_number(Integer atomicNumber);
 }

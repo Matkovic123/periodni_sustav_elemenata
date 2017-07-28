@@ -1,79 +1,54 @@
 package hr.tvz.matkovic.model;
 
+
 import javax.persistence.*;
 
 /**
  * Created by Matkovic on 10/07/2017.
  */
-@Entity(name = "chemical_element")
+@Entity
+@Table(name = "chemical_element", schema = "periodic_system")
 public class ChemicalElement {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column(name = "NAME")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "SYMBOL")
+    @Column(name = "symbol")
     private String symbol;
 
-    @Column(name = "ATOMIC_NUMBER")
+    @Id
+    @GeneratedValue
+    @Column(name = "atomic_number")
     private Integer atomicNumber;
 
-    @Column(name = "BLOCK")
+    @Column(name = "block")
     private char block;
 
-    @Column(name = "STATE_AT_20C")
+    @Column(name = "state_at_20c")
     private String stateAt20C;
 
-    @Column(name = "ELECTRON_CONFIGURATION")
+    @Column(name = "electron_configuration")
     private String electronConfiguration;
 
-    @Column(name = "MELTING_POINT")
+    @Column(name = "melting_point_in_c")
     private String meltingPoint;
 
-    @Column(name = "BOILING_POINT")
+    @Column(name = "boiling_point_in_c")
     private String boilingPoint;
 
-    @Column(name = "ATOMIC_MASS")
+    @Column(name = "atomic_mass")
     private Double atomicMass;
 
-    @Column(name = "ATOMIC_RADIUS")
+    @Column(name = "atomic_radius")
     private String atomicRadius;
 
-    @Column(name = "ELECTRONEGATIVITY")
+    @Column(name = "electronegativity")
     private String electronegativity;
 
-    @Column(name = "COMMON_OXIDATION_STATES")
+    @Column(name = "common_oxidation_states")
     private String commonOxidationStates;
 
     public ChemicalElement(){}
-
-    public ChemicalElement(String name, String symbol, Integer atomicNumber, char block, String stateAt20C,
-                           String electronConfiguration, String meltingPoint, String boilingPoint, Double atomicMass,
-                           String atomicRadius, String electronegativity, String commonOxidationStates) {
-        this.name = name;
-        this.symbol = symbol;
-        this.atomicNumber = atomicNumber;
-        this.block = block;
-        this.stateAt20C = stateAt20C;
-        this.electronConfiguration = electronConfiguration;
-        this.meltingPoint = meltingPoint;
-        this.boilingPoint = boilingPoint;
-        this.atomicMass = atomicMass;
-        this.atomicRadius = atomicRadius;
-        this.electronegativity = electronegativity;
-        this.commonOxidationStates = commonOxidationStates;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

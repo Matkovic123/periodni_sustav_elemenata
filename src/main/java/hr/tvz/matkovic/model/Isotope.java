@@ -5,7 +5,8 @@ import javax.persistence.*;
 /**
  * Created by Matkovic on 10/07/2017.
  */
-@Entity(name = "isotope")
+@Entity
+@Table(name = "KEY_ISOTOPE", schema = "periodic_system")
 public class Isotope {
 
     @Id
@@ -16,7 +17,7 @@ public class Isotope {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "CHEMICAL_ELEMENT_ID")
+    @JoinColumn(name = "CHEMICAL_ELEMENT_ATOMIC_NUMBER")
     private ChemicalElement chemicalElement;
 
     public Isotope(){}

@@ -24,10 +24,9 @@ CREATE TABLE periodic_system.user (
 );
 
 CREATE TABLE periodic_system.chemical_element (
-  id                      SERIAL UNIQUE PRIMARY KEY,
+  atomic_number           SERIAL UNIQUE PRIMARY KEY   NOT NULL,
   name                    VARCHAR(25) UNIQUE NOT NULL,
   symbol                  CHAR(2) UNIQUE     NOT NULL,
-  atomic_number           INT UNIQUE         NOT NULL,
   block                   CHAR(1)            NOT NULL,
   state_at_20C            VARCHAR(15)        NOT NULL,
   electron_configuration  VARCHAR(50),
@@ -42,6 +41,6 @@ CREATE TABLE periodic_system.chemical_element (
 CREATE TABLE periodic_system.key_isotope(
   id                  SERIAL UNIQUE PRIMARY KEY,
   symbol              VARCHAR(25) UNIQUE NOT NULL,
-  chemical_element_id BIGINT             NOT NULL,
-  FOREIGN KEY (chemical_element_id) REFERENCES periodic_system.chemical_element (id)
+  chemical_element_atomic_number BIGINT             NOT NULL,
+  FOREIGN KEY (chemical_element_atomic_number) REFERENCES periodic_system.chemical_element (atomic_number)
 );

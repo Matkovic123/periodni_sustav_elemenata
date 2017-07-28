@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * Created by Matkovic on 28/07/2017.
  */
 @Repository
-public interface ChemicalElementRepository extends JpaRepository<ChemicalElement, Long> {
+public interface ChemicalElementRepository extends JpaRepository<ChemicalElement, Integer> {
 
-    public ChemicalElement findByAtomicNumber(Integer atomicNumber);
+    ChemicalElement findByAtomicNumber(Integer atomicNumber);
 }

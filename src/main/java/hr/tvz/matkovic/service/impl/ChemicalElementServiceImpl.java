@@ -23,7 +23,7 @@ public class ChemicalElementServiceImpl implements ChemicalElementService {
     }
 
     @Override
-    public ChemicalElement findById(Long id) {
+    public ChemicalElement findById(Integer id) {
         return chemicalElementRepository.findOne(id);
     }
 
