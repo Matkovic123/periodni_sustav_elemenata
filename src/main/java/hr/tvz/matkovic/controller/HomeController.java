@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    // --- VIEW NAMES ---------------------------------------------------------
+    public static final String PERIODIC_SYSTEM_REDIRECT = "redirect:/periodic_table";
+
+    @GetMapping({"/", "/index"})
     public String home(){
-        return "periodic_system";
+        return PERIODIC_SYSTEM_REDIRECT;
     }
 }
