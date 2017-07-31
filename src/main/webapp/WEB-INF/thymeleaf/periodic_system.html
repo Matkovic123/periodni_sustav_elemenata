@@ -17,7 +17,7 @@
                         <tbody>
                         <tr id="period_1">
                             <td class="period-number">1</td>
-                            <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}">Hydrogen</td>
+                            <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}"><span>Hydrogen</span></td>
                             <td colspan="16" class="filler-cell"></td>
                             <td class="element-cell" id="Helium" th:text="${chemicalElements[1].symbol}">Helium</td>
                         </tr>
@@ -127,6 +127,7 @@
                             <td class="element-cell" id="Roentgenium" th:text="${chemicalElements[110].symbol}"> Roentgenium</td>
                             <td class="element-cell" id="Copernicium" th:text="${chemicalElements[111].symbol}">Copernicium</td>
                         </tr>
+                        <tr><td><br/></td></tr>
                         <tr id="lanthanides">
                             <td colspan="3" class="filler-cell">Lanthanides</td>
                             <td class="element-cell" id="Cerium" th:text="${chemicalElements[57].symbol}"> Cerium</td>

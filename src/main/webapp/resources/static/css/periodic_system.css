@@ -1,12 +1,14 @@
 table, tr, td{
-    border: none;
+    border: solid 3px white;
 }
 
 .element-cell{
-    border: 1px solid black;
-    padding: 5px 5px 5px 5px;
-    height: 65px;
+    padding: 2px 2px 2px 2px;
+    height: 60px;
     width: 60px;
+    text-align:center;
+    vertical-align:middle;
+    border-radius: 20px;
 }
 .filler-cell{
     border: none;
@@ -22,7 +24,9 @@ group-number{
 
 
 }
-#lanthanides, #actinides{
-    word-wrap: break-word;
-    text-overflow: ellipsis;
+#lanthanides .element-cell{
+    background-color:  #00bfff;
+}
+#actinides .element-cell{
+    background-color: #00cc00;
 }
