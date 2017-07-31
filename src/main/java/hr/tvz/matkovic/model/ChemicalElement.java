@@ -145,4 +145,5 @@ public class ChemicalElement {
     public void setCommonOxidationStates(String commonOxidationStates) {
         this.commonOxidationStates = commonOxidationStates;
     }
+
 }

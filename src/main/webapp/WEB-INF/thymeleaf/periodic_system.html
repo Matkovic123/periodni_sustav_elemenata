@@ -13,154 +13,153 @@
             </div>
             <div class="panel-body">
                 <div class="col-lg-12" id="periodic_system">
-                    <table >
+                    <table>
                         <tbody>
                         <tr id="period_1">
                             <td class="period-number">1</td>
-                            <td class="element-cell">H</td>
-                            <td colspan="16" class="filler-cell"> </td>
-                            <td class="element-cell"> He</td>
+                            <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}">Hydrogen</td>
+                            <td colspan="16" class="filler-cell"></td>
+                            <td class="element-cell" id="Helium" th:text="${chemicalElements[1].symbol}">Helium</td>
                         </tr>
                         <tr id="period_2">
                             <td class="period-number">2</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Lithium" th:text="${chemicalElements[2].symbol}">Lithium</td>
+                            <td class="element-cell" id="Beryllium" th:text="${chemicalElements[3].symbol}">Beryllium
+                            </td>
                             <td colspan="10" class="filler-cell"></td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
+                            <td class="element-cell" id="Carbon" th:text="${chemicalElements[5].symbol}">Carbon</td>
+                            <td class="element-cell" id="Nitrogen" th:text="${chemicalElements[6].symbol}">Nitrogen</td>
+                            <td class="element-cell" id="Oxygen" th:text="${chemicalElements[7].symbol}">Oxygen</td>
+                            <td class="element-cell" id="Fluorine" th:text="${chemicalElements[8].symbol}"> Fluorine</td>
+                            <td class="element-cell" id="Neon" th:text="${chemicalElements[9].symbol}">Neon</td>
                         </tr>
 
                         <tr id="period_3">
                             <td class="period-number">3</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Sodium" th:text="${chemicalElements[10].symbol}"> Sodium</td>
+                            <td class="element-cell" id="Magnesium" th:text="${chemicalElements[11].symbol}">Magnesium</td>
                             <td colspan="10" class="filler-cell"></td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Aluminium" th:text="${chemicalElements[12].symbol}">Aluminium </td>
+                            <td class="element-cell" id="Silicon" th:text="${chemicalElements[13].symbol}">Silicon</td>
+                            <td class="element-cell" id="Phosphorus" th:text="${chemicalElements[14].symbol}">Phosphorus </td>
+                            <td class="element-cell" id="Sulphur" th:text="${chemicalElements[15].symbol}">Sulphur</td>
+                            <td class="element-cell" id="Chlorine" th:text="${chemicalElements[16].symbol}"> Chlorine</td>
+                            <td class="element-cell" id="Argon" th:text="${chemicalElements[17].symbol}">Argon</td>
                         </tr>
                         <tr id="period_4">
                             <td class="period-number">4</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Potassium" th:text="${chemicalElements[18].symbol}"> Potassium</td>
+                            <td class="element-cell" id="Calcium" th:text="${chemicalElements[19].symbol}">Calcium</td>
+                            <td class="element-cell" id="Scandium" th:text="${chemicalElements[20].symbol}">Scandium</td>
+                            <td class="element-cell" id="Titanium" th:text="${chemicalElements[21].symbol}">Titanium</td>
+                            <td class="element-cell" id="Vanadium" th:text="${chemicalElements[22].symbol}">Vanadium</td>
+                            <td class="element-cell" id="Chromium" th:text="${chemicalElements[23].symbol}"> Chromium</td>
+                            <td class="element-cell" id="Manganese" th:text="${chemicalElements[24].symbol}">Manganese</td>
+                            <td class="element-cell" id="Iron" th:text="${chemicalElements[25].symbol}"> Iron</td>
+                            <td class="element-cell" id="Cobalt" th:text="${chemicalElements[26].symbol}">Cobalt</td>
+                            <td class="element-cell" id="Nickel" th:text="${chemicalElements[27].symbol}">Nickel</td>
+                            <td class="element-cell" id="Copper" th:text="${chemicalElements[28].symbol}"> Copper</td>
+                            <td class="element-cell" id="Zinc" th:text="${chemicalElements[29].symbol}"> Zinc</td>
+                            <td class="element-cell" id="Gallium" th:text="${chemicalElements[30].symbol}"> Gallium</td>
+                            <td class="element-cell" id="Germanium" th:text="${chemicalElements[31].symbol}"> Germanium</td>
+                            <td class="element-cell" id="Arsenic" th:text="${chemicalElements[32].symbol}"> Arsenic</td>
+                            <td class="element-cell" id="Selenium" th:text="${chemicalElements[33].symbol}">Selenium</td>
+                            <td class="element-cell" id="Bromine" th:text="${chemicalElements[34].symbol}">Bromine</td>
+                            <td class="element-cell" id="Krypton" th:text="${chemicalElements[35].symbol}">Krypton</td>
                         </tr>
                         <tr id="period_5">
                             <td class="period-number">5</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Rubidium" th:text="${chemicalElements[36].symbol}"> Rubidium</td>
+                            <td class="element-cell" id="Strontium" th:text="${chemicalElements[37].symbol}"> Strontium</td>
+                            <td class="element-cell" id="Yttrium" th:text="${chemicalElements[38].symbol}"> Yttrium</td>
+                            <td class="element-cell" id="Zirconium" th:text="${chemicalElements[39].symbol}"> Zirconium</td>
+                            <td class="element-cell" id="Niobium" th:text="${chemicalElements[40].symbol}">Niobium</td>
+                            <td class="element-cell" id="Molybdenum" th:text="${chemicalElements[41].symbol}">Molybdenum</td>
+                            <td class="element-cell" id="Technetium" th:text="${chemicalElements[42].symbol}">Technetium</td>
+                            <td class="element-cell" id="Ruthenium" th:text="${chemicalElements[43].symbol}">Ruthenium</td>
+                            <td class="element-cell" id="Rhodium" th:text="${chemicalElements[44].symbol}">Rhodium</td>
+                            <td class="element-cell" id="Palladium" th:text="${chemicalElements[45].symbol}"> Palladium</td>
+                            <td class="element-cell" id="Silver" th:text="${chemicalElements[46].symbol}">Silver</td>
+                            <td class="element-cell" id="Cadmium" th:text="${chemicalElements[47].symbol}">Cadmium</td>
+                            <td class="element-cell" id="Indium" th:text="${chemicalElements[48].symbol}">Indium</td>
+                            <td class="element-cell" id="Tin" th:text="${chemicalElements[49].symbol}">Tin</td>
+                            <td class="element-cell" id="Antimony" th:text="${chemicalElements[50].symbol}">Antimony</td>
+                            <td class="element-cell" id="Tellurium" th:text="${chemicalElements[51].symbol}">Tellurium</td>
+                            <td class="element-cell" id="Iodine" th:text="${chemicalElements[52].symbol}">Iodine</td>
+                            <td class="element-cell" id="Xenon" th:text="${chemicalElements[53].symbol}">Xenon</td>
                         </tr>
                         <tr id="period_6">
                             <td class="period-number">6</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Caesium" th:text="${chemicalElements[54].symbol}"> Caesium</td>
+                            <td class="element-cell" id="Barium" th:text="${chemicalElements[55].symbol}"> Barium</td>
+                            <td class="element-cell" id="Lanthanum" th:text="${chemicalElements[56].symbol}"> Lanthanum</td>
+                            <!--Lanthanides-->
+                            <td class="element-cell" id="Hafnium" th:text="${chemicalElements[71].symbol}"> Hafnium</td>
+                            <td class="element-cell" id="Tantalum" th:text="${chemicalElements[72].symbol}">Tantalum</td>
+                            <td class="element-cell" id="Tungsten" th:text="${chemicalElements[73].symbol}">Tungsten</td>
+                            <td class="element-cell" id="Rhenium" th:text="${chemicalElements[74].symbol}">Rhenium</td>
+                            <td class="element-cell" id="Osmium" th:text="${chemicalElements[75].symbol}">Osmium</td>
+                            <td class="element-cell" id="Iridium" th:text="${chemicalElements[76].symbol}">Iridium</td>
+                            <td class="element-cell" id="Platinum" th:text="${chemicalElements[77].symbol}"> Platinum</td>
+                            <td class="element-cell" id="Gold" th:text="${chemicalElements[78].symbol}"> Gold</td>
+                            <td class="element-cell" id="Mercury" th:text="${chemicalElements[79].symbol}">Mercury</td>
+                            <td class="element-cell" id="Thallium" th:text="${chemicalElements[80].symbol}"> Thallium</td>
+                            <td class="element-cell" id="Lead" th:text="${chemicalElements[81].symbol}"> Lead</td>
+                            <td class="element-cell" id="Bismuth" th:text="${chemicalElements[82].symbol}">Bismuth</td>
+                            <td class="element-cell" id="Polonium" th:text="${chemicalElements[83].symbol}">Polonium</td>
+                            <td class="element-cell" id="Astatine" th:text="${chemicalElements[84].symbol}">Astatine</td>
+                            <td class="element-cell" id="Radon" th:text="${chemicalElements[85].symbol}"> Radon</td>
                         </tr>
                         <tr id="period_7">
                             <td class="period-number">7</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td class="element-cell" id="Francium" th:text="${chemicalElements[86].symbol}">Francium</td>
+                            <td class="element-cell" id="Radium" th:text="${chemicalElements[87].symbol}"> Radium</td>
+                            <td class="element-cell" id="Actinium" th:text="${chemicalElements[88].symbol}"> Actinium</td>
+                            <!--Actinides-->
+                            <td class="element-cell" id="Rutherfordium" th:text="${chemicalElements[103].symbol}">Rutherfordium</td>
+                            <td class="element-cell" id="Dubnium" th:text="${chemicalElements[104].symbol}"> Dubnium</td>
+                            <td class="element-cell" id="Seaborgium" th:text="${chemicalElements[105].symbol}"> Seaborgium</td>
+                            <td class="element-cell" id="Bohrium" th:text="${chemicalElements[106].symbol}"> Bohrium</td>
+                            <td class="element-cell" id="Hassium" th:text="${chemicalElements[107].symbol}">Hassium</td>
+                            <td class="element-cell" id="Meitnerium" th:text="${chemicalElements[108].symbol}">Meitnerium</td>
+                            <td class="element-cell" id="Darmstadtium" th:text="${chemicalElements[109].symbol}">Darmstadtium</td>
+                            <td class="element-cell" id="Roentgenium" th:text="${chemicalElements[110].symbol}"> Roentgenium</td>
+                            <td class="element-cell" id="Copernicium" th:text="${chemicalElements[111].symbol}">Copernicium</td>
                         </tr>
                         <tr id="lanthanides">
-                            <td colspan="3" class="filler-cell"></td>
-                            <td>Lanthanides</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td colspan="3" class="filler-cell">Lanthanides</td>
+                            <td class="element-cell" id="Cerium" th:text="${chemicalElements[57].symbol}"> Cerium</td>
+                            <td class="element-cell" id="Praseodymium" th:text="${chemicalElements[58].symbol}"> Praseodymium</td>
+                            <td class="element-cell" id="Neodymium" th:text="${chemicalElements[59].symbol}">Neodymium</td>
+                            <td class="element-cell" id="Promethium" th:text="${chemicalElements[60].symbol}">Promethium</td>
+                            <td class="element-cell" id="Samarium" th:text="${chemicalElements[61].symbol}">Samarium</td>
+                            <td class="element-cell" id="Europium" th:text="${chemicalElements[62].symbol}">Europium</td>
+                            <td class="element-cell" id="Gadolinium" th:text="${chemicalElements[63].symbol}">Gadolinium</td>
+                            <td class="element-cell" id="Terbium" th:text="${chemicalElements[64].symbol}"> Terbium</td>
+                            <td class="element-cell" id="Dysprosium" th:text="${chemicalElements[65].symbol}">Dysprosium</td>
+                            <td class="element-cell" id="Holmium" th:text="${chemicalElements[55].symbol}"> Holmium</td>
+                            <td class="element-cell" id="Erbium" th:text="${chemicalElements[67].symbol}">Erbium</td>
+                            <td class="element-cell" id="Thulium" th:text="${chemicalElements[68].symbol}">Thulium</td>
+                            <td class="element-cell" id="Ytterbium" th:text="${chemicalElements[69].symbol}">Ytterbium</td>
+                            <td class="element-cell" id="Lutetium" th:text="${chemicalElements[70].symbol}"> Lutetium</td>
                         </tr>
                         <tr id="actinides">
-                            <td colspan="3" class="filler-cell"></td>
-                            <td>Actinides</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
-                            <td class="element-cell"> H</td>
+                            <td colspan="3" class="filler-cell">Actinides</td>
+                            <td class="element-cell" id="Thorium" th:text="${chemicalElements[89].symbol}">Thorium</td>
+                            <td class="element-cell" id="Protactinium" th:text="${chemicalElements[90].symbol}"> Protactinium</td>
+                            <td class="element-cell" id="Uranium" th:text="${chemicalElements[91].symbol}">Uranium</td>
+                            <td class="element-cell" id="Neptunium" th:text="${chemicalElements[92].symbol}"> Neptunium</td>
+                            <td class="element-cell" id="Plutonium" th:text="${chemicalElements[93].symbol}">Plutonium</td>
+                            <td class="element-cell" id="Americium" th:text="${chemicalElements[94].symbol}">Americium</td>
+                            <td class="element-cell" id="Curium" th:text="${chemicalElements[95].symbol}">Curium</td>
+                            <td class="element-cell" id="Berkelium" th:text="${chemicalElements[96].symbol}">Berkelium</td>
+                            <td class="element-cell" id="Californium" th:text="${chemicalElements[97].symbol}">Californium</td>
+                            <td class="element-cell" id="Einsteinium" th:text="${chemicalElements[98].symbol}">Einsteinium</td>
+                            <td class="element-cell" id="Fermium" th:text="${chemicalElements[99].symbol}"> Fermium</td>
+                            <td class="element-cell" id="Mendelevium" th:text="${chemicalElements[100].symbol}">Mendelevium</td>
+                            <td class="element-cell" id="Nobelium" th:text="${chemicalElements[101].symbol}"> Nobelium</td>
+                            <td class="element-cell" id="Lawrencium" th:text="${chemicalElements[102].symbol}">Lawrencium</td>
                         </tr>
 
                         </tbody>
