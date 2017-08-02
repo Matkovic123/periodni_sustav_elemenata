@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS periodic_system.user;
-DROP TABLE IF EXISTS periodic_system.user_role;
-DROP TABLE IF EXISTS periodic_system.key_isotope;
-DROP TABLE IF EXISTS periodic_system.chemical_element;
+DROP TABLE  IF EXISTS periodic_system.user CASCADE;
+DROP TABLE  IF EXISTS periodic_system.user_role CASCADE;
+DROP TABLE  IF EXISTS periodic_system.key_isotope CASCADE;
+DROP TABLE  IF EXISTS periodic_system.chemical_element CASCADE;
 
 DROP SCHEMA IF EXISTS periodic_system;
 CREATE SCHEMA periodic_system

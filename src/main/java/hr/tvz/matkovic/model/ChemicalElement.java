@@ -2,50 +2,51 @@ package hr.tvz.matkovic.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Matkovic on 10/07/2017.
  */
 @Entity
-@Table(name = "chemical_element", schema = "periodic_system")
-public class ChemicalElement {
+@Table(name = "CHEMICAL_ELEMENT", schema = "PERIODIC_SYSTEM")
+public class ChemicalElement implements Serializable {
 
-    @Column(name = "name")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "symbol")
+    @Column(name = "SYMBOL")
     private String symbol;
 
     @Id
-    @GeneratedValue
-    @Column(name = "atomic_number")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ATOMIC_NUMBER")
     private Integer atomicNumber;
 
-    @Column(name = "block")
+    @Column(name = "BLOCK")
     private char block;
 
-    @Column(name = "state_at_20c")
+    @Column(name = "STATE_AT_20C")
     private String stateAt20C;
 
-    @Column(name = "electron_configuration")
+    @Column(name = "ELECTRON_CONFIGURATION")
     private String electronConfiguration;
 
-    @Column(name = "melting_point_in_c")
-    private String meltingPoint;
+    @Column(name = "MELTING_POINT_IN_C")
+    private Double meltingPoint;
 
-    @Column(name = "boiling_point_in_c")
-    private String boilingPoint;
+    @Column(name = "BOILING_POINT_IN_C")
+    private Double boilingPoint;
 
-    @Column(name = "atomic_mass")
+    @Column(name = "ATOMIC_MASS")
     private Double atomicMass;
 
-    @Column(name = "atomic_radius")
-    private String atomicRadius;
+    @Column(name = "ATOMIC_RADIUS")
+    private Double atomicRadius;
 
-    @Column(name = "electronegativity")
-    private String electronegativity;
+    @Column(name = "ELECTRONEGATIVITY")
+    private Double electronegativity;
 
-    @Column(name = "common_oxidation_states")
+    @Column(name = "COMMON_OXIDATION_STATES")
     private String commonOxidationStates;
 
     public ChemicalElement(){}
@@ -98,19 +99,19 @@ public class ChemicalElement {
         this.electronConfiguration = electronConfiguration;
     }
 
-    public String getMeltingPoint() {
+    public Double getMeltingPoint() {
         return meltingPoint;
     }
 
-    public void setMeltingPoint(String meltingPoint) {
+    public void setMeltingPoint(Double meltingPoint) {
         this.meltingPoint = meltingPoint;
     }
 
-    public String getBoilingPoint() {
+    public Double getBoilingPoint() {
         return boilingPoint;
     }
 
-    public void setBoilingPoint(String boilingPoint) {
+    public void setBoilingPoint(Double boilingPoint) {
         this.boilingPoint = boilingPoint;
     }
 
@@ -122,19 +123,19 @@ public class ChemicalElement {
         this.atomicMass = atomicMass;
     }
 
-    public String getAtomicRadius() {
+    public Double getAtomicRadius() {
         return atomicRadius;
     }
 
-    public void setAtomicRadius(String atomicRadius) {
+    public void setAtomicRadius(Double atomicRadius) {
         this.atomicRadius = atomicRadius;
     }
 
-    public String getElectronegativity() {
+    public Double getElectronegativity() {
         return electronegativity;
     }
 
-    public void setElectronegativity(String electronegativity) {
+    public void setElectronegativity(Double electronegativity) {
         this.electronegativity = electronegativity;
     }
 
@@ -145,5 +146,4 @@ public class ChemicalElement {
     public void setCommonOxidationStates(String commonOxidationStates) {
         this.commonOxidationStates = commonOxidationStates;
     }
-
 }

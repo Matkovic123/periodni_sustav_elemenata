@@ -1,20 +1,21 @@
 package hr.tvz.matkovic.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Matkovic on 10/07/2017.
  */
 @Entity
-@Table(name = "KEY_ISOTOPE", schema = "periodic_system")
-public class Isotope {
+@Table(name = "KEY_ISOTOPE", schema = "PERIODIC_SYSTEM")
+public class Isotope implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "NAME")
-    private String name;
+    @Column(name = "SYMBOL",unique = true)
+    private String symbol;
 
     @ManyToOne
     @JoinColumn(name = "CHEMICAL_ELEMENT_ATOMIC_NUMBER")
@@ -23,7 +24,7 @@ public class Isotope {
     public Isotope(){}
 
     public Isotope(String name, ChemicalElement chemicalElement) {
-        this.name = name;
+        this.symbol = name;
         this.chemicalElement = chemicalElement;
     }
 
@@ -36,11 +37,11 @@ public class Isotope {
     }
 
     public String getName() {
-        return name;
+        return symbol;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.symbol = name;
     }
 
     public ChemicalElement getChemicalElement() {

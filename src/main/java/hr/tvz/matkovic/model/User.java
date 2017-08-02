@@ -1,28 +1,48 @@
 package hr.tvz.matkovic.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Matkovic on 09/07/2017.
  */
-@Entity(name = "user")
-public class User {
+@Entity
+@Table(name = "USER", schema = "PERIODIC_SYSTEM")
+public class User implements Serializable {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long id;
-        @Column(name = "username")
-        private String username;
-        @Column(name ="password")
-        private String password;
-        @Column(name ="first_name")
-        private String first_name;
-        @Column(name ="last_name")
-        private String last_name;
-        @Column(name = "role_id")
-        private Long roleID;
-        @Column(name ="enabled")
-        private Boolean enabled;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "USERNAME", nullable = false)
+    private String username;
+    @Column(name = "PASSWORD", nullable = false)
+    private String password;
+    @Column(name = "FIRST_NAME", nullable = false)
+    private String first_name;
+    @Column(name = "LAST_NAME", nullable = false)
+    private String last_name;
+    @Column(name = "ENABLED", nullable = false)
+    private Boolean enabled;
+
+    @ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinTable(name="USER_ROLES",
+            joinColumns = {@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+            inverseJoinColumns = {@JoinColumn(name="ROLE_ID", referencedColumnName="ID")}
+    )
+    private List<UserRole> roles;
+
+    public List<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<UserRole> roles) {
+        this.roles = roles;
+    }
+
+    public User(){}
 
     public Long getId() {
         return id;
@@ -64,13 +84,6 @@ public class User {
         this.last_name = last_name;
     }
 
-    public Long getRoleID() {
-        return roleID;
-    }
-
-    public void setRoleID(Long roleID) {
-        this.roleID = roleID;
-    }
 
     public Boolean getEnabled() {
         return enabled;
