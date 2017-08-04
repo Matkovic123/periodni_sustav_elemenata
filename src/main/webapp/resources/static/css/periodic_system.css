@@ -3,13 +3,9 @@ table, tr, td{
 }
 th{
     background-color: white !important;
-    text-align: center;
-    vertical-align:middle;
-    height: 20px;
-    width: 20px;
+    text-align: center !important;
 
 }
-
 .element-cell{
     padding: 2px 2px 2px 2px;
     height: 60px;
