@@ -1,6 +1,14 @@
 table, tr, td{
     border: solid 3px white;
 }
+th{
+    background-color: white !important;
+    text-align: center;
+    vertical-align:middle;
+    height: 20px;
+    width: 20px;
+
+}
 
 .element-cell{
     padding: 2px 2px 2px 2px;
@@ -8,7 +16,8 @@ table, tr, td{
     width: 60px;
     text-align:center;
     vertical-align:middle;
-    border-radius: 20px;
+    background-color: transparent;
+
 }
 .filler-cell{
     border: none;
@@ -29,4 +38,58 @@ group-number{
 }
 #actinides .element-cell{
     background-color: #00cc00;
+}
+.group1{
+    background-color: #b30059;
+}
+.group2{
+
+ }
+.group3{
+
+}
+.group4{
+
+}
+.group5{
+
+}
+.group6{
+
+}
+.group7{
+
+}
+.group8{
+
+}
+.group9{
+
+}
+.group10{
+
+}
+.group11{
+
+}
+.group12{
+
+}
+.group13{
+
+}
+.group14{
+
+}
+.group15{
+
+}
+.group16{
+
+}
+.group17{
+
+}
+.group18{
+
 }

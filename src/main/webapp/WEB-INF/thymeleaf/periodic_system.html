@@ -15,19 +15,59 @@
                 <div class="col-lg-12" id="periodic_system">
                     <table>
                         <tbody>
+                        <tr>
+                            <th></th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                        </tr>
+                        <colgroup>
+                            <col/>
+                            <col class="group1"/>
+                            <col class="group2"/>
+                            <col class="group3"/>
+                            <col class="group4"/>
+                            <col class="group5"/>
+                            <col class="group6"/>
+                            <col class="group7"/>
+                            <col class="group8"/>
+                            <col class="group9"/>
+                            <col class="group10"/>
+                            <col class="group12"/>
+                            <col class="group13"/>
+                            <col class="group14"/>
+                            <col class="group15"/>
+                            <col class="group16"/>
+                            <col class="group17"/>
+                            <col class="group18"/>
+                        </colgroup>
                         <tr id="period_1">
                             <td class="period-number">1</td>
                             <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}"><span>Hydrogen</span></td>
-                            <td colspan="16" class="filler-cell"></td>
+                            <td colspan="10" rowspan="3" class="filler-cell"></td>
+                            <td colspan="6"/>
                             <td class="element-cell" id="Helium" th:text="${chemicalElements[1].symbol}">Helium</td>
                         </tr>
                         <tr id="period_2">
                             <td class="period-number">2</td>
                             <td class="element-cell" id="Lithium" th:text="${chemicalElements[2].symbol}">Lithium</td>
-                            <td class="element-cell" id="Beryllium" th:text="${chemicalElements[3].symbol}">Beryllium
-                            </td>
-                            <td colspan="10" class="filler-cell"></td>
-                            <td class="element-cell" id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
+                            <td class="element-cell" id="Beryllium" th:text="${chemicalElements[3].symbol}">Beryllium</td>
+                            <td class="element-cell " id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
                             <td class="element-cell" id="Carbon" th:text="${chemicalElements[5].symbol}">Carbon</td>
                             <td class="element-cell" id="Nitrogen" th:text="${chemicalElements[6].symbol}">Nitrogen</td>
                             <td class="element-cell" id="Oxygen" th:text="${chemicalElements[7].symbol}">Oxygen</td>
@@ -39,7 +79,6 @@
                             <td class="period-number">3</td>
                             <td class="element-cell" id="Sodium" th:text="${chemicalElements[10].symbol}"> Sodium</td>
                             <td class="element-cell" id="Magnesium" th:text="${chemicalElements[11].symbol}">Magnesium</td>
-                            <td colspan="10" class="filler-cell"></td>
                             <td class="element-cell" id="Aluminium" th:text="${chemicalElements[12].symbol}">Aluminium </td>
                             <td class="element-cell" id="Silicon" th:text="${chemicalElements[13].symbol}">Silicon</td>
                             <td class="element-cell" id="Phosphorus" th:text="${chemicalElements[14].symbol}">Phosphorus </td>
