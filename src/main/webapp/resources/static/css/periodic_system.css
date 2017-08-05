@@ -17,6 +17,7 @@ th{
 }
 .filler-cell{
     border: none;
+    background-color: white !important;
 }
 
 .period-number{
@@ -30,62 +31,78 @@ group-number{
 
 }
 #lanthanides .element-cell{
-    background-color:  #00bfff;
+    background-color:  #bfeaec;
 }
 #actinides .element-cell{
-    background-color: #00cc00;
+    background-color: #a2d34d;
 }
 .group1{
-    background-color: #b30059;
+    background-color: #ebbfd8;
 }
 .group2{
+    background-color: #fbc9e5;
 
  }
 .group3{
+    background-color: #5bc2e7;
 
 }
 .group4{
-
+    background-color: #5bc2e7;
 }
 .group5{
+    background-color: #5bc2e7;
 
 }
 .group6{
+    background-color: #5bc2e7;
 
 }
 .group7{
+    background-color: #5bc2e7;
 
 }
 .group8{
+    background-color: #5bc2e7;
 
 }
 .group9{
+    background-color: #5bc2e7;
 
 }
 .group10{
+    background-color: #5bc2e7;
 
 }
 .group11{
+    background-color: #5bc2e7;
 
 }
 .group12{
+    background-color: #5bc2e7;
 
 }
 .group13{
+    background-color: #cedc00;
 
 }
 .group14{
+    background-color: #d1a2cb;
 
 }
 .group15{
+    background-color: #b5b9ba;
 
 }
 .group16{
+    background-color: #f0b323;
 
 }
 .group17{
+    background-color: #eab37f;
 
 }
 .group18{
+    background-color: #eada24;
 
 }

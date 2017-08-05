@@ -48,6 +48,7 @@
                             <col class="group8"/>
                             <col class="group9"/>
                             <col class="group10"/>
+                            <col class="group11"/>
                             <col class="group12"/>
                             <col class="group13"/>
                             <col class="group14"/>
@@ -59,15 +60,16 @@
                         <tr id="period_1">
                             <td class="period-number">1</td>
                             <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}"><span>Hydrogen</span></td>
+                            <td class="filler-cell"></td>
                             <td colspan="10" rowspan="3" class="filler-cell"></td>
-                            <td colspan="6"/>
+                            <td colspan="5" class="filler-cell"/>
                             <td class="element-cell" id="Helium" th:text="${chemicalElements[1].symbol}">Helium</td>
                         </tr>
                         <tr id="period_2">
                             <td class="period-number">2</td>
                             <td class="element-cell" id="Lithium" th:text="${chemicalElements[2].symbol}">Lithium</td>
                             <td class="element-cell" id="Beryllium" th:text="${chemicalElements[3].symbol}">Beryllium</td>
-                            <td class="element-cell " id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
+                            <td class="element-cell" id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
                             <td class="element-cell" id="Carbon" th:text="${chemicalElements[5].symbol}">Carbon</td>
                             <td class="element-cell" id="Nitrogen" th:text="${chemicalElements[6].symbol}">Nitrogen</td>
                             <td class="element-cell" id="Oxygen" th:text="${chemicalElements[7].symbol}">Oxygen</td>
