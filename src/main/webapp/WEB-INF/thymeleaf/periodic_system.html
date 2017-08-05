@@ -36,172 +36,713 @@
                             <th>17</th>
                             <th>18</th>
                         </tr>
-                        <colgroup>
-                            <col/>
-                            <col class="group1"/>
-                            <col class="group2"/>
-                            <col class="group3"/>
-                            <col class="group4"/>
-                            <col class="group5"/>
-                            <col class="group6"/>
-                            <col class="group7"/>
-                            <col class="group8"/>
-                            <col class="group9"/>
-                            <col class="group10"/>
-                            <col class="group11"/>
-                            <col class="group12"/>
-                            <col class="group13"/>
-                            <col class="group14"/>
-                            <col class="group15"/>
-                            <col class="group16"/>
-                            <col class="group17"/>
-                            <col class="group18"/>
-                        </colgroup>
                         <tr id="period_1">
                             <td class="period-number">1</td>
-                            <td class="element-cell" id="Hydrogen" th:text="${chemicalElements[0].symbol}"><span>Hydrogen</span></td>
+                            <td class="element-cell diatomic-nonmetal" id="Hydrogen" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[0].atomicNumber})}" th:title="${chemicalElements[0].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[0].symbol}">Hydrogen</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[0].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                             <td class="filler-cell"></td>
-                            <td colspan="10" rowspan="3" class="filler-cell"></td>
+                            <td colspan="10" rowspan="3" class="filler-cell">
+                                <span></span>
+                            </td>
                             <td colspan="5" class="filler-cell"/>
-                            <td class="element-cell" id="Helium" th:text="${chemicalElements[1].symbol}">Helium</td>
+                            <td class="element-cell noble-gas" id="Helium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[1].atomicNumber})}" th:title="${chemicalElements[1].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[1].symbol}">Helium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[1].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="period_2">
                             <td class="period-number">2</td>
-                            <td class="element-cell" id="Lithium" th:text="${chemicalElements[2].symbol}">Lithium</td>
-                            <td class="element-cell" id="Beryllium" th:text="${chemicalElements[3].symbol}">Beryllium</td>
-                            <td class="element-cell" id="Boron" th:text="${chemicalElements[4].symbol}">Boron</td>
-                            <td class="element-cell" id="Carbon" th:text="${chemicalElements[5].symbol}">Carbon</td>
-                            <td class="element-cell" id="Nitrogen" th:text="${chemicalElements[6].symbol}">Nitrogen</td>
-                            <td class="element-cell" id="Oxygen" th:text="${chemicalElements[7].symbol}">Oxygen</td>
-                            <td class="element-cell" id="Fluorine" th:text="${chemicalElements[8].symbol}"> Fluorine</td>
-                            <td class="element-cell" id="Neon" th:text="${chemicalElements[9].symbol}">Neon</td>
+                            <td class="element-cell alkali-metal" id="Lithium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[2].atomicNumber})}" th:title="${chemicalElements[2].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[2].symbol}">Lithium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[2].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Beryllium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[3].atomicNumber})}" th:title="${chemicalElements[3].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[3].symbol}">Beryllium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[3].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Boron">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[4].atomicNumber})}" th:title="${chemicalElements[4].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[4].symbol}">Boron</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[4].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell polyatomic-nonmetal" id="Carbon" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[5].atomicNumber})}" th:title="${chemicalElements[5].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[5].symbol}">Carbon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[5].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Nitrogen" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[6].atomicNumber})}" th:title="${chemicalElements[6].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[6].symbol}">Nitrogen</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[6].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Oxygen" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[7].atomicNumber})}" th:title="${chemicalElements[7].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[7].symbol}">Oxygen</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[7].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Fluorine">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[8].atomicNumber})}" th:title="${chemicalElements[8].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[8].symbol}">Neon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[8].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell noble-gas" id="Neon" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[9].atomicNumber})}" th:title="${chemicalElements[9].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[9].symbol}">Neon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[9].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr id="period_3">
                             <td class="period-number">3</td>
-                            <td class="element-cell" id="Sodium" th:text="${chemicalElements[10].symbol}"> Sodium</td>
-                            <td class="element-cell" id="Magnesium" th:text="${chemicalElements[11].symbol}">Magnesium</td>
-                            <td class="element-cell" id="Aluminium" th:text="${chemicalElements[12].symbol}">Aluminium </td>
-                            <td class="element-cell" id="Silicon" th:text="${chemicalElements[13].symbol}">Silicon</td>
-                            <td class="element-cell" id="Phosphorus" th:text="${chemicalElements[14].symbol}">Phosphorus </td>
-                            <td class="element-cell" id="Sulphur" th:text="${chemicalElements[15].symbol}">Sulphur</td>
-                            <td class="element-cell" id="Chlorine" th:text="${chemicalElements[16].symbol}"> Chlorine</td>
-                            <td class="element-cell" id="Argon" th:text="${chemicalElements[17].symbol}">Argon</td>
+                            <td class="element-cell alkali-metal" id="Sodium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[10].atomicNumber})}" th:title="${chemicalElements[10].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[10].symbol}">Sodium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[10].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Magnesium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[11].atomicNumber})}" th:title="${chemicalElements[11].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[11].symbol}">Magnesium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[11].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Aluminium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[12].atomicNumber})}" th:title="${chemicalElements[12].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[12].symbol}">Aluminium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[12].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Silicon" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[13].atomicNumber})}" th:title="${chemicalElements[13].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[13].symbol}">Silicon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[13].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell polyatomic-nonmetal" id="Phosphorus" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[14].atomicNumber})}" th:title="${chemicalElements[14].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[14].symbol}">Phosphorus</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[14].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell polyatomic-nonmetal" id="Sulphur" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[15].atomicNumber})}" th:title="${chemicalElements[15].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[15].symbol}">Sulphur</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[15].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Chlorine" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[16].atomicNumber})}" th:title="${chemicalElements[16].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[16].symbol}">Chlorine</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[16].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell noble-gas" id="Argon" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[17].atomicNumber})}" th:title="${chemicalElements[17].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[17].symbol}">Argon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[17].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="period_4">
                             <td class="period-number">4</td>
-                            <td class="element-cell" id="Potassium" th:text="${chemicalElements[18].symbol}"> Potassium</td>
-                            <td class="element-cell" id="Calcium" th:text="${chemicalElements[19].symbol}">Calcium</td>
-                            <td class="element-cell" id="Scandium" th:text="${chemicalElements[20].symbol}">Scandium</td>
-                            <td class="element-cell" id="Titanium" th:text="${chemicalElements[21].symbol}">Titanium</td>
-                            <td class="element-cell" id="Vanadium" th:text="${chemicalElements[22].symbol}">Vanadium</td>
-                            <td class="element-cell" id="Chromium" th:text="${chemicalElements[23].symbol}"> Chromium</td>
-                            <td class="element-cell" id="Manganese" th:text="${chemicalElements[24].symbol}">Manganese</td>
-                            <td class="element-cell" id="Iron" th:text="${chemicalElements[25].symbol}"> Iron</td>
-                            <td class="element-cell" id="Cobalt" th:text="${chemicalElements[26].symbol}">Cobalt</td>
-                            <td class="element-cell" id="Nickel" th:text="${chemicalElements[27].symbol}">Nickel</td>
-                            <td class="element-cell" id="Copper" th:text="${chemicalElements[28].symbol}"> Copper</td>
-                            <td class="element-cell" id="Zinc" th:text="${chemicalElements[29].symbol}"> Zinc</td>
-                            <td class="element-cell" id="Gallium" th:text="${chemicalElements[30].symbol}"> Gallium</td>
-                            <td class="element-cell" id="Germanium" th:text="${chemicalElements[31].symbol}"> Germanium</td>
-                            <td class="element-cell" id="Arsenic" th:text="${chemicalElements[32].symbol}"> Arsenic</td>
-                            <td class="element-cell" id="Selenium" th:text="${chemicalElements[33].symbol}">Selenium</td>
-                            <td class="element-cell" id="Bromine" th:text="${chemicalElements[34].symbol}">Bromine</td>
-                            <td class="element-cell" id="Krypton" th:text="${chemicalElements[35].symbol}">Krypton</td>
+                            <td class="element-cell alkali-metal" id="Potassium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[18].atomicNumber})}" th:title="${chemicalElements[18].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[18].symbol}">Potassium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[18].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Calcium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[19].atomicNumber})}" th:title="${chemicalElements[19].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[19].symbol}">Calcium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[19].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Scandium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[20].atomicNumber})}" th:title="${chemicalElements[20].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[20].symbol}">Scandium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[20].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Titanium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[21].atomicNumber})}" th:title="${chemicalElements[21].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[21].symbol}">Titanium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[21].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Vanadium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[22].atomicNumber})}" th:title="${chemicalElements[22].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[22].symbol}">Vanadium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[22].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Chromium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[23].atomicNumber})}" th:title="${chemicalElements[23].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[23].symbol}">Chromium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[23].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Manganese" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[24].atomicNumber})}" th:title="${chemicalElements[24].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[24].symbol}">Manganese</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[24].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Iron" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[25].atomicNumber})}" th:title="${chemicalElements[25].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[25].symbol}">Iron</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[25].atomicNumber}">Atomic number</div>
+                                </a>
+                                </td>
+                            <td class="element-cell transition-metal" id="Cobalt" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[26].atomicNumber})}" th:title="${chemicalElements[26].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[26].symbol}">Cobalt</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[26].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Nickel" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[27].atomicNumber})}" th:title="${chemicalElements[27].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[27].symbol}">Nickel</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[27].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Copper" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[28].atomicNumber})}" th:title="${chemicalElements[28].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[28].symbol}">Copper</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[28].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Zinc" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[29].atomicNumber})}" th:title="${chemicalElements[29].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[29].symbol}">Zinc</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[29].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Gallium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[30].atomicNumber})}" th:title="${chemicalElements[30].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[30].symbol}">Gallium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[30].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Germanium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[31].atomicNumber})}" th:title="${chemicalElements[31].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[31].symbol}">Germanium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[31].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Arsenic" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[32].atomicNumber})}" th:title="${chemicalElements[32].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[32].symbol}">Arsenic</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[32].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell polyatomic-nonmetal" id="Selenium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[33].atomicNumber})}" th:title="${chemicalElements[33].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[33].symbol}">Selenium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[33].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Bromine" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[34].atomicNumber})}" th:title="${chemicalElements[34].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[34].symbol}">Bromine</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[34].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell noble-gas" id="Krypton" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[35].atomicNumber})}" th:title="${chemicalElements[35].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[35].symbol}">Krypton</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[35].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="period_5">
                             <td class="period-number">5</td>
-                            <td class="element-cell" id="Rubidium" th:text="${chemicalElements[36].symbol}"> Rubidium</td>
-                            <td class="element-cell" id="Strontium" th:text="${chemicalElements[37].symbol}"> Strontium</td>
-                            <td class="element-cell" id="Yttrium" th:text="${chemicalElements[38].symbol}"> Yttrium</td>
-                            <td class="element-cell" id="Zirconium" th:text="${chemicalElements[39].symbol}"> Zirconium</td>
-                            <td class="element-cell" id="Niobium" th:text="${chemicalElements[40].symbol}">Niobium</td>
-                            <td class="element-cell" id="Molybdenum" th:text="${chemicalElements[41].symbol}">Molybdenum</td>
-                            <td class="element-cell" id="Technetium" th:text="${chemicalElements[42].symbol}">Technetium</td>
-                            <td class="element-cell" id="Ruthenium" th:text="${chemicalElements[43].symbol}">Ruthenium</td>
-                            <td class="element-cell" id="Rhodium" th:text="${chemicalElements[44].symbol}">Rhodium</td>
-                            <td class="element-cell" id="Palladium" th:text="${chemicalElements[45].symbol}"> Palladium</td>
-                            <td class="element-cell" id="Silver" th:text="${chemicalElements[46].symbol}">Silver</td>
-                            <td class="element-cell" id="Cadmium" th:text="${chemicalElements[47].symbol}">Cadmium</td>
-                            <td class="element-cell" id="Indium" th:text="${chemicalElements[48].symbol}">Indium</td>
-                            <td class="element-cell" id="Tin" th:text="${chemicalElements[49].symbol}">Tin</td>
-                            <td class="element-cell" id="Antimony" th:text="${chemicalElements[50].symbol}">Antimony</td>
-                            <td class="element-cell" id="Tellurium" th:text="${chemicalElements[51].symbol}">Tellurium</td>
-                            <td class="element-cell" id="Iodine" th:text="${chemicalElements[52].symbol}">Iodine</td>
-                            <td class="element-cell" id="Xenon" th:text="${chemicalElements[53].symbol}">Xenon</td>
+                            <td class="element-cell alkali-metal" id="Rubidium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[36].atomicNumber})}" th:title="${chemicalElements[36].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[36].symbol}">Rubidium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[36].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Strontium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[37].atomicNumber})}" th:title="${chemicalElements[37].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[37].symbol}">Strontium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[37].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Yttrium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[38].atomicNumber})}" th:title="${chemicalElements[38].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[38].symbol}">Yttrium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[38].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Zirconium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[39].atomicNumber})}" th:title="${chemicalElements[39].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[39].symbol}">Zirconium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[39].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Niobium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[40].atomicNumber})}" th:title="${chemicalElements[40].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[40].symbol}">Niobium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[40].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Molybdenum">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[41].atomicNumber})}" th:title="${chemicalElements[41].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[41].symbol}">Molybdenum</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[41].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Technetium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[42].atomicNumber})}" th:title="${chemicalElements[42].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[42].symbol}">Technetium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[42].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Ruthenium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[43].atomicNumber})}" th:title="${chemicalElements[43].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[43].symbol}">Ruthenium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[43].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Rhodium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[44].atomicNumber})}" th:title="${chemicalElements[44].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[44].symbol}">Rhodium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[44].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Palladium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[45].atomicNumber})}" th:title="${chemicalElements[45].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[45].symbol}">Palladium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[45].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Silver">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[46].atomicNumber})}" th:title="${chemicalElements[46].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[46].symbol}">Silver</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[46].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Cadmium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[47].atomicNumber})}" th:title="${chemicalElements[47].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[47].symbol}">Cadmium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[47].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Indium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[48].atomicNumber})}" th:title="${chemicalElements[48].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[48].symbol}">Indium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[48].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Tin" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[49].atomicNumber})}" th:title="${chemicalElements[49].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[49].symbol}">Tin</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[49].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Antimony" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[50].atomicNumber})}" th:title="${chemicalElements[50].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[50].symbol}">Antimony</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[50].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Tellurium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[51].atomicNumber})}" th:title="${chemicalElements[51].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[51].symbol}">Tellurium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[51].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell diatomic-nonmetal" id="Iodine" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[52].atomicNumber})}" th:title="${chemicalElements[52].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[52].symbol}">Iodine</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[52].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell noble-gas" id="Xenon" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[53].atomicNumber})}" th:title="${chemicalElements[53].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[53].symbol}">Xenon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[53].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="period_6">
                             <td class="period-number">6</td>
-                            <td class="element-cell" id="Caesium" th:text="${chemicalElements[54].symbol}"> Caesium</td>
-                            <td class="element-cell" id="Barium" th:text="${chemicalElements[55].symbol}"> Barium</td>
-                            <td class="element-cell" id="Lanthanum" th:text="${chemicalElements[56].symbol}"> Lanthanum</td>
-                            <!--Lanthanides-->
-                            <td class="element-cell" id="Hafnium" th:text="${chemicalElements[71].symbol}"> Hafnium</td>
-                            <td class="element-cell" id="Tantalum" th:text="${chemicalElements[72].symbol}">Tantalum</td>
-                            <td class="element-cell" id="Tungsten" th:text="${chemicalElements[73].symbol}">Tungsten</td>
-                            <td class="element-cell" id="Rhenium" th:text="${chemicalElements[74].symbol}">Rhenium</td>
-                            <td class="element-cell" id="Osmium" th:text="${chemicalElements[75].symbol}">Osmium</td>
-                            <td class="element-cell" id="Iridium" th:text="${chemicalElements[76].symbol}">Iridium</td>
-                            <td class="element-cell" id="Platinum" th:text="${chemicalElements[77].symbol}"> Platinum</td>
-                            <td class="element-cell" id="Gold" th:text="${chemicalElements[78].symbol}"> Gold</td>
-                            <td class="element-cell" id="Mercury" th:text="${chemicalElements[79].symbol}">Mercury</td>
-                            <td class="element-cell" id="Thallium" th:text="${chemicalElements[80].symbol}"> Thallium</td>
-                            <td class="element-cell" id="Lead" th:text="${chemicalElements[81].symbol}"> Lead</td>
-                            <td class="element-cell" id="Bismuth" th:text="${chemicalElements[82].symbol}">Bismuth</td>
-                            <td class="element-cell" id="Polonium" th:text="${chemicalElements[83].symbol}">Polonium</td>
-                            <td class="element-cell" id="Astatine" th:text="${chemicalElements[84].symbol}">Astatine</td>
-                            <td class="element-cell" id="Radon" th:text="${chemicalElements[85].symbol}"> Radon</td>
+                            <td class="element-cell alkali-metal" id="Caesium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[54].atomicNumber})}" th:title="${chemicalElements[54].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[54].symbol}">Caesium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[54].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Barium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[55].atomicNumber})}" th:title="${chemicalElements[55].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[55].symbol}">Barium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[55].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Lanthanum" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[56].atomicNumber})}" th:title="${chemicalElements[56].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[56].symbol}">Lanthanum</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[56].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                                                                         <!--Lanthanides-->
+                            <td class="element-cell transition-metal" id="Hafnium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[71].atomicNumber})}" th:title="${chemicalElements[71].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[71].symbol}">Hafnium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[71].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Tantalum" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[72].atomicNumber})}" th:title="${chemicalElements[72].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[72].symbol}">Tantalum</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[72].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Tungsten" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[73].atomicNumber})}" th:title="${chemicalElements[73].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[73].symbol}">Tungsten</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[73].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Rhenium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[74].atomicNumber})}" th:title="${chemicalElements[74].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[74].symbol}">Rhenium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[74].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Osmium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[75].atomicNumber})}" th:title="${chemicalElements[75].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[75].symbol}">Osmium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[75].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Iridium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[76].atomicNumber})}" th:title="${chemicalElements[76].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[76].symbol}">Iridium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[76].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Platinum" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[77].atomicNumber})}" th:title="${chemicalElements[77].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[77].symbol}">Platinum</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[77].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Gold" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[78].atomicNumber})}" th:title="${chemicalElements[78].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[78].symbol}">Gold</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[78].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Mercury" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[79].atomicNumber})}" th:title="${chemicalElements[79].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[79].symbol}">Mercury</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[79].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Thallium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[80].atomicNumber})}" th:title="${chemicalElements[80].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[80].symbol}">Thallium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[80].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Lead">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[81].atomicNumber})}" th:title="${chemicalElements[81].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[81].symbol}">Lead</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[81].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Bismuth" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[82].atomicNumber})}" th:title="${chemicalElements[82].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[82].symbol}">Bismuth</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[82].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell post-transition-metal" id="Polonium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[83].atomicNumber})}" th:title="${chemicalElements[83].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[83].symbol}">Polonium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[83].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell metalloid" id="Astatine" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[84].atomicNumber})}" th:title="${chemicalElements[84].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[84].symbol}">Astatine</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[84].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell noble-gas" id="Radon">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[85].atomicNumber})}" th:title="${chemicalElements[85].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[85].symbol}">Radon</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[85].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="period_7">
                             <td class="period-number">7</td>
-                            <td class="element-cell" id="Francium" th:text="${chemicalElements[86].symbol}">Francium</td>
-                            <td class="element-cell" id="Radium" th:text="${chemicalElements[87].symbol}"> Radium</td>
-                            <td class="element-cell" id="Actinium" th:text="${chemicalElements[88].symbol}"> Actinium</td>
-                            <!--Actinides-->
-                            <td class="element-cell" id="Rutherfordium" th:text="${chemicalElements[103].symbol}">Rutherfordium</td>
-                            <td class="element-cell" id="Dubnium" th:text="${chemicalElements[104].symbol}"> Dubnium</td>
-                            <td class="element-cell" id="Seaborgium" th:text="${chemicalElements[105].symbol}"> Seaborgium</td>
-                            <td class="element-cell" id="Bohrium" th:text="${chemicalElements[106].symbol}"> Bohrium</td>
-                            <td class="element-cell" id="Hassium" th:text="${chemicalElements[107].symbol}">Hassium</td>
-                            <td class="element-cell" id="Meitnerium" th:text="${chemicalElements[108].symbol}">Meitnerium</td>
-                            <td class="element-cell" id="Darmstadtium" th:text="${chemicalElements[109].symbol}">Darmstadtium</td>
-                            <td class="element-cell" id="Roentgenium" th:text="${chemicalElements[110].symbol}"> Roentgenium</td>
-                            <td class="element-cell" id="Copernicium" th:text="${chemicalElements[111].symbol}">Copernicium</td>
+                            <td class="element-cell alkali-metal" id="Francium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[86].atomicNumber})}" th:title="${chemicalElements[86].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[86].symbol}">Francium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[86].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell alkaline-earth-metal" id="Radium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[87].atomicNumber})}" th:title="${chemicalElements[87].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[87].symbol}">Radium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[87].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Actinium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[88].atomicNumber})}" th:title="${chemicalElements[88].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[88].symbol}">Actinium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[88].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                                                                             <!--Actinides-->
+                            <td class="element-cell transition-metal" id="Rutherfordium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[103].atomicNumber})}" th:title="${chemicalElements[103].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[103].symbol}">Rutherfordium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[103].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Dubnium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[104].atomicNumber})}" th:title="${chemicalElements[104].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[104].symbol}">Dubnium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[104].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Seaborgium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[105].atomicNumber})}" th:title="${chemicalElements[105].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[105].symbol}">Seaborgium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[105].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Bohrium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[106].atomicNumber})}" th:title="${chemicalElements[106].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[106].symbol}">Bohrium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[106].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Hassium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[107].atomicNumber})}" th:title="${chemicalElements[107].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[107].symbol}">Hassium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[107].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell unknown-chemical-properties" id="Meitnerium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[108].atomicNumber})}" th:title="${chemicalElements[108].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[108].symbol}">Meitnerium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[108].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell unknown-chemical-properties" id="Darmstadtium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[109].atomicNumber})}" th:title="${chemicalElements[109].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[109].symbol}">Darmstadtium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[109].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell unknown-chemical-properties" id="Roentgenium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[110].atomicNumber})}" th:title="${chemicalElements[110].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[110].symbol}">Roentgenium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[110].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell transition-metal" id="Copernicium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[111].atomicNumber})}" th:title="${chemicalElements[111].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[111].symbol}">Copernicium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[111].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr><td><br/></td></tr>
                         <tr id="lanthanides">
                             <td colspan="3" class="filler-cell">Lanthanides</td>
-                            <td class="element-cell" id="Cerium" th:text="${chemicalElements[57].symbol}"> Cerium</td>
-                            <td class="element-cell" id="Praseodymium" th:text="${chemicalElements[58].symbol}"> Praseodymium</td>
-                            <td class="element-cell" id="Neodymium" th:text="${chemicalElements[59].symbol}">Neodymium</td>
-                            <td class="element-cell" id="Promethium" th:text="${chemicalElements[60].symbol}">Promethium</td>
-                            <td class="element-cell" id="Samarium" th:text="${chemicalElements[61].symbol}">Samarium</td>
-                            <td class="element-cell" id="Europium" th:text="${chemicalElements[62].symbol}">Europium</td>
-                            <td class="element-cell" id="Gadolinium" th:text="${chemicalElements[63].symbol}">Gadolinium</td>
-                            <td class="element-cell" id="Terbium" th:text="${chemicalElements[64].symbol}"> Terbium</td>
-                            <td class="element-cell" id="Dysprosium" th:text="${chemicalElements[65].symbol}">Dysprosium</td>
-                            <td class="element-cell" id="Holmium" th:text="${chemicalElements[55].symbol}"> Holmium</td>
-                            <td class="element-cell" id="Erbium" th:text="${chemicalElements[67].symbol}">Erbium</td>
-                            <td class="element-cell" id="Thulium" th:text="${chemicalElements[68].symbol}">Thulium</td>
-                            <td class="element-cell" id="Ytterbium" th:text="${chemicalElements[69].symbol}">Ytterbium</td>
-                            <td class="element-cell" id="Lutetium" th:text="${chemicalElements[70].symbol}"> Lutetium</td>
+                            <td class="element-cell lanthanide" id="Cerium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[57].atomicNumber})}" th:title="${chemicalElements[57].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[57].symbol}">Cerium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[57].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Praseodymium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[58].atomicNumber})}" th:title="${chemicalElements[58].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[58].symbol}">Praseodymium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[58].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Neodymium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[59].atomicNumber})}" th:title="${chemicalElements[59].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[59].symbol}">Neodymium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[59].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Promethium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[60].atomicNumber})}" th:title="${chemicalElements[60].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[60].symbol}">Promethium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[60].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Samarium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[61].atomicNumber})}" th:title="${chemicalElements[61].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[61].symbol}">Samarium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[61].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Europium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[62].atomicNumber})}" th:title="${chemicalElements[62].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[62].symbol}">Europium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[62].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Gadolinium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[63].atomicNumber})}" th:title="${chemicalElements[63].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[63].symbol}">Gadolinium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[63].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Terbium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[64].atomicNumber})}" th:title="${chemicalElements[64].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[64].symbol}">Terbium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[64].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Dysprosium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[65].atomicNumber})}" th:title="${chemicalElements[65].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[65].symbol}">Dysprosium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[65].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Holmium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[66].atomicNumber})}" th:title="${chemicalElements[66].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[66].symbol}">Holmium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[66].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Erbium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[67].atomicNumber})}" th:title="${chemicalElements[67].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[67].symbol}">Erbium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[67].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Thulium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[68].atomicNumber})}" th:title="${chemicalElements[68].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[68].symbol}">Thulium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[68].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Ytterbium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[69].atomicNumber})}" th:title="${chemicalElements[69].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[69].symbol}">Ytterbium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[69].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell lanthanide" id="Lutetium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[70].atomicNumber})}" th:title="${chemicalElements[70].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[70].symbol}">Lutetium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[70].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
                         <tr id="actinides">
                             <td colspan="3" class="filler-cell">Actinides</td>
-                            <td class="element-cell" id="Thorium" th:text="${chemicalElements[89].symbol}">Thorium</td>
-                            <td class="element-cell" id="Protactinium" th:text="${chemicalElements[90].symbol}"> Protactinium</td>
-                            <td class="element-cell" id="Uranium" th:text="${chemicalElements[91].symbol}">Uranium</td>
-                            <td class="element-cell" id="Neptunium" th:text="${chemicalElements[92].symbol}"> Neptunium</td>
-                            <td class="element-cell" id="Plutonium" th:text="${chemicalElements[93].symbol}">Plutonium</td>
-                            <td class="element-cell" id="Americium" th:text="${chemicalElements[94].symbol}">Americium</td>
-                            <td class="element-cell" id="Curium" th:text="${chemicalElements[95].symbol}">Curium</td>
-                            <td class="element-cell" id="Berkelium" th:text="${chemicalElements[96].symbol}">Berkelium</td>
-                            <td class="element-cell" id="Californium" th:text="${chemicalElements[97].symbol}">Californium</td>
-                            <td class="element-cell" id="Einsteinium" th:text="${chemicalElements[98].symbol}">Einsteinium</td>
-                            <td class="element-cell" id="Fermium" th:text="${chemicalElements[99].symbol}"> Fermium</td>
-                            <td class="element-cell" id="Mendelevium" th:text="${chemicalElements[100].symbol}">Mendelevium</td>
-                            <td class="element-cell" id="Nobelium" th:text="${chemicalElements[101].symbol}"> Nobelium</td>
-                            <td class="element-cell" id="Lawrencium" th:text="${chemicalElements[102].symbol}">Lawrencium</td>
+                            <td class="element-cell actinides" id="Thorium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[89].atomicNumber})}" th:title="${chemicalElements[89].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[89].symbol}">Thorium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[89].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Protactinium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[90].atomicNumber})}" th:title="${chemicalElements[90].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[90].symbol}">Protactinium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[90].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Uranium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[91].atomicNumber})}" th:title="${chemicalElements[91].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[91].symbol}">Uranium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[91].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Neptunium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[92].atomicNumber})}" th:title="${chemicalElements[92].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[92].symbol}">Neptunium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[92].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Plutonium">
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[93].atomicNumber})}" th:title="${chemicalElements[93].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[93].symbol}">Plutonium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[93].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Americium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[94].atomicNumber})}" th:title="${chemicalElements[94].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[94].symbol}">Americium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[94].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Curium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[95].atomicNumber})}" th:title="${chemicalElements[95].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[95].symbol}">Curium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[95].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Berkelium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[96].atomicNumber})}" th:title="${chemicalElements[96].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[96].symbol}">Berkelium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[96].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Californium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[97].atomicNumber})}" th:title="${chemicalElements[97].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[97].symbol}">Californium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[97].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Einsteinium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[98].atomicNumber})}" th:title="${chemicalElements[98].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[98].symbol}">Einsteinium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[98].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Fermium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[99].atomicNumber})}" th:title="${chemicalElements[99].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[99].symbol}">Fermium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[99].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Mendelevium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[100].atomicNumber})}" th:title="${chemicalElements[100].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[100].symbol}">Mendelevium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[100].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Nobelium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[101].atomicNumber})}" th:title="${chemicalElements[101].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[101].symbol}">Nobelium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[101].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
+                            <td class="element-cell actinides" id="Lawrencium" >
+                                <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[102].atomicNumber})}" th:title="${chemicalElements[102].name}">
+                                    <div class="bottom-buffer-small" th:text="${chemicalElements[102].symbol}">Lawrencium</div>
+                                    <div class="atomic-number" th:text="${chemicalElements[102].atomicNumber}">Atomic number</div>
+                                </a>
+                            </td>
                         </tr>
 
                         </tbody>

@@ -1,108 +1,78 @@
+table{
+    width:100%;
+}
 table, tr, td{
     border: solid 3px white;
 }
 th{
     background-color: white !important;
     text-align: center !important;
-
 }
+
 .element-cell{
-    padding: 2px 2px 2px 2px;
     height: 60px;
     width: 60px;
     text-align:center;
     vertical-align:middle;
     background-color: transparent;
-
 }
+.element-cell a{
+    color: #0f0f0f;
+    text-decoration: none;
+}
+
+.element-cell a:hover{
+    color: #0f0f0f;
+    text-decoration: none;
+}
+
 .filler-cell{
     border: none;
     background-color: white !important;
 }
-
-.period-number{
-    border: none;
-    padding-right: 5px;
+.atomic-number{
+    margin-left:25%;
+    max-width: 50%;
+    font-size: 80%;
+    background-color: rgba(102, 102, 153, 0.15);
+    border-radius: 60%;
+ }
+.bottom-buffer-small{
+    padding-bottom: 5px;
 }
-group-number{
-    border: none;
-    padding-top: 5px;
 
-
-}
-#lanthanides .element-cell{
+.lanthanide {
     background-color:  #bfeaec;
 }
-#actinides .element-cell{
+.actinides {
     background-color: #a2d34d;
 }
-.group1{
-    background-color: #ebbfd8;
-}
-.group2{
-    background-color: #fbc9e5;
 
- }
-.group3{
-    background-color: #5bc2e7;
-
+/*ELEMENT GROUPS*/
+.alkali-metal{
+    background-color: #a2d34d;
 }
-.group4{
-    background-color: #5bc2e7;
+.alkaline-earth-metal{
+    background-color: #a2d34d;
 }
-.group5{
-    background-color: #5bc2e7;
-
+.transition-metal{
+    background-color: #a2d34d;
 }
-.group6{
-    background-color: #5bc2e7;
-
+.post-transition-metal{
+    background-color: #a2d34d;
 }
-.group7{
-    background-color: #5bc2e7;
-
+.metalloid{
+    background-color: #a2d34d;
 }
-.group8{
-    background-color: #5bc2e7;
-
+.polyatomic-nonmetal{
+    background-color: #a2d34d;
 }
-.group9{
-    background-color: #5bc2e7;
-
+.diatomic-nonmetal{
+    background-color: #a2d34d;
 }
-.group10{
-    background-color: #5bc2e7;
-
+.noble-gas{
+    background-color: #a2d34d;
 }
-.group11{
-    background-color: #5bc2e7;
-
-}
-.group12{
-    background-color: #5bc2e7;
-
-}
-.group13{
-    background-color: #cedc00;
-
-}
-.group14{
-    background-color: #d1a2cb;
-
-}
-.group15{
-    background-color: #b5b9ba;
-
-}
-.group16{
-    background-color: #f0b323;
-
-}
-.group17{
-    background-color: #eab37f;
-
-}
-.group18{
-    background-color: #eada24;
-
+.unknown-chemical-properties{
+    background-color: #a2d34d;
 }
