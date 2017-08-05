@@ -10,6 +10,7 @@ th{
 }
 
 .element-cell{
+    border-radius: 15px;
     height: 60px;
     width: 60px;
     text-align:center;
@@ -41,38 +42,37 @@ th{
     padding-bottom: 5px;
 }
 
-.lanthanide {
-    background-color:  #bfeaec;
-}
-.actinides {
-    background-color: #a2d34d;
-}
-
 /*ELEMENT GROUPS*/
 .alkali-metal{
-    background-color: #a2d34d;
+    background-color: #fbc584;
 }
 .alkaline-earth-metal{
-    background-color: #a2d34d;
+    background-color: #fde4c7 ;
 }
 .transition-metal{
-    background-color: #a2d34d;
+    background-color: #c9c8d8;
 }
 .post-transition-metal{
-    background-color: #a2d34d;
+    background-color:#d8c5c0 ;
 }
 .metalloid{
-    background-color: #a2d34d;
+    background-color: #cdecd2;
 }
 .polyatomic-nonmetal{
-    background-color: #a2d34d;
+    background-color: #f9b4b7;
 }
 .diatomic-nonmetal{
-    background-color: #a2d34d;
+    background-color: #bfebfb;
 }
 .noble-gas{
-    background-color: #a2d34d;
+    background-color: #fffcbf;
 }
 .unknown-chemical-properties{
-    background-color: #a2d34d;
+    background-color: #e8e8e8 ;
+}
+.lanthanide {
+    background-color: #fce0ed ;
+}
+.actinides {
+    background-color: #fabfe2 ;
 }
