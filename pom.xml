@@ -48,6 +48,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<dependency>
+		<groupId>com.github.jsimone</groupId>
+		<artifactId>webapp-runner</artifactId>
+		<version>8.5.15.1</version>
+	</dependency>
 
 	<build>
 		<plugins>
