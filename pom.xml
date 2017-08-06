@@ -6,7 +6,7 @@
 	<groupId>hr.tvz.matkovic</groupId>
 	<artifactId>periodni_sustav_elemenata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>periodni_sustav_elemenata</name>
 	<description>Java Spring Web Application for learning chemistry</description>
