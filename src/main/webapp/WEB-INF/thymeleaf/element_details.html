@@ -43,7 +43,7 @@
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Atomic Radius</h3>
-                            <p th:text="${chemicalElement.atomicRadius}">atomicRadius</p>
+                            <p th:text="${#strings.isEmpty(chemicalElement.atomicRadius) ? 'No data' : chemicalElement.atomicRadius}">atomicRadius</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -69,11 +69,11 @@
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Electronegativity</h3>
-                            <p th:text="${chemicalElement.electronegativity}">electronegativity</p>
+                            <p th:text="${#strings.isEmpty(chemicalElement.electronegativity) ? 'No data' : chemicalElement.electronegativity}">electronegativity</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Common Oxidation States</h3>
-                            <p th:text="${chemicalElement.commonOxidationStates}">commonOxidationStates</p>
+                            <p th:text="${#strings.isEmpty(chemicalElement.commonOxidationStates) ? 'No data' : chemicalElement.commonOxidationStates}">commonOxidationStates</p>
                         </div>
                     </div>
                 </div>
