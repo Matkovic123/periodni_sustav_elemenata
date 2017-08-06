@@ -41,7 +41,26 @@ th{
 .bottom-buffer-small{
     padding-bottom: 5px;
 }
+.color-box{
+    float:left;
+    max-width: 30%;
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    border-radius: 20%;
+}
+.bordered-box:hover{
+    border:1px solid lightgrey;
+}
+.box-text{
+    float:left;
+    height: 20px;
+    margin: 5px;
+    vertical-align: middle;
 
+}
 /*ELEMENT GROUPS*/
 .alkali-metal{
     background-color: #fbc584;
@@ -67,12 +86,12 @@ th{
 .noble-gas{
     background-color: #fffcbf;
 }
-.unknown-chemical-properties{
-    background-color: #e8e8e8 ;
-}
 .lanthanide {
     background-color: #fce0ed ;
 }
 .actinides {
     background-color: #fabfe2 ;
+}
+.unknown-chemical-properties{
+    background-color: #e8e8e8 ;
 }
