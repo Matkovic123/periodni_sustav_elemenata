@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* periodni_sustav_elemenata
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/periodni_sustav_elemenata-0.0.1-SNAPSHOT.jar
