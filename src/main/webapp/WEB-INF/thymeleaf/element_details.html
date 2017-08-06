@@ -3,8 +3,6 @@
 <head>
     <link th:href="@{/resources/static/css/element_details.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/resources/static/css/periodic_system.css}" rel="stylesheet" type="text/css"/>
-
-
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -55,21 +53,20 @@
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Melting Point in °C</h3>
-                            <p th:text="${chemicalElement.meltingPointInC}">meltingPointInC</p>
-                            <p th:if=""
+                            <p th:text="${#strings.isEmpty(chemicalElement.meltingPointInC) ? 'No data' : chemicalElement.meltingPointInC}">meltingPointInC</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Boiling Point in °C</h3>
-                            <p th:text="${chemicalElement.boilingPointInC}">boilingPointInC</p></div>
-                        <!--TODO: rješiti bug ako je neka vrijednost null-->
-                        <!--<div class="details-box" th:classappend="${chemicalElement.type}">-->
-                            <!--<h3>Melting Point in F</h3>-->
-                            <!--<p th:text="${#numbers.formatDecimal(chemicalElement.meltingPointInC * 1.8 +32, 0 ,2)}">-->
-                                <!--meltingPointInF</p></div>-->
-                        <!--<div class="details-box" th:classappend="${chemicalElement.type}">-->
-                            <!--<h3>Boiling Point in F</h3>-->
-                            <!--<p th:text="${#numbers.formatDecimal(chemicalElement.boilingPointInC * 1.8 +32, 0 ,2)}">-->
-                                <!--boilingPointInF</p></div>-->
+                            <p th:text="${#strings.isEmpty(chemicalElement.boilingPointInC) ? 'No data' : chemicalElement.boilingPointInC}">boilingPointInC</p>
+                        </div>
+                        <div class="details-box" th:classappend="${chemicalElement.type}">
+                            <h3>Melting Point in F</h3>
+                            <p th:text="${#strings.isEmpty(chemicalElement.meltingPointInC) ? 'No data' : #numbers.formatDecimal(chemicalElement.meltingPointInC * 1.8 +32, 0 ,2)}"> meltingPointInF</p>
+                        </div>
+                        <div class="details-box" th:classappend="${chemicalElement.type}">
+                            <h3>Boiling Point in F</h3>
+                            <p th:text="${#strings.isEmpty(chemicalElement.boilingPointInC) ? 'No data' : #numbers.formatDecimal(chemicalElement.boilingPointInC * 1.8 +32, 0 ,2)}"> boilingPointInF</p>
+                        </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
                             <h3>Electronegativity</h3>
                             <p th:text="${chemicalElement.electronegativity}">electronegativity</p>

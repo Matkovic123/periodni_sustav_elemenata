@@ -20,6 +20,10 @@ public class PeriodicTableController {
     private static final String CHEMICAL_ELEMENTS = "chemicalElements";
     private static final String CHEMICAL_ELEMENT = "chemicalElement";
     private static final String KEY_ISOTOPES = "keyIsotopes";
+    private static final String BOILING_POINT_IN_F = "boilingPointInF";
+    private static final String MELTING_POINT_IN_F = "meltingPointInF";
+
+
 
 
     // --- SERVICES -----------------------------------------------------------
