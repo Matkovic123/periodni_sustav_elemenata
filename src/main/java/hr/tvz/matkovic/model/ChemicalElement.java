@@ -17,6 +17,9 @@ public class ChemicalElement implements Serializable {
     @Column(name = "SYMBOL")
     private String symbol;
 
+    @Column(name = "TYPE")
+    private String type;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ATOMIC_NUMBER")
@@ -146,5 +149,13 @@ public class ChemicalElement implements Serializable {
 
     public void setCommonOxidationStates(String commonOxidationStates) {
         this.commonOxidationStates = commonOxidationStates;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
