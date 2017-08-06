@@ -116,9 +116,7 @@
                                             <span class="box-text">Unknown chemical properties</span>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </td>
                             <td colspan="5" class="filler-cell"/>
                             <td class="element-cell noble-gas" id="Helium">
@@ -136,7 +134,7 @@
                                     <div class="atomic-number" th:text="${chemicalElements[2].atomicNumber}">Atomic number</div>
                                 </a>
                             </td>
-                            <td class="element-cell alkaline-earth-metal" id="Beryllium" >
+                            <td  class="element-cell alkaline-earth-metal" id="Beryllium" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[3].atomicNumber})}" th:title="${chemicalElements[3].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[3].symbol}">Beryllium</div>
                                     <div class="atomic-number" th:text="${chemicalElements[3].atomicNumber}">Atomic number</div>

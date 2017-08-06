@@ -3,7 +3,6 @@ package hr.tvz.matkovic.controller;
 import hr.tvz.matkovic.model.ChemicalElement;
 import hr.tvz.matkovic.repository.KeyIsotopeRepository;
 import hr.tvz.matkovic.service.ChemicalElementService;
-import hr.tvz.matkovic.service.impl.KeyIsotopeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,8 +40,8 @@ public class PeriodicTableController {
 
         ChemicalElement chemicalElement = chemicalElementService.findByatomic_number(atomicNumber);
 
-        model.addAttribute(CHEMICAL_ELEMENT,chemicalElement);
-        model.addAttribute(KEY_ISOTOPES,keyIsotopeRepository.findAllByChemicalElement(chemicalElement));
+        model.addAttribute(CHEMICAL_ELEMENT, chemicalElement);
+        model.addAttribute(KEY_ISOTOPES, keyIsotopeRepository.findAllByChemicalElement(chemicalElement));
         return "element_details";
     }
 }

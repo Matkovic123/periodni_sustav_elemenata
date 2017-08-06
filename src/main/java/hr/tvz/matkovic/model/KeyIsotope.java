@@ -36,11 +36,11 @@ public class KeyIsotope implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
+    public String getSymbol() {
         return symbol;
     }
 
-    public void setName(String name) {
+    public void setSymbol(String name) {
         this.symbol = name;
     }
 

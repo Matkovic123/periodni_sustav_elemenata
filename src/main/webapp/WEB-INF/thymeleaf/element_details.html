@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--<link th:href="@{/resources/static/css/periodic_system.css}" rel="stylesheet" type="text/css"/>-->
+    <link th:href="@{/resources/static/css/element_details.css}" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -9,12 +10,74 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <!-- name, symbol, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C,
-             boiling_point_in_C, atomic_mass, atomic_radius,electronegativity, common_oxidation_states)-->
+             boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)-->
             <div class="panel-heading">
                 <h1 th:text="${chemicalElement.name}">Symbol</h1>
             </div>
             <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
 
+                        <div class=" details-box ">
+                            <h3>Symbol</h3>
+                            <p th:text="${chemicalElement.symbol}">symbol</p>
+                        </div>
+                        <div class="details-box">
+                            <h3>Atomic Number</h3>
+                            <p th:text="${chemicalElement.atomicNumber}">atomicNumber</p>
+                        </div>
+                        <div class="details-box">
+
+                            <h3>Block</h3>
+                            <p th:text="${chemicalElement.block}">block</p>
+                        </div>
+                        <div class="details-box">
+                            <h3>State at 20°C</h3>
+                            <p th:text="${chemicalElement.stateAt20C}">stateAt20C</p>
+                        </div>
+                        <div class="details-box">
+                            <h3>Electron Configuration</h3>
+                            <p th:text="${chemicalElement.electronConfiguration}">electronConfiguration</p>
+                        </div>
+                        <div class="details-box">
+                            <h3>Atomic Mass</h3>
+                            <p th:text="${chemicalElement.atomicMass}">atomicMass</p>
+                        </div>
+                        <div class="details-box">
+
+                            <h3>Atomic Radius</h3>
+                            <p th:text="${chemicalElement.atomicRadius}">atomicRadius</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Melting Point in °C</h3>
+                        <p th:text="${chemicalElement.meltingPointInC}">meltingPointInC</p>
+                        <h3>Boiling Point in °C</h3>
+                        <p th:text="${chemicalElement.boilingPointInC}">boilingPointInC</p>
+                        <!--TODO: rješiti bug ako je neka vrijednost null-->
+                        <h3>Melting Point in F</h3>
+                        <p th:text="${#numbers.formatDecimal(chemicalElement.meltingPointInC * 1.8 +32, 0 ,2)}">
+                            meltingPointInF</p>
+                        <h3>Boiling Point in F</h3>
+                        <p th:text="${#numbers.formatDecimal(chemicalElement.boilingPointInC * 1.8 +32, 0 ,2)}">
+                            boilingPointInF</p>
+
+                        <h3>Electronegativity</h3>
+                        <p th:text="${chemicalElement.electronegativity}">electronegativity</p>
+                        <h3>Common Oxidation States</h3>
+                        <p th:text="${chemicalElement.commonOxidationStates}">commonOxidationStates</p>
+                        <div class="panel panel-default" style="max-width: 20%;">
+                            <h3 class="panel-title">Key Isotopes</h3>
+                            <div class="list-group">
+                                <div class="list-group-item" th:each="keyIsotope : ${keyIsotopes}">
+                                    <p th:text="*{keyIsotope.symbol}">Symbol</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

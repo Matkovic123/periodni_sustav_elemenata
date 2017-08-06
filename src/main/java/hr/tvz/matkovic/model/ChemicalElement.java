@@ -32,10 +32,10 @@ public class ChemicalElement implements Serializable {
     private String electronConfiguration;
 
     @Column(name = "MELTING_POINT_IN_C")
-    private Double meltingPoint;
+    private Double meltingPointInC;
 
     @Column(name = "BOILING_POINT_IN_C")
-    private Double boilingPoint;
+    private Double boilingPointInC;
 
     @Column(name = "ATOMIC_MASS")
     private Double atomicMass;
@@ -49,7 +49,8 @@ public class ChemicalElement implements Serializable {
     @Column(name = "COMMON_OXIDATION_STATES")
     private String commonOxidationStates;
 
-    public ChemicalElement(){}
+    public ChemicalElement() {
+    }
 
     public String getName() {
         return name;
@@ -99,20 +100,20 @@ public class ChemicalElement implements Serializable {
         this.electronConfiguration = electronConfiguration;
     }
 
-    public Double getMeltingPoint() {
-        return meltingPoint;
+    public Double getMeltingPointInC() {
+        return meltingPointInC;
     }
 
-    public void setMeltingPoint(Double meltingPoint) {
-        this.meltingPoint = meltingPoint;
+    public void setMeltingPointInC(Double meltingPoint) {
+        this.meltingPointInC = meltingPoint;
     }
 
-    public Double getBoilingPoint() {
-        return boilingPoint;
+    public Double getBoilingPointInC() {
+        return boilingPointInC;
     }
 
-    public void setBoilingPoint(Double boilingPoint) {
-        this.boilingPoint = boilingPoint;
+    public void setBoilingPointInC(Double boilingPoint) {
+        this.boilingPointInC = boilingPoint;
     }
 
     public Double getAtomicMass() {
