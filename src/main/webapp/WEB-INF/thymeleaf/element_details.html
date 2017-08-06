@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<link th:href="@{/resources/static/css/periodic_system.css}" rel="stylesheet" type="text/css"/>-->
+</head>
+<body>
+<th:block th:replace="fragments/header"/>
+<div class="container">
+    <div class="vertical-center">
+        <div class="panel panel-default">
+            <!-- name, symbol, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C,
+             boiling_point_in_C, atomic_mass, atomic_radius,electronegativity, common_oxidation_states)-->
+            <div class="panel-heading">
+                <h1 th:text="${chemicalElement.name}">Symbol</h1>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

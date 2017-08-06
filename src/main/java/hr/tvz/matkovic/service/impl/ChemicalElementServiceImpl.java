@@ -23,11 +23,6 @@ public class ChemicalElementServiceImpl implements ChemicalElementService {
     }
 
     @Override
-    public ChemicalElement findById(Integer id) {
-        return chemicalElementRepository.findOne(id);
-    }
-
-    @Override
     public ChemicalElement findByatomic_number(Integer atomicNumber) {
         return chemicalElementRepository.findByAtomicNumber(atomicNumber);
     }

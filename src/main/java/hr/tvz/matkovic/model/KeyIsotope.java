@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "KEY_ISOTOPE", schema = "PERIODIC_SYSTEM")
-public class Isotope implements Serializable {
+public class KeyIsotope implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ public class Isotope implements Serializable {
     @JoinColumn(name = "CHEMICAL_ELEMENT_ATOMIC_NUMBER")
     private ChemicalElement chemicalElement;
 
-    public Isotope(){}
+    public KeyIsotope(){}
 
-    public Isotope(String name, ChemicalElement chemicalElement) {
+    public KeyIsotope(String name, ChemicalElement chemicalElement) {
         this.symbol = name;
         this.chemicalElement = chemicalElement;
     }
