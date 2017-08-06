@@ -217,7 +217,7 @@ VALUES (U&'\2076\00B3Cu', 29);
 
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES
-  ('Zinc', 'Zn', 30, 'transition-metal', 'd', 'Solid', U&'[Ar]3d\00B9\20704s\00B2', 419.73, 906.85, 65.409, 201, 1.65,
+  ('Zinc', 'Zn','transition-metal', 30 , 'd', 'Solid', U&'[Ar]3d\00B9\20704s\00B2', 419.73, 906.85, 65.409, 201, 1.65,
    '2');
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\2076\2074Zn', 30);
@@ -520,7 +520,7 @@ VALUES (U&'\00B9\2077\2074Yb', 70);
 
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES
-  ('Lutetium', 'Lu', 71, 'lanthanide', 'f', 'Solid', U&'[Xe]4f\00B9\20745d\00B96s\00B2', 1651.85, 3401.85, 174.97, 224,
+  ('Lutetium', 'Lu','lanthanide', 71,  'f', 'Solid', U&'[Xe]4f\00B9\20745d\00B96s\00B2', 1651.85, 3401.85, 174.97, 224,
    1.27, '3');
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B9\2077\2075Lu', 71);
@@ -820,21 +820,21 @@ VALUES (U&'\00B2\2077\2070Hs', 108);
 
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES
-  ('Meitnerium', 'Mt', 'unknown', 109, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\20777s\00B2', NULL, NULL, 276.15, NULL, NULL,
+  ('Meitnerium', 'Mt', 'unknown-type', 109, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\20777s\00B2', NULL, NULL, 276.15, NULL, NULL,
    NULL);
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B2\2077\2076Mt', 109);
 
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES
-  ('Darmstadtium', 'Ds', 'unknown', 110, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\20797s\00B9', NULL, NULL, 281.16, NULL,
+  ('Darmstadtium', 'Ds', 'unknown-type', 110, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\20797s\00B9', NULL, NULL, 281.16, NULL,
    NULL, NULL);
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B2\2078\00B9Ds', 110);
 
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
 VALUES
-  ('Roentgenium', 'Rg', 'unknown', 111, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B9', NULL, NULL, 280.17, NULL,
+  ('Roentgenium', 'Rg', 'unknown-type', 111, 'f', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B9', NULL, NULL, 280.17, NULL,
    NULL,
    NULL);
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
