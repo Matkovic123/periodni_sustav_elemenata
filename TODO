@@ -1,6 +1,6 @@
-# Fill database with data
-
-# Create controller for periodic system
-
 # Add spring security/ login screen
 # Design Login page
+
+
+Ideas:
+put element type in DB and use its colors trough th:classappend

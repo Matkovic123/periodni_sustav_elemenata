@@ -3,7 +3,6 @@ package hr.tvz.matkovic.controller;
 import hr.tvz.matkovic.model.ChemicalElement;
 import hr.tvz.matkovic.repository.KeyIsotopeRepository;
 import hr.tvz.matkovic.service.ChemicalElementService;
-import hr.tvz.matkovic.service.impl.KeyIsotopeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +20,10 @@ public class PeriodicTableController {
     private static final String CHEMICAL_ELEMENTS = "chemicalElements";
     private static final String CHEMICAL_ELEMENT = "chemicalElement";
     private static final String KEY_ISOTOPES = "keyIsotopes";
+    private static final String BOILING_POINT_IN_F = "boilingPointInF";
+    private static final String MELTING_POINT_IN_F = "meltingPointInF";
+
+
 
 
     // --- SERVICES -----------------------------------------------------------
@@ -41,8 +44,8 @@ public class PeriodicTableController {
 
         ChemicalElement chemicalElement = chemicalElementService.findByatomic_number(atomicNumber);
 
-        model.addAttribute(CHEMICAL_ELEMENT,chemicalElement);
-        model.addAttribute(KEY_ISOTOPES,keyIsotopeRepository.findAllByChemicalElement(chemicalElement));
+        model.addAttribute(CHEMICAL_ELEMENT, chemicalElement);
+        model.addAttribute(KEY_ISOTOPES, keyIsotopeRepository.findAllByChemicalElement(chemicalElement));
         return "element_details";
     }
 }
