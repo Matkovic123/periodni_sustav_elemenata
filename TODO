@@ -1,6 +1,18 @@
+
+STORY: Quizes
+# design landing page to choose questions
+# add questions & answers to database
+# create quiz implementation, somehow
+-------------------------------------------------------
+
+STORY: Sprint security
 # Add spring security/ login screen
 # Design Login page
+-------------------------------------------------------
 
 
-Ideas:
-put element type in DB and use its colors trough th:classappend
+STORY: dodati tekstove po aplikaciji koji sve objašnjavaju
++dodati nove elemente
+-------------------------------------------------------
+
+STORY: TESTOVI

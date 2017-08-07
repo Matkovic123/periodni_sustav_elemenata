@@ -5,10 +5,18 @@ body{
     background-attachment: fixed;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 .pull-left {
     float: left;
 }
 
 .pull-right {
     float: right;
+}
+
+.top-buffer{
+    margin-top: 35px;
 }

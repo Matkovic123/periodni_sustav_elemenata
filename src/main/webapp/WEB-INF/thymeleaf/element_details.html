@@ -17,62 +17,63 @@
                     <div class="col-lg-6">
 
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Symbol</h3>
+                            <h3><i class="fa fa-bullseye"></i> Symbol</h3>
                             <p th:text="${chemicalElement.symbol}">symbol</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Atomic Number</h3>
+                            <h3><i class="fa fa-hashtag" ></i> Atomic Number</h3>
                             <p th:text="${chemicalElement.atomicNumber}">atomicNumber</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
 
-                            <h3>Block</h3>
+                            <h3><i class="fa fa-table" ></i> Block</h3>
                             <p th:text="${chemicalElement.block}">block</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>State at 20°C</h3>
+                            <h3><i th:class="${chemicalElement.stateAt20C == 'Solid' ? 'fa fa-cube' : chemicalElement.stateAt20C == 'Gas' ? 'fa fa-cloud' : 'fa fa-tint'}"></i>
+                                State at 20°C</h3>
                             <p th:text="${chemicalElement.stateAt20C}">stateAt20C</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Electron Configuration</h3>
+                            <h3><i class="fa fa-arrow-down"></i> <i class="fa fa-arrow-up" ></i> Electron Configuration</h3>
                             <p th:text="${chemicalElement.electronConfiguration}">electronConfiguration</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Atomic Mass</h3>
+                            <h3><i class="fa fa-balance-scale"></i> Atomic Mass</h3>
                             <p th:text="${chemicalElement.atomicMass}">atomicMass</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Atomic Radius</h3>
+                            <h3><i class="fa fa-arrows-h"></i> Atomic Radius</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.atomicRadius) ? 'No data' : chemicalElement.atomicRadius}">atomicRadius</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Element Type</h3>
+                            <h3><i class="fa fa-object-group"></i> Element Type</h3>
                             <p th:text="${#strings.capitalize(chemicalElement.type)}">type</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Melting Point in °C</h3>
+                            <h3><i class="fa fa-thermometer-empty"></i> Melting Point in °C</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.meltingPointInC) ? 'No data' : chemicalElement.meltingPointInC}">meltingPointInC</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Boiling Point in °C</h3>
+                            <h3><i class="fa fa-thermometer-full" ></i> Boiling Point in °C</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.boilingPointInC) ? 'No data' : chemicalElement.boilingPointInC}">boilingPointInC</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Melting Point in F</h3>
+                            <h3><i class="fa fa-thermometer-empty"></i> Melting Point in F</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.meltingPointInC) ? 'No data' : #numbers.formatDecimal(chemicalElement.meltingPointInC * 1.8 +32, 0 ,2)}"> meltingPointInF</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Boiling Point in F</h3>
+                            <h3><i class="fa fa-thermometer-full" ></i> Boiling Point in F</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.boilingPointInC) ? 'No data' : #numbers.formatDecimal(chemicalElement.boilingPointInC * 1.8 +32, 0 ,2)}"> boilingPointInF</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Electronegativity</h3>
+                            <h3><i class="fa fa-spinner"></i> Electronegativity</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.electronegativity) ? 'No data' : chemicalElement.electronegativity}">electronegativity</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3>Common Oxidation States</h3>
+                            <h3><i class="fa fa-plus">&nbsp;</i><i class="fa fa-minus"></i> Common Oxidation States</h3>
                             <p th:text="${#strings.isEmpty(chemicalElement.commonOxidationStates) ? 'No data' : chemicalElement.commonOxidationStates}">commonOxidationStates</p>
                         </div>
                     </div>
@@ -80,7 +81,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="isotopes-box" th:classappend="${chemicalElement.type}">
-                            <h3>Key Isotopes</h3>
+                            <h3><i class="fa fa-key" ></i> Key Isotopes</h3>
+                            <div class="details-box" th:if="${#lists.isEmpty(keyIsotopes)}">
+                                <p>No data</p>
+                            </div>
                             <div class="details-box" th:classappend="${chemicalElement.type}" th:each="keyIsotope : ${keyIsotopes}">
                                 <p th:text="*{keyIsotope.symbol}">Symbol</p>
                             </div>

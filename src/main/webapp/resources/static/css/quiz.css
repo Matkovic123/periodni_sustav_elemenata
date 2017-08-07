@@ -1,0 +1,20 @@
+#quiz1-btn:hover ,#quiz2-btn:hover,#quiz3-btn:hover,#quiz4-btn:hover{
+    -webkit-filter: brightness(92%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#quiz1-btn{
+    background-color: #cdecd2;
+}
+#quiz2-btn{
+    background-color: #bfebfb;
+}
+#quiz3-btn{
+    background-color: #fbc584;
+}
+#quiz4-btn{
+    background-color: #f9b4b7;
+}
