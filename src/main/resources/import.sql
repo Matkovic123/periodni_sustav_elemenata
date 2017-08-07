@@ -3,10 +3,15 @@ INSERT INTO periodic_system.user_role (id, role) VALUES (1, 'ROLE_ADMIN');
 INSERT INTO periodic_system.user_role (id, role) VALUES (2, 'ROLE_USER');
 
 --USER DATA
-INSERT INTO periodic_system.user (first_name, last_name, username, password, enabled)
-VALUES ('Admin', 'Admin', 'ROLE_ADMIN', '$2a$10$KgN3J87rf5kYCG3c0jCKtuessy0YgnrchxGi6ZtA7SV0NTDdShwxi', TRUE);
-INSERT INTO periodic_system.user (first_name, last_name, username, password, enabled)
-VALUES ('User', 'User', 'ROLE_USER', '$2a$10$hMr9K2CX8zxgxd195uyBS.ePUWeuQb/3pfPQBJbJ0EUl3Mry2G6m6', TRUE);
+INSERT INTO periodic_system.user (id,  username, password, enabled)
+VALUES (1, 'Admin', '$2a$10$KgN3J87rf5kYCG3c0jCKtuessy0YgnrchxGi6ZtA7SV0NTDdShwxi', TRUE);
+INSERT INTO periodic_system.user (id, username, password, enabled)
+VALUES (2,  'User', '$2a$10$hMr9K2CX8zxgxd195uyBS.ePUWeuQb/3pfPQBJbJ0EUl3Mry2G6m6', TRUE);
+
+--USER AND THEIR ROLES
+INSERT INTO periodic_system.user_roles(user_id, user_role_id) VALUES (1,1);
+INSERT INTO periodic_system.user_roles(user_id, user_role_id) VALUES (2,2);
+
 
 -- CHEMICAL ELEMENTS & ISOTOPES
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)

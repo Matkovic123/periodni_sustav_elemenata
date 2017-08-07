@@ -2,10 +2,17 @@ package hr.tvz.matkovic.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Created by Matkovic on 07/08/2017.
+ */
 
 @Entity
 @Table(name = "USER_ROLE", schema = "PERIODIC_SYSTEM")
 public class UserRole implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +21,20 @@ public class UserRole implements Serializable {
     @Column(name = "ROLE")
     private String role;
 
-    public UserRole(){}
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "userRoles")
+    private Set<User> users = new HashSet<>(0);
+
+    public UserRole() {
+    }
+
+    public Set<User> getUsers() {
+        return this.users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
 
     public Long getId() {
         return id;
@@ -31,4 +51,6 @@ public class UserRole implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
+
+
 }
