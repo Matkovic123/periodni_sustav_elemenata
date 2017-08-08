@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Collections;
@@ -20,7 +21,6 @@ public class QuizController {
     // --- MODEL ATTRIBUTES ---------------------------------------------------
     private static final String QUESTION = "question";
     private static final String ANSWERS = "answers";
-    private static final String ERROR_MESSAGE = "errorMessage";
 
 
 
@@ -43,7 +43,6 @@ public class QuizController {
     public String quiz(@PathVariable("difficulty") final Integer difficulty,
                        @PathVariable("questionNumber") Integer questionNumber,
                        Model model) {
-        try {
             List<Question> questions = questionService.findAllByDifficulty(difficulty);
             Question question = questions.get(--questionNumber);
             List<Answer> answers = answerService.findAllByQuestion(question);
@@ -51,12 +50,14 @@ public class QuizController {
 
             model.addAttribute(QUESTION, question);
             model.addAttribute(ANSWERS, answers);
-        }
-        catch (Exception ex){
-            System.out.println("Couldnt resolve quiz.");
-            model.addAttribute(ERROR_MESSAGE, "Work in porogress");
-        }
+
+
 
         return "quiz_question";
     }
+     @PostMapping("/{difficulty}/{questionNumber}")
+    public String checkAnswer(){
+
+         return "quiz_question";
+     }
 }

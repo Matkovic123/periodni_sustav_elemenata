@@ -9,9 +9,19 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h3  th:text="${question.text}"></h3>
-                <div  th:each="answer : ${answers}">
-                    <p th:text="*{answer.text}"></p>
+                <div class="row">
+                    <div class="col-md-12">
+                    <h3 th:text="${question.text}">Question</h3>
+                    <form class="form-group" method="POST">
+                        <ul>
+                            <li th:each="answer : ${answers}">
+                                <input type="radio" th:id="*{answer.id}" name="answerName" th:value="*{answer.id}">&nbsp;</input>
+                                <label th:for="*{answer.id}" th:text="*{answer.text}"> label</label>
+                            </li>
+                        </ul>
+                        <input type="submit" value="Submit" class="btn btn-success"/>
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>

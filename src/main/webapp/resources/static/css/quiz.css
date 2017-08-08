@@ -18,3 +18,7 @@
 #quiz4-btn{
     background-color: #f9b4b7;
 }
+ul{
+    list-style: none;
+    padding: 0;
+}

@@ -909,6 +909,24 @@ INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'E
 INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 1);
 INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 1);
 
+-- TODO: obrisati ovaj blok
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (2, 2,'Which scientist came up with the concept of a periodic table?');
+INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 2);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 2);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 2);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 2);
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (3, 3,'Which scientist came up with the concept of a periodic table?');
+INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 3);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 3);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 3);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 3);
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (4, 4,'Which scientist came up with the concept of a periodic table?');
+INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 4);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 4);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 4);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 4);
+
 
 
 
