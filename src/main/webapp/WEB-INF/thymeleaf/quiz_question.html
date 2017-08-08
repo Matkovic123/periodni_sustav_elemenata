@@ -7,6 +7,14 @@
 <th:block th:replace="fragments/header"/>
 <div class="container">
     <div class="vertical-center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3  th:text="${question.text}"></h3>
+                <div  th:each="answer : ${answers}">
+                    <p th:text="*{answer.text}"></p>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

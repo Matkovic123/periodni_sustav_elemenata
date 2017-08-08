@@ -900,6 +900,14 @@ INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B2\2079\2074Og', 118);
 
 
+--QUESTIONS & ANSWERS
+
+--DIFFICULTY 1
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (1, 1,'Which scientist came up with the concept of a periodic table?');
+INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 1);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 1);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 1);
+INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 1);
 
 
 

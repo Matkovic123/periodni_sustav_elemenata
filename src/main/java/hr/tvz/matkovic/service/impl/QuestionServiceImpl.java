@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class QuestionServiceImpl implements QuestionService{
+public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
     private QuestionRepository questionRepository;
@@ -22,5 +22,10 @@ public class QuestionServiceImpl implements QuestionService{
     @Override
     public Question findOne(Long id) {
         return questionRepository.findOne(id);
+    }
+
+    @Override
+    public List<Question> findAllByDifficulty(Integer difficulty) {
+        return questionRepository.findAllByDifficulty(difficulty);
     }
 }

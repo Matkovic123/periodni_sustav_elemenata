@@ -1,6 +1,7 @@
 package hr.tvz.matkovic.service.impl;
 
 import hr.tvz.matkovic.model.Answer;
+import hr.tvz.matkovic.model.Question;
 import hr.tvz.matkovic.repository.AnswerRepository;
 import hr.tvz.matkovic.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,11 @@ public class AnswerServiceImpl implements AnswerService{
     @Override
     public Answer findOne(Long id) {
         return answerRepository.findOne(id);
+    }
+
+    @Override
+    public List<Answer> findAllByQuestion(Question question)
+    {
+        return answerRepository.findAllByQuestion(question);
     }
 }

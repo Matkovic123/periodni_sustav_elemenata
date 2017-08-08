@@ -15,14 +15,14 @@ public class Answer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "TEXT")
+    @Column(name = "TEXT", nullable = false, updatable = false)
     private String text;
 
-    @Column(name = "CORRECT")
+    @Column(name = "CORRECT", nullable = false, updatable = false)
     private Boolean correct;
 
     @ManyToOne
-    @JoinColumn(name = "QUESTION_ID")
+    @JoinColumn(name = "QUESTION_ID", nullable = false, updatable = false)
     private Question question;
 
     public Answer(){}
