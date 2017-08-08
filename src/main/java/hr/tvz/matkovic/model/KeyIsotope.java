@@ -28,6 +28,9 @@ public class KeyIsotope implements Serializable {
         this.chemicalElement = chemicalElement;
     }
 
+    //--- set / get methods ---------------------------------------------------
+
+
     public Long getId() {
         return id;
     }

@@ -28,6 +28,9 @@ public class Question implements Serializable{
         this.difficulty = difficulty;
     }
 
+    //--- set / get methods ---------------------------------------------------
+
+
     public Long getId() {
         return id;
     }

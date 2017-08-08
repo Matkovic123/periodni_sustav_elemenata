@@ -9,24 +9,56 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12">
-                    <h3 th:text="${question.text}">Question</h3>
-                    <form class="form-group" method="POST">
-                        <ul>
-                            <li th:each="answer : ${answers}">
-                                <input type="radio" th:id="*{answer.id}" name="answerName" th:value="*{answer.id}">&nbsp;</input>
-                                <label th:for="*{answer.id}" th:text="*{answer.text}"> label</label>
-                            </li>
-                        </ul>
-                        <input type="submit" value="Submit" class="btn btn-success"/>
-                    </form>
+                <h2 th:text="${'Quiz difficulty: ' + questions[0].difficulty}">Quiz difficulty</h2>
+                <hr/>
+                <form th:action="@{/quiz/results}" id="quizForm" class="form-group" method="POST">
+                    <div th:each="question : ${questions}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 th:text="${question.text}">Question</h3>
+                                <ul>
+                                    <li th:each="answer : ${answers}">
+                                        <div th:if="${answer.question.id == question.id}">
+                                            <input type="radio" checked="true" th:name="${question.id}"
+                                                    th:id="${answer.id}" th:value="${answer}" >&nbsp;</input>
+                                            <label th:for="${answer.id}" th:text="${answer.text}"> label</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr/>
                     </div>
-                </div>
+                    <input id="submit-quiz" type="submit" value="Submit answers" class="btn btn-success"/>
+                </form>
             </div>
         </div>
-
     </div>
 </div>
+
+<script type="javascript">
+    $("#submit-quiz").click(function () {
+
+        var checkedInputs = $("input:checked");
+        var answerIdArray = [];
+        checkedInputs.each(function () {
+            answerIdArray.push($(this).val());
+            console.log(answerIdArray);
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/http://localhost:8080/little-chemist/quiz/results",
+            //     data: {
+            //         answerIdArray: a //notice that "myArray" matches the value for @RequestParam
+            //                    //on the Java side
+            //     }
+            // })
+
+        })
+        ;
+    }
+</script>
+
+
 </body>
 </html>
+

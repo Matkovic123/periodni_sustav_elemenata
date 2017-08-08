@@ -33,6 +33,9 @@ public class Answer implements Serializable {
         this.question = question;
     }
 
+    //--- set / get methods ---------------------------------------------------
+
+
     public Long getId() {
         return id;
     }

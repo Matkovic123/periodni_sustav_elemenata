@@ -27,6 +27,9 @@ public class UserRole implements Serializable {
     public UserRole() {
     }
 
+    //--- set / get methods ---------------------------------------------------
+
+
     public Set<User> getUsers() {
         return this.users;
     }

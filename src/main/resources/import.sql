@@ -909,28 +909,248 @@ INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'E
 INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 1);
 INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 1);
 
--- TODO: obrisati ovaj blok
 
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (2, 2,'Which scientist came up with the concept of a periodic table?');
-INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 2);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 2);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 2);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 2);
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (3, 3,'Which scientist came up with the concept of a periodic table?');
-INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 3);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 3);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 3);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 3);
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (4, 4,'Which scientist came up with the concept of a periodic table?');
-INSERT INTO periodic_system.answer(correct, text, question_id)  VALUES (true, 'Dmitri Mendeleev', 4);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false, 'Ernest Rutherford', 4);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Antoine Lavoisier', 4);
-INSERT INTO periodic_system.answer(correct,text, question_id)  VALUES (false,'Niels Bohr', 4);
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (2, 1, 'What is the first element in the periodic table?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Hydrogen (H)', 2);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Helium (He)', 2);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Lithium (Li)', 2);
 
 
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (3, 1, 'The rows of the periodic table are called periods and the columns are called groups.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 3);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 3);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (4, 1, 'Which of these choices is NOT a family of elements?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Molecules', 4);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Alkali metals', 4);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Halogens', 4);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Noble gases', 4);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (5, 1, 'How many periodes and groups are in PSE?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, '7 & 18', 5);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '8 & 16', 5);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '9 & 18', 5);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (6, 1, 'You will find non-metals on the far left columns of the periodic table.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'False', 6);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'True', 6);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (7, 1, 'What is the symbol for Lead?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Pb', 7);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'La', 7);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Li', 7);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Hg', 7);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (8, 1, 'What 3 elements are the most abundant in the Earth''s atmosphere?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Nitrogen (N), Oxygen (O) & Argon (Ar)', 8);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Hydrogen (H), Oxygen (O) & Nitrogen (N)', 8);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Neon (Ne), Helium (He) & Oxygen (O)', 8);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Oxygen (O), Hydrogen (H) & Carbon dioxide (CO2)', 8);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (9, 1, 'Which 2 elements are in liquid state at 20°C?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Bromine (Br) & Mercury (Hg)', 9);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Chlorine (Cl) & Fluorine (F)', 9);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Antimony (Sb) & Sodium (Na)', 9);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (10, 1, 'Atomic number 27 represents which element?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Cobalt (Co)', 10);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Aluminium (Al)', 10);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Argon (Ar)', 10);
+
+
+-- Difficulty 2
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (11, 2, 'Which 2 elements are the most abundant in Universe?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Hydrogen (H) & Helium (He)', 11);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Hydrogen (H) & Oxygen (O)', 11);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Helium (He) & Krypton (Kr)', 11);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (12, 2, 'Which element was used as „flash powder“ for subject illumination in the early days of photography?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Magnesium (Mg)', 12);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Calcium (Ca)', 12);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Strontium (Sr)', 12);
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (13, 2, 'What is the symbol for Rhodium?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Rh', 13);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Ru', 13);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Rn', 13);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (14, 2, 'How many elements represent noble gases?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, '7', 14);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '6', 14);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '8', 14);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (15, 2, 'Elements in the periodic table are arranged by...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Atomic number', 15);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Relative atomic mass', 15);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Chemical reactivity', 15);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (16, 2, 'The atomic number of an element tells you the number of _____ in a neutral atom.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Protons & electrons', 16);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Neutrons & protons', 16);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Protons', 16);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (17, 2, 'Which of these elements is a noble gas?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Neon (Ne)', 17);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Gallium (Ga)', 17);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Fluorine (F)', 17);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Yttrium (Y)', 17);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (18, 1, 'Hydrogen atom (H) only has one proton and one electron.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 18);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 18);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (19, 1, 'The element with atomic number 12 is...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Magnesium (Mg)', 19);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Manganese (Mn)', 19);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Carbon (C)', 19);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (20, 1, 'All of the following are in the same rows/periods of the periodic table EXCEPT...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Sodium(Na),Carbon(C), Chlorine(Cl)', 20);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Beryllium(Be), Oxygen(O), Fluorine (F)', 20);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Lithium(Li), Boron(B), Neon(Ne)', 20);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Hydrogen(H), Helium(He)', 20);
+
+
+-- Difficulty 3
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (21, 3, 'How many groups are in PSE?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, '18', 21);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '16', 21);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '8', 21);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (22, 3, 'The atomic number of phosphorus (P) is...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, '16', 22);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '15', 22);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '30,97', 22);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (23, 3, 'The order of elements in groups is based on similar chemical properties.?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 23);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 23);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (24, 3, 'Silicon (Si) and carbon (C) share some similar characteristics.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 24);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 24);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (25, 3, 'Which symbol stands for Antimony & Tin?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Sb & Sn', 25);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Mo & Ti', 25);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Am & In', 25);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'At & Ti', 25);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (26, 3, 'Na-K pump serves as an active transport system in animal cells, and it transports ions of:');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Sodium & Potassium', 26);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Nickel & Copper', 26);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Niobium & Chrome ', 26);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (27, 3, 'Which element is present in every organic molecule?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Carbon (C)', 27);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Hydrogen (H)', 27);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Oxygen (O)', 27);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Nitrogen (N)', 27);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (28, 3, 'The majority of the elements in the periodic table are...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Metals', 28);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Non-metals', 28);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Metalloids', 28);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (29, 3, 'Elements that have properties of both metals and nonmetals are...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Metalloids', 29);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Noble gases', 29);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Transition metals', 29);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (30, 3, 'Of the following 3 elements, which is a metalloid ');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Selenium (Se)', 30);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Vanadium (V)', 30);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Platinum (Pt)', 30);
 
 
 
+-- Difficulty 4
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (31, 4, 'Nitrogen (N) has a greater mass than Bromine (Br).');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'False', 31);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'True', 31);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (32, 4, 'You might find boron (B) in the soap in your bathtub.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 32);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 32);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (33, 4, 'Which element is used the most for making medical implants?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Titanium (Ti)', 33);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Aluminium (Al)', 33);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Nickel (Ni)', 33);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (34, 4, 'What is the symbol for Astatine?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'At', 34);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'As', 34);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Ac', 34);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (35, 4, 'An isotope is a form of an atom with a different number of...');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Neutrons', 35);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Protons', 35);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Electrons', 35);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'All of the above', 35);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (36, 4, 'The number of electrons in the outermost energy level are called the ______ electrons.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Valence', 36);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Atomic mass', 36);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Atomic number', 36);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (37, 4, 'The valence electrons determine the _______ properties of the element.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Chemical', 37);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Physical', 37);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'None of the above', 37);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (38, 4, 'How many valence electrons contains Iodine (I) atom?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, '7', 38);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '6', 38);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, '5', 38);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (39, 4, 'Electronegativity is a chemical property that describes the tendency of an atom to _____ electrons towards itself.');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Attract', 39);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Repulse', 39);
+
+
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (40, 4, 'Which element in Periodic table has the greatest electronegativity value?');
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Fluorine (F)', 40);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Chlorine (Cl)', 40);
+INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Iodine (I)', 40);
 
 
 

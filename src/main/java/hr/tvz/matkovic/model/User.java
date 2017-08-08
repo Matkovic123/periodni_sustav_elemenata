@@ -1,12 +1,8 @@
 package hr.tvz.matkovic.model;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,7 +11,6 @@ import java.util.Set;
 @Entity
 @Table(name = "USER", schema = "PERIODIC_SYSTEM")
 public class User implements Serializable {
-
 
 
     @Id
@@ -30,12 +25,16 @@ public class User implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLES", schema = "PERIODIC_SYSTEM", joinColumns = {
-            @JoinColumn(name = "USER_ID", nullable = false, updatable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "USER_ROLE_ID",
-                    nullable = false, updatable = false) })
+            @JoinColumn(name = "USER_ID", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "USER_ROLE_ID",
+                    nullable = false, updatable = false)})
     private Set<UserRole> userRoles = new HashSet<>(0);
 
-    public User(){}
+    public User() {
+    }
+
+    //--- set / get methods ---------------------------------------------------
+
 
     public Set<UserRole> getUserRoles() {
         return userRoles;

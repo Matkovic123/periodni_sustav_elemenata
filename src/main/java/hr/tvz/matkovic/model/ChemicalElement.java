@@ -55,6 +55,8 @@ public class ChemicalElement implements Serializable {
     public ChemicalElement() {
     }
 
+    //--- set / get methods ---------------------------------------------------
+
     public String getName() {
         return name;
     }
