@@ -852,4 +852,76 @@ VALUES
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B2\2078\2075Cn', 112);
 
--- TODO: dodati novootkrivene elemente 113-118
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Nihonium', 'Nh', 'unknown-type', 113, 'p', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\00B9', NULL, NULL, 286,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2078\2076Nh', 113);
+
+
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Flerovium', 'Fl', 'unknown-type', 114, 'p', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\00B2', NULL, NULL, 289,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2078\2079Fl', 114);
+
+
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Moscovium', 'Mc', 'unknown-type', 115, 'p', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\00B3', NULL, NULL, 289,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2078\2079Mc', 115);
+
+
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Livermorium', 'Lv', 'unknown-type', 116, 'p', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\2074', NULL, NULL, 293,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2079\00B3Lv', 116);
+
+
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Tennessine', 'Ts','unknown-type', 117, 'p', 'Solid', U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\2075', NULL, NULL, 294,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2079\2074Ts', 117);
+
+
+INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
+VALUES
+  ('Oganesson', 'Og','unknown-type', 118, 'p', 'Solid',U&'[Rn]5f\00B9\20746d\00B9\20707s\00B27p\2076', NULL, NULL, 294,
+                  NULL, NULL, NULL);
+INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
+VALUES (U&'\00B2\2079\2074Og', 118);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
