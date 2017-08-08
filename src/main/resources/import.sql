@@ -1010,18 +1010,18 @@ INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'F
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Yttrium (Y)', 17);
 
 
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (18, 1, 'Hydrogen atom (H) only has one proton and one electron.');
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (18, 2, 'Hydrogen atom (H) only has one proton and one electron.');
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'True', 18);
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'False', 18);
 
 
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (19, 1, 'The element with atomic number 12 is...');
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (19, 2, 'The element with atomic number 12 is...');
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Magnesium (Mg)', 19);
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Manganese (Mn)', 19);
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Carbon (C)', 19);
 
 
-INSERT INTO periodic_system.question(id, difficulty, text) VALUES (20, 1, 'All of the following are in the same rows/periods of the periodic table EXCEPT...');
+INSERT INTO periodic_system.question(id, difficulty, text) VALUES (20, 2, 'All of the following are in the same rows/periods of the periodic table EXCEPT...');
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (true, 'Sodium(Na),Carbon(C), Chlorine(Cl)', 20);
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Beryllium(Be), Oxygen(O), Fluorine (F)', 20);
 INSERT INTO periodic_system.answer(correct, text, question_id) VALUES (false, 'Lithium(Li), Boron(B), Neon(Ne)', 20);
