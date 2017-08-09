@@ -46,14 +46,13 @@
 
     $("#submit-quiz").click(function (quiz) {
 
-//        quiz.preventDefault();
+        quiz.preventDefault();
 
         var ctx = getContextPath();
         var pathname = window.location.pathname; // Returns path only
-        var url      = window.location.href;     // Returns full URL
+
         console.log(ctx);
         console.log(pathname);
-        console.log(url);
 
 
         var checkedInputs = $("input:checked");
@@ -64,7 +63,7 @@
         console.log(answerIdArray);
         $.ajax({
                 type: "POST",
-                url: ctx + "/quiz/results",
+                url: pathname,
                 data: JSON.stringify(answerIdArray),
                 contentType: "application/json",
                 dataType: "json"
