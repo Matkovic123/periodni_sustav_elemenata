@@ -50,7 +50,7 @@ public class QuizController {
     }
 
     @PostMapping(value = "/{difficulty}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String checkAnswer(@RequestBody List<Long> answerIdArray,
+    public  String checkAnswer(@RequestBody List<Long> answerIdArray,
                               @PathVariable(value = "difficulty") final Integer difficulty,
                               Model model) {
 

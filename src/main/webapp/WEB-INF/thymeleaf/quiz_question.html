@@ -12,7 +12,7 @@
             <div class="panel-body">
                 <h2 th:text="${'Quiz difficulty: ' + questions[0].difficulty}">Quiz difficulty</h2>
                 <hr/>
-                <form th:action="@{/quiz/results}" id="quizForm" class="form-group" method="POST">
+                <form id="quizForm" class="form-group" method="POST">
                     <div th:each="question : ${questions}">
                         <div class="row">
                             <div class="col-md-12">
@@ -46,7 +46,6 @@
 
     $("#submit-quiz").click(function (quiz) {
 
-        quiz.preventDefault();
 
         var ctx = getContextPath();
         var pathname = window.location.pathname; // Returns path only
