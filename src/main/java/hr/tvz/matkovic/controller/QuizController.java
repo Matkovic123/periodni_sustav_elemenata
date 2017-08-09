@@ -9,10 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static hr.tvz.matkovic.controller.HomeController.PERIODIC_SYSTEM_REDIRECT;
 
 @Controller
 @RequestMapping("/quiz")
@@ -83,7 +86,8 @@ public class QuizController {
                               @PathVariable(value = "questionNr") Integer questionNr,
                               @SessionAttribute Map<Long,Long> sessionQuestionsAndAnswers,
                               @ModelAttribute UserAnswer userAnswer,
-                              Model model) {
+                              Model model,
+                              SessionStatus status) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
 
         if(userAnswer.getAnswerId() ==null || userAnswer.getAnswerId().equals(0L)) {
@@ -95,6 +99,15 @@ public class QuizController {
         }
         userAnswer=new UserAnswer();
 
+        //Last question answered
+        if(questionNr.equals(questions.size())){
+
+            status.setComplete();
+            return "quiz_results";
+        }
+
+
+
 
         Boolean lastQuestion = false;
         if(questionNr.equals(questions.size()))
@@ -104,13 +117,19 @@ public class QuizController {
 
         Question question = questions.get(questionNr - 1);
         List<Answer> answers = answerService.findAllByQuestion(question);
+
         model.addAttribute(USER_ANSWER, userAnswer);
         model.addAttribute(QUESTION, question);
         model.addAttribute(ANSWERS, answers);
         model.addAttribute(NEXT_QUESTION_NR, ++questionNr);
         model.addAttribute(LAST_QUESTION, lastQuestion);
 
-
         return "redirect:/quiz/"+difficulty+"/"+questionNr;
+    }
+
+    @RequestMapping("/cleanSession")
+    public String cleanSession(SessionStatus status){
+        status.setComplete();
+        return PERIODIC_SYSTEM_REDIRECT;
     }
 }

@@ -21,8 +21,9 @@
                                     th:id="${answer.id}"/>
                             <label th:for="${answer.id}" th:text="${answer.text}">Answer</label>
                         </div>
-                    <!--<a  class="btn btn-success" th:href="@{/quiz/{difficulty}/{nextQuestionNr}(difficulty = ${question.difficulty},nextQuestionNr=${nextQuestionNr})}"> Next question</a>-->
-                    <input  id="submitBtn" type="submit" value="Submit quiz" class="btn btn-success"/>
+                    <br/>
+                    <input  id="submitBtn" type="submit" th:value="${lastQuestion == true ? 'Submit quiz' : 'Next question'}" class="btn btn-success btn-lg"/>
+                    <a class="btn btn-danger pull-right btn-lg" th:href="@{/quiz/cleanSession}"> Quit exam</a>
                 </form>
             </div>
         </div>

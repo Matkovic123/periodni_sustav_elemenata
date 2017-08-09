@@ -10,25 +10,10 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2 th:text="${'Your Quiz Nr. +'+ questions[0].difficulty +' results: ' }">Quiz results</h2>
-                <hr/>
-                    <div th:each="question : ${questions}">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 th:text="${question.text}">Question</h3>
-                                <ul>
-                                    <li th:each="answer : ${answers}">
-                                        <div th:if="${answer.question.id == question.id}">
-                                            <h4 th:text="${answer.text}">&nbsp;</h4>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr/>
-                    </div>
+
             </div>
         </div>
     </div>
 </div>
 </body>
+</html>
