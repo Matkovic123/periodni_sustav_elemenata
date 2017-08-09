@@ -12,14 +12,17 @@
             <div class="panel-body">
                 <h2 th:text="${'Quiz difficulty: ' + question.difficulty}">Quiz difficulty</h2>
                 <hr/>
-                <form id="quizForm" class="form-group" method="POST">
+                <form th:object="${userAnswer}" id="quizForm" class="form-group" method="POST">
                     <h3 th:text="${question.text}">Question</h3>
                         <div th:each=" answer : ${answers}">
-                            <input type="radio" th:id="*{answer.id}" th:value="*{answer.id}" th:name="${question.id}"/>
-                            <label th:for="*{answer.id}" th:text="*{answer.text}">Answer</label>
+                            <input type="radio" checked="true"
+                                   th:field="*{answerId}"
+                                   th:value="${answer.id}"
+                                    th:id="${answer.id}"/>
+                            <label th:for="${answer.id}" th:text="${answer.text}">Answer</label>
                         </div>
-                    <a th:if="${lastQuestion == false}" class="btn btn-success" th:href="@{/quiz/{difficulty}/{nextQuestionNr}(difficulty = ${question.difficulty},nextQuestionNr=${nextQuestionNr})}"> Next question</a>
-                    <input th:if="${lastQuestion == true}" id="submitBtn" type="submit" value="Submit quiz" class="btn btn-success"/>
+                    <!--<a  class="btn btn-success" th:href="@{/quiz/{difficulty}/{nextQuestionNr}(difficulty = ${question.difficulty},nextQuestionNr=${nextQuestionNr})}"> Next question</a>-->
+                    <input  id="submitBtn" type="submit" value="Submit quiz" class="btn btn-success"/>
                 </form>
             </div>
         </div>
