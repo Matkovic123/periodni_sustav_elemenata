@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link th:href="@{/resources/static/css/quiz.css}" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -20,7 +21,7 @@
                                     <li th:each="answer : ${answers}">
                                         <div th:if="${answer.question.id == question.id}">
                                             <input type="radio" checked="true" th:name="${question.id}"
-                                                    th:id="${answer.id}" th:value="${answer}" >&nbsp;</input>
+                                                   th:id="*{answer.id}" th:value="*{answer.id}">&nbsp;</input>
                                             <label th:for="${answer.id}" th:text="${answer.text}"> label</label>
                                         </div>
                                     </li>
@@ -36,35 +37,41 @@
     </div>
 </div>
 
-<script type="javascript">
-//    $("#submit-quiz").click(function () {
-//
-//        var checkedInputs = $("input:checked");
-//        var answerIdArray = [];
-//        checkedInputs.each(function () {
-//            answerIdArray.push($(this).val());
-//            console.log(answerIdArray);
-//            // $.ajax({
-//            //     type: "POST",
-//            //     url: "/http://localhost:8080/little-chemist/quiz/results",
-//            //     data: {
-//            //         answerIdArray: a //notice that "myArray" matches the value for @RequestParam
-//            //                    //on the Java side
-//            //     }
-//            // })
-//
-//        })
-//        ;
-function dildo () {
-    
-}
-a = 5;
-b = 6;
-c = a + b;
-console.log(c);
-    }
-</script>
+<script>
 
+    function getContextPath() {
+        return window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
+    }
+
+
+    $("#submit-quiz").click(function (quiz) {
+
+//        quiz.preventDefault();
+
+        var ctx = getContextPath();
+        var pathname = window.location.pathname; // Returns path only
+        var url      = window.location.href;     // Returns full URL
+        console.log(ctx);
+        console.log(pathname);
+        console.log(url);
+
+
+        var checkedInputs = $("input:checked");
+        var answerIdArray = [];
+        checkedInputs.each(function () {
+            answerIdArray.push($(this).val());
+        })
+        console.log(answerIdArray);
+        $.ajax({
+                type: "POST",
+                url: ctx + "/quiz/results",
+                data: JSON.stringify(answerIdArray),
+                contentType: "application/json",
+                dataType: "json"
+            }
+        )
+    });
+</script>
 
 </body>
 </html>

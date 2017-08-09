@@ -5,10 +5,12 @@ import hr.tvz.matkovic.model.Question;
 import hr.tvz.matkovic.service.AnswerService;
 import hr.tvz.matkovic.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,7 +39,7 @@ public class QuizController {
 
     @GetMapping("/{difficulty}")
     public String quiz(@PathVariable(value = "difficulty") final Integer difficulty,
-                        Model model) {
+                       Model model) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
         List<Answer> answers = answerService.findAll();
         Collections.shuffle(answers);
@@ -47,9 +49,9 @@ public class QuizController {
         return "quiz_question";
     }
 
-    @PostMapping("/results")
-    public String checkAnswer(@RequestParam(value = "answerIdArray[]", required = false) Long[] answerIdArray ,
-                              Model model) {
+    @PostMapping(value = "/results", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String checkAnswer(@RequestBody Long[] answerIdArray) {
+
         System.out.println("Numbers: " + answerIdArray);
 
         return "redirect:/";
