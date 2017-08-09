@@ -11,11 +11,11 @@ public class GlobalExceptionHandler {
 
     // --- VIEW NAMES ---------------------------------------------------------
     public static final String PERIODIC_SYSTEM_REDIRECT = "redirect:/periodic_table";
-
-    @ExceptionHandler(Exception.class)
-    public String handleException(Exception ex) {
-        LOGGER.error("Caught Exception: ", ex);
-        return "PERIODIC_SYSTEM_REDIRECT";
-    }
+//
+//    @ExceptionHandler(Exception.class)
+//    public String handleException(Exception ex) {
+//        LOGGER.error("Caught Exception: ", ex);
+//        return "PERIODIC_SYSTEM_REDIRECT";
+//    }
 
 }

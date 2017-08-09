@@ -10,66 +10,55 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2 th:text="${'Quiz difficulty: ' + questions[0].difficulty}">Quiz difficulty</h2>
+                <h2 th:text="${'Quiz difficulty: ' + question.difficulty}">Quiz difficulty</h2>
                 <hr/>
                 <form id="quizForm" class="form-group" method="POST">
-                    <div th:each="question : ${questions}">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 th:text="${question.text}">Question</h3>
-                                <ul>
-                                    <li th:each="answer : ${answers}">
-                                        <div th:if="${answer.question.id == question.id}">
-                                            <input type="radio" checked="true" th:name="${question.id}"
-                                                   th:id="*{answer.id}" th:value="*{answer.id}">&nbsp;</input>
-                                            <label th:for="${answer.id}" th:text="${answer.text}"> label</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                    <h3 th:text="${question.text}">Question</h3>
+                        <div th:each=" answer : ${answers}">
+                            <input type="radio" th:id="*{answer.id}" th:value="*{answer.id}" th:name="${question.id}"/>
+                            <label th:for="*{answer.id}" th:text="*{answer.text}">Answer</label>
                         </div>
-                        <hr/>
-                    </div>
-                    <input id="submit-quiz" type="submit" value="Submit answers" class="btn btn-success"/>
+                    <a th:if="${lastQuestion == false}" class="btn btn-success" th:href="@{/quiz/{difficulty}/{nextQuestionNr}(difficulty = ${question.difficulty},nextQuestionNr=${nextQuestionNr})}"> Next question</a>
+                    <input th:if="${lastQuestion == true}" id="submitBtn" type="submit" value="Submit quiz" class="btn btn-success"/>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<script>
+<!--<script>-->
 
-    function getContextPath() {
-        return window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
-    }
-
-
-    $("#submit-quiz").click(function (quiz) {
+    <!--function getContextPath() {-->
+        <!--return window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));-->
+    <!--}-->
 
 
-        var ctx = getContextPath();
-        var pathname = window.location.pathname; // Returns path only
-
-        console.log(ctx);
-        console.log(pathname);
+    <!--$("#submit-quiz").click(function (quiz) {-->
 
 
-        var checkedInputs = $("input:checked");
-        var answerIdArray = [];
-        checkedInputs.each(function () {
-            answerIdArray.push($(this).val());
-        })
-        console.log(answerIdArray);
-        $.ajax({
-                type: "POST",
-                url: pathname,
-                data: JSON.stringify(answerIdArray),
-                contentType: "application/json",
-                dataType: "json"
-            }
-        )
-    });
-</script>
+        <!--var ctx = getContextPath();-->
+        <!--var pathname = window.location.pathname; // Returns path only-->
+
+        <!--console.log(ctx);-->
+        <!--console.log(pathname);-->
+
+
+        <!--var checkedInputs = $("input:checked");-->
+        <!--var answerIdArray = [];-->
+        <!--checkedInputs.each(function () {-->
+            <!--answerIdArray.push($(this).val());-->
+        <!--})-->
+        <!--console.log(answerIdArray);-->
+        <!--$.ajax({-->
+                <!--type: "POST",-->
+                <!--url: pathname,-->
+                <!--data: JSON.stringify(answerIdArray),-->
+                <!--contentType: "application/json",-->
+                <!--dataType: "json"-->
+            <!--}-->
+        <!--)-->
+    <!--});-->
+<!--</script>-->
 
 </body>
 </html>

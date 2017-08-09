@@ -15,6 +15,9 @@ public class Question implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "NUMBER")
+    private Integer number;
+
     @Column(name = "TEXT")
     private String text;
 
@@ -26,6 +29,7 @@ public class Question implements Serializable{
     public Question(String text, Integer difficulty) {
         this.text = text;
         this.difficulty = difficulty;
+        this.number =  number;
     }
 
     //--- set / get methods ---------------------------------------------------
@@ -53,5 +57,13 @@ public class Question implements Serializable{
 
     public void setDifficulty(Integer difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }
