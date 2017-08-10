@@ -16,14 +16,17 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "USERNAME", nullable = false, unique = true)
     private String username;
+
     @Column(name = "PASSWORD", nullable = false)
     private String password;
+    
     @Column(name = "ENABLED", nullable = false)
     private Boolean enabled;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USER_ROLES", schema = "PERIODIC_SYSTEM", joinColumns = {
             @JoinColumn(name = "USER_ID", nullable = false, updatable = false)},
             inverseJoinColumns = {@JoinColumn(name = "USER_ROLE_ID",

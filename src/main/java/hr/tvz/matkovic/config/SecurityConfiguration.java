@@ -22,7 +22,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
-    @Qualifier("dataSource")
     @Autowired
     DataSource dataSource;
 
@@ -46,7 +45,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll();
         httpSecurity.csrf().disable();
-//        httpSecurity.exceptionHandling().accessDeniedPage("/403");
     }
 
     @Autowired
@@ -55,8 +53,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         auth.jdbcAuthentication().dataSource(dataSource)
                 .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("select username,password, enabled from users where username=?")
-                .authoritiesByUsernameQuery("select username, role from user_role where username=?");
+                .usersByUsernameQuery("select username,password, enabled from periodic_system.user where username=?")
+                .authoritiesByUsernameQuery("select username, role from periodic_system.user_role as user_role\n" +
+                        "INNER JOIN periodic_system.user_roles as user_roles on user_role.id=user_roles.user_role_id\n" +
+                        "INNER JOIN periodic_system.user as userr on  user_roles.user_id = userr.id where username=?");
     }
 
     @Bean
