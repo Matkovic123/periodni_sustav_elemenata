@@ -1127,7 +1127,7 @@ INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'S
 INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Vanadium (V)', 30);
 INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Platinum (Pt)', 30);
 
-Difficulty 4
+-- Difficulty 4
 
 
 INSERT INTO periodic_system.question (id, number, difficulty, text)
