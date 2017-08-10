@@ -49,7 +49,7 @@
 //        auth.jdbcAuthentication().dataSource(dataSource)
 //                .passwordEncoder(passwordEncoder())
 //                .usersByUsernameQuery("select username,password, enabled from users where username=?")
-//                .authoritiesByUsernameQuery("select username, role from user_roles where username=?");
+//                .authoritiesByUsernameQuery("select username, role from user_role where username=?");
 //    }
 //
 //    @Bean

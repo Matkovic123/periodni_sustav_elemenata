@@ -51,7 +51,6 @@ public class QuizController {
     // --- MAPPINGS -----------------------------------------------------------
     @GetMapping({"/", "/start"})
     public String quizSelection(Model model) {
-
         UserAnswer userAnswer = new UserAnswer();
         model.addAttribute(USER_ANSWER, userAnswer);
 
@@ -62,11 +61,16 @@ public class QuizController {
     @GetMapping("/{difficulty}/{questionNr}")
     public String quizQuestions(@PathVariable(value = "difficulty") final Integer difficulty,
                                 @PathVariable(value = "questionNr") Integer questionNr,
+                                @SessionAttribute Map<Long,Long> sessionQuestionsAndAnswers,
                                 Model model) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
         Question question = questions.get(questionNr - 1);
         List<Answer> answers = question.getAnswers();
         Collections.shuffle(answers);
+
+//        reset session on new quiz start
+        if(questionNr.equals(1))
+            sessionQuestionsAndAnswers.clear();
 
         Boolean lastQuestion = false;
         if(questionNr.equals(questions.size()))
