@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +24,16 @@ import static hr.tvz.matkovic.controller.HomeController.PERIODIC_SYSTEM_REDIRECT
 public class QuizController {
     // --- MODEL ATTRIBUTES ---------------------------------------------------
     private static final String QUESTION = "question";
+    private static final String QUESTIONS = "questions";
     private static final String ANSWERS = "answers";
     private static final String NEXT_QUESTION_NR = "nextQuestionNr";
     private static final String LAST_QUESTION = "lastQuestion";
     private static final String USER_ANSWER = "userAnswer";
+    private static final String USER_ANSWERS = "userAnswers";
+    private static final String TOTAL_NR_OF_QUESTIONS = "totalNrOfQuestions";
+    private static final String CORRECT_ANSWERS = "correctAnswers";
+
+
 
 
     @ModelAttribute("sessionQuestionsAndAnswers")
@@ -101,7 +108,24 @@ public class QuizController {
 
         //Last question answered
         if(questionNr.equals(questions.size())){
+//            List<Answer> userAnswers = new ArrayList<>();
+            Integer rightAnswers = 0;
+            for(Map.Entry<Long,Long> entry : sessionQuestionsAndAnswers.entrySet())
+            {
+//                userAnswers.add(answerService.findOne(entry.getValue()));
+                if(entry.getValue().equals(-1L))
+                    continue;
+                Answer answer = answerService.findOne(entry.getValue());
+                if (answer.getCorrect())
+                    rightAnswers++;
 
+            }
+
+            model.addAttribute(ANSWERS, answerService.findAll());
+//            model.addAttribute(USER_ANSWERS,userAnswers);
+            model.addAttribute(QUESTIONS, questions);
+            model.addAttribute(TOTAL_NR_OF_QUESTIONS, questions.size());
+            model.addAttribute(CORRECT_ANSWERS,rightAnswers);
             status.setComplete();
             return "quiz_results";
         }

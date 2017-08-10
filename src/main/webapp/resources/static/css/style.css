@@ -1,8 +1,5 @@
 body{
-    background-image: url(../../images/main-background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background: url(../../images/main-background.jpg) no-repeat fixed center;
 }
 
 a:hover{
@@ -19,4 +16,7 @@ a:hover{
 
 .top-buffer{
     margin-top: 35px;
+}
+.top-buffer-small{
+    margin-top: 15px;
 }

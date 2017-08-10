@@ -924,64 +924,64 @@ INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '
 INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Lithium (Li)', 2);
 
 
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (3, 3, 1, 'The rows of the periodic table are called periods and the columns are called groups.');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'True', 3);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'False', 3);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (4, 4, 1, 'Which of these choices is NOT a family of elements?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Molecules', 4);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Alkali metals', 4);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Halogens', 4);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Noble gases', 4);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (5, 5, 1, 'How many periodes and groups are in PSE?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, '7 & 18', 5);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '8 & 16', 5);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '9 & 18', 5);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (6, 6, 1, 'You will find non-metals on the far left columns of the periodic table.');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'False', 6);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'True', 6);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text) VALUES (7, 7, 1, 'What is the symbol for Lead?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Pb', 7);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'La', 7);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Li', 7);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Hg', 7);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (8, 8, 1, 'What 3 elements are the most abundant in the Earth''s atmosphere?');
-INSERT INTO periodic_system.answer (correct, text, question_id)
-VALUES (TRUE, 'Nitrogen (N), Oxygen (O) & Argon (Ar)', 8);
-INSERT INTO periodic_system.answer (correct, text, question_id)
-VALUES (FALSE, 'Hydrogen (H), Oxygen (O) & Nitrogen (N)', 8);
-INSERT INTO periodic_system.answer (correct, text, question_id)
-VALUES (FALSE, 'Neon (Ne), Helium (He) & Oxygen (O)', 8);
-INSERT INTO periodic_system.answer (correct, text, question_id)
-VALUES (FALSE, 'Oxygen (O), Hydrogen (H) & Carbon dioxide (CO2)', 8);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (9, 9, 1, 'Which 2 elements are in liquid state at 20°C?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Bromine (Br) & Mercury (Hg)', 9);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Chlorine (Cl) & Fluorine (F)', 9);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Antimony (Sb) & Sodium (Na)', 9);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (10, 10, 1, 'Atomic number 27 represents which element?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Cobalt (Co)', 10);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Aluminium (Al)', 10);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Argon (Ar)', 10);
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (3, 3, 1, 'The rows of the periodic table are called periods and the columns are called groups.');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'True', 3);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'False', 3);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (4, 4, 1, 'Which of these choices is NOT a family of elements?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Molecules', 4);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Alkali metals', 4);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Halogens', 4);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Noble gases', 4);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (5, 5, 1, 'How many periodes and groups are in PSE?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, '7 & 18', 5);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '8 & 16', 5);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '9 & 18', 5);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (6, 6, 1, 'You will find non-metals on the far left columns of the periodic table.');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'False', 6);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'True', 6);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text) VALUES (7, 7, 1, 'What is the symbol for Lead?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Pb', 7);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'La', 7);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Li', 7);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Hg', 7);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (8, 8, 1, 'What 3 elements are the most abundant in the Earth''s atmosphere?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id)
+-- VALUES (TRUE, 'Nitrogen (N), Oxygen (O) & Argon (Ar)', 8);
+-- INSERT INTO periodic_system.answer (correct, text, question_id)
+-- VALUES (FALSE, 'Hydrogen (H), Oxygen (O) & Nitrogen (N)', 8);
+-- INSERT INTO periodic_system.answer (correct, text, question_id)
+-- VALUES (FALSE, 'Neon (Ne), Helium (He) & Oxygen (O)', 8);
+-- INSERT INTO periodic_system.answer (correct, text, question_id)
+-- VALUES (FALSE, 'Oxygen (O), Hydrogen (H) & Carbon dioxide (CO2)', 8);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (9, 9, 1, 'Which 2 elements are in liquid state at 20°C?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Bromine (Br) & Mercury (Hg)', 9);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Chlorine (Cl) & Fluorine (F)', 9);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Antimony (Sb) & Sodium (Na)', 9);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (10, 10, 1, 'Atomic number 27 represents which element?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Cobalt (Co)', 10);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Aluminium (Al)', 10);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Argon (Ar)', 10);
 
 -- Difficulty 2
 

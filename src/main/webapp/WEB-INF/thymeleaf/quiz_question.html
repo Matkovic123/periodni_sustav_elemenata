@@ -14,55 +14,23 @@
                 <hr/>
                 <form th:object="${userAnswer}" id="quizForm" class="form-group" method="POST">
                     <h3 th:text="${question.text}">Question</h3>
-                        <div th:each=" answer : ${answers}">
-                            <input type="radio" checked="true"
+                        <div id="radionInputs" th:each=" answer : ${answers}">
+                            <input type="radio" class="radioInput"
                                    th:field="*{answerId}"
                                    th:value="${answer.id}"
-                                    th:id="${answer.id}"/>
+                                    th:id="${answer.id}"
+                                   onchange="document.getElementById('submitBtn').disabled = !this.checked;"
+                                   />
                             <label th:for="${answer.id}" th:text="${answer.text}">Answer</label>
                         </div>
                     <br/>
-                    <input  id="submitBtn" type="submit" th:value="${lastQuestion == true ? 'Submit quiz' : 'Next question'}" class="btn btn-success btn-lg"/>
+                    <input  id="submitBtn" type="submit" th:value="${lastQuestion == true ? 'Submit quiz' : 'Next question'}" class="btn btn-success btn-lg" disabled="disabled"/>
                     <a class="btn btn-danger pull-right btn-lg" th:href="@{/quiz/cleanSession}"> Quit exam</a>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<!--<script>-->
-
-    <!--function getContextPath() {-->
-        <!--return window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));-->
-    <!--}-->
-
-
-    <!--$("#submit-quiz").click(function (quiz) {-->
-
-
-        <!--var ctx = getContextPath();-->
-        <!--var pathname = window.location.pathname; // Returns path only-->
-
-        <!--console.log(ctx);-->
-        <!--console.log(pathname);-->
-
-
-        <!--var checkedInputs = $("input:checked");-->
-        <!--var answerIdArray = [];-->
-        <!--checkedInputs.each(function () {-->
-            <!--answerIdArray.push($(this).val());-->
-        <!--})-->
-        <!--console.log(answerIdArray);-->
-        <!--$.ajax({-->
-                <!--type: "POST",-->
-                <!--url: pathname,-->
-                <!--data: JSON.stringify(answerIdArray),-->
-                <!--contentType: "application/json",-->
-                <!--dataType: "json"-->
-            <!--}-->
-        <!--)-->
-    <!--});-->
-<!--</script>-->
 
 </body>
 </html>

@@ -30,4 +30,10 @@ public class AnswerServiceImpl implements AnswerService{
     {
         return answerRepository.findAllByQuestion(question);
     }
+
+    @Override
+    public List<Answer> findAllByQuestion_Id(Long id){
+        return answerRepository.findAllByQuestion_Id(id);
+    }
+
 }

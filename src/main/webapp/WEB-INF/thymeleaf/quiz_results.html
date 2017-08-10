@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link th:href="@{/resources/static/css/quiz.css}" rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -10,7 +9,25 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-
+                <div class="panel-header">
+                    <h2>Your quiz results:</h2>
+                    <h3 th:text="${correctAnswers +' / ' + totalNrOfQuestions}">Result</h3>
+                </div>
+                <div class="panel-body">
+                    <div th:each="question : ${questions}">
+                        <h3 th:text="${question.text}">Question</h3>
+                        <div th:each="answer : ${answers}">
+                            <div class="top-buffer-small" th:if="${answer.question == question}">
+                                <span class="btn"  th:classappend="${answer.correct == true ? 'green-background' :''}"
+                                   th:text="${answer.text}">Answer</span>
+                                <span class="btn" th:if="${answer.correct == true }" >
+                                    <i class="fa fa-check green-text" ></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="btn" th:text="${'Your answer: '+ userAnswers[0].text}">UserAnswer</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
