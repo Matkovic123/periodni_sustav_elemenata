@@ -1128,55 +1128,55 @@ INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, '
 INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Platinum (Pt)', 30);
 
 -- Difficulty 4
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (31, 1, 4, 'Nitrogen (N) has a greater mass than Bromine (Br).');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'False', 31);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'True', 31);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (32, 2, 4, 'You might find boron (B) in the soap in your bathtub.');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'True', 32);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'False', 32);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (33, 3, 4, 'Which element is used the most for making medical implants?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Titanium (Ti)', 33);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Aluminium (Al)', 33);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Nickel (Ni)', 33);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (34, 4, 4, 'What is the symbol for Astatine?');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'At', 34);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'As', 34);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Ac', 34);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (35, 5, 4, 'An isotope is a form of an atom with a different number of...');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Neutrons', 35);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Protons', 35);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Electrons', 35);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'All of the above', 35);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (36, 6, 4, 'The number of electrons in the outermost energy level are called the ______ electrons.');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Valence', 36);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Atomic mass', 36);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Atomic number', 36);
-
-
-INSERT INTO periodic_system.question (id, number, difficulty, text)
-VALUES (37, 7, 4, 'The valence electrons determine the _______ properties of the element.');
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Chemical', 37);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Physical', 37);
-INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'None of the above', 37);
-
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (31, 1, 4, 'Nitrogen (N) has a greater mass than Bromine (Br).');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'False', 31);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'True', 31);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (32, 2, 4, 'You might find boron (B) in the soap in your bathtub.');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'True', 32);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'False', 32);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (33, 3, 4, 'Which element is used the most for making medical implants?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Titanium (Ti)', 33);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Aluminium (Al)', 33);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Nickel (Ni)', 33);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (34, 4, 4, 'What is the symbol for Astatine?');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'At', 34);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'As', 34);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Ac', 34);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (35, 5, 4, 'An isotope is a form of an atom with a different number of...');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Neutrons', 35);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Protons', 35);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Electrons', 35);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'All of the above', 35);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (36, 6, 4, 'The number of electrons in the outermost energy level are called the ______ electrons.');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Valence', 36);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Atomic mass', 36);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Atomic number', 36);
+--
+--
+-- INSERT INTO periodic_system.question (id, number, difficulty, text)
+-- VALUES (37, 7, 4, 'The valence electrons determine the _______ properties of the element.');
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (TRUE, 'Chemical', 37);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'Physical', 37);
+-- INSERT INTO periodic_system.answer (correct, text, question_id) VALUES (FALSE, 'None of the above', 37);
+--
 
 INSERT INTO periodic_system.question (id, number, difficulty, text)
 VALUES (38, 8, 4, 'How many valence electrons contains Iodine (I) atom?');

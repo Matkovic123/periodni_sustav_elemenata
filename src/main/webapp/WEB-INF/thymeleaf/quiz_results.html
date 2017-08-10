@@ -20,13 +20,15 @@
                             <div class="top-buffer-small" th:if="${answer.question == question}">
                                 <span class="btn"
                                    th:text="${answer.text}">Answer</span>
-                                <span class="btn" th:if="${answer.correct == true }" >
-                                    <i class="fa fa-arrow-right " > Correct Answer</i>
+                                <span  th:if="${answer.correct == true}">
+                                    <i class="fa fa-arrow-right "></i>
+                                    <span> Correct answer</span>
                                 </span>
                             </div>
                         </div>
-                        <span class="btn" th:classappend="${userAnswers[iterator.index].correct == true ? 'green-background' : 'red-background'}"
-                              th:text="${'Your answer: '+ userAnswers[iterator.index].text}">UserAnswer</span>
+                        <span class="btn" th:text="${'Your answer: ' + userAnswers[iterator.index].text}"
+                        th:classappend="${ userAnswers[iterator.index].correct == true ? 'green-background' : 'red-background'}"
+                        >User answer</span>
                     </div>
                 </div>
             </div>

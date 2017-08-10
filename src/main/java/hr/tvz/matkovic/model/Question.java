@@ -1,5 +1,7 @@
 package hr.tvz.matkovic.model;
 
+import com.sun.deploy.security.ValidationState;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,14 +31,11 @@ public class Question implements Serializable{
     @OneToMany(mappedBy = "question")
     List<Answer> answers = new ArrayList<>();
 
+    private Answer answer;
+
     public Question(){}
 
-    public Question(Integer number, String text, Integer difficulty, List<Answer> answers) {
-        this.number = number;
-        this.text = text;
-        this.difficulty = difficulty;
-        this.answers = answers;
-    }
+
 
     //--- set / get methods ---------------------------------------------------
 
@@ -79,5 +78,13 @@ public class Question implements Serializable{
 
     public void setAnswers(List<Answer> answers) {
         this.answers = answers;
+    }
+
+    public Answer getCorrectAnswer(){
+        for(Answer answer : answers){
+            if (answer.getCorrect())
+                return answer;
+        }
+        return null;
     }
 }

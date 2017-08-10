@@ -32,7 +32,7 @@ public class QuizController {
 
     @ModelAttribute("sessionQuestionsAndAnswers")
     public Map<Long, Long> getSessionQuestionsAndAnswers() {
-        return new HashMap<>();
+        return new TreeMap<>();
     }
 
     @ModelAttribute("userAnswer")
