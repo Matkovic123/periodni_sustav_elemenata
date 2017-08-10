@@ -2,6 +2,8 @@ package hr.tvz.matkovic.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Matkovic on 07/08/2017.
@@ -24,12 +26,16 @@ public class Question implements Serializable{
     @Column(name = "DIFFICULTY")
     private Integer difficulty;
 
+    @OneToMany(mappedBy = "question")
+    List<Answer> answers = new ArrayList<>();
+
     public Question(){}
 
-    public Question(String text, Integer difficulty) {
+    public Question(Integer number, String text, Integer difficulty, List<Answer> answers) {
+        this.number = number;
         this.text = text;
         this.difficulty = difficulty;
-        this.number =  number;
+        this.answers = answers;
     }
 
     //--- set / get methods ---------------------------------------------------
@@ -65,5 +71,13 @@ public class Question implements Serializable{
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 }

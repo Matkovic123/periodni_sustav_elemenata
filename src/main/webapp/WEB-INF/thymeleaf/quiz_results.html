@@ -14,18 +14,19 @@
                     <h3 th:text="${correctAnswers +' / ' + totalNrOfQuestions}">Result</h3>
                 </div>
                 <div class="panel-body">
-                    <div th:each="question : ${questions}">
+                    <div th:each="question,iterator : ${questions}">
                         <h3 th:text="${question.text}">Question</h3>
                         <div th:each="answer : ${answers}">
                             <div class="top-buffer-small" th:if="${answer.question == question}">
-                                <span class="btn"  th:classappend="${answer.correct == true ? 'green-background' :''}"
+                                <span class="btn"
                                    th:text="${answer.text}">Answer</span>
                                 <span class="btn" th:if="${answer.correct == true }" >
-                                    <i class="fa fa-check green-text" ></i>
+                                    <i class="fa fa-arrow-right " > Correct Answer</i>
                                 </span>
                             </div>
                         </div>
-                        <span class="btn" th:text="${'Your answer: '+ userAnswers[0].text}">UserAnswer</span>
+                        <span class="btn" th:classappend="${userAnswers[iterator.index].correct == true ? 'green-background' : 'red-background'}"
+                              th:text="${'Your answer: '+ userAnswers[iterator.index].text}">UserAnswer</span>
                     </div>
                 </div>
             </div>

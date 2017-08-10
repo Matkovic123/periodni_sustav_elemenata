@@ -3,6 +3,8 @@ package hr.tvz.matkovic.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Matkovic on 10/07/2017.
@@ -51,6 +53,9 @@ public class ChemicalElement implements Serializable {
 
     @Column(name = "COMMON_OXIDATION_STATES")
     private String commonOxidationStates;
+
+    @OneToMany(mappedBy = "chemicalElement")
+    List<KeyIsotope> keyIsotopes = new ArrayList<>();
 
     public ChemicalElement() {
     }

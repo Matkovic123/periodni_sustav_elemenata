@@ -11,10 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static hr.tvz.matkovic.controller.HomeController.PERIODIC_SYSTEM_REDIRECT;
 
@@ -32,9 +29,6 @@ public class QuizController {
     private static final String USER_ANSWERS = "userAnswers";
     private static final String TOTAL_NR_OF_QUESTIONS = "totalNrOfQuestions";
     private static final String CORRECT_ANSWERS = "correctAnswers";
-
-
-
 
     @ModelAttribute("sessionQuestionsAndAnswers")
     public Map<Long, Long> getSessionQuestionsAndAnswers() {
@@ -55,7 +49,6 @@ public class QuizController {
     private AnswerService answerService;
 
     // --- MAPPINGS -----------------------------------------------------------
-
     @GetMapping({"/", "/start"})
     public String quizSelection(Model model) {
 
@@ -72,7 +65,8 @@ public class QuizController {
                                 Model model) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
         Question question = questions.get(questionNr - 1);
-        List<Answer> answers = answerService.findAllByQuestion(question);
+        List<Answer> answers = question.getAnswers();
+        Collections.shuffle(answers);
 
         Boolean lastQuestion = false;
         if(questionNr.equals(questions.size()))
@@ -108,21 +102,19 @@ public class QuizController {
 
         //Last question answered
         if(questionNr.equals(questions.size())){
-//            List<Answer> userAnswers = new ArrayList<>();
+            List<Answer> userAnswers = new ArrayList<>();
             Integer rightAnswers = 0;
             for(Map.Entry<Long,Long> entry : sessionQuestionsAndAnswers.entrySet())
             {
-//                userAnswers.add(answerService.findOne(entry.getValue()));
-                if(entry.getValue().equals(-1L))
-                    continue;
+
                 Answer answer = answerService.findOne(entry.getValue());
+                userAnswers.add(answer);
                 if (answer.getCorrect())
                     rightAnswers++;
-
             }
 
             model.addAttribute(ANSWERS, answerService.findAll());
-//            model.addAttribute(USER_ANSWERS,userAnswers);
+            model.addAttribute(USER_ANSWERS,userAnswers);
             model.addAttribute(QUESTIONS, questions);
             model.addAttribute(TOTAL_NR_OF_QUESTIONS, questions.size());
             model.addAttribute(CORRECT_ANSWERS,rightAnswers);
@@ -140,7 +132,7 @@ public class QuizController {
         }
 
         Question question = questions.get(questionNr - 1);
-        List<Answer> answers = answerService.findAllByQuestion(question);
+        List<Answer> answers = question.getAnswers();
 
         model.addAttribute(USER_ANSWER, userAnswer);
         model.addAttribute(QUESTION, question);
