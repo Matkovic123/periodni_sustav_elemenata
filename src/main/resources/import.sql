@@ -7,10 +7,17 @@ INSERT INTO periodic_system.user (id, username, password, enabled)
 VALUES (1, 'Admin', '$2a$10$KgN3J87rf5kYCG3c0jCKtuessy0YgnrchxGi6ZtA7SV0NTDdShwxi', TRUE);
 INSERT INTO periodic_system.user (id, username, password, enabled)
 VALUES (2, 'User', '$2a$10$bnnVt3Gx4C.PZGADKRa0EeuLcJaotxkNhu7pUOUcYYOVfY0spyWMa', TRUE);
+INSERT INTO periodic_system.user (id, username, password, enabled)
+VALUES (3, 'Crobelia', '$2a$10$361Xa9kae0W5dkJfUer3bOeEqZTZEBat1lvoGwfd2XYxQCJ8cUP6u', TRUE);
 
 --USER AND THEIR ROLES
 INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (1, 1);
+INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (1, 2);
 INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (2, 2);
+INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (3, 1);
+INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (3, 2);
+
+
 
 -- CHEMICAL ELEMENTS & ISOTOPES
 INSERT INTO periodic_system.chemical_element (name, symbol, type, atomic_number, block, state_at_20c, electron_configuration, melting_point_in_C, boiling_point_in_C, atomic_mass, atomic_radius, electronegativity, common_oxidation_states)
