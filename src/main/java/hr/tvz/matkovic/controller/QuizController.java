@@ -17,7 +17,7 @@ import static hr.tvz.matkovic.controller.HomeController.PERIODIC_SYSTEM_REDIRECT
 
 @Controller
 @RequestMapping("/quiz")
-@SessionAttributes(names ={"sessionQuestionsAndAnswers", "userAnswer"})
+@SessionAttributes(names = {"sessionQuestionsAndAnswers", "userAnswer"})
 public class QuizController {
     // --- MODEL ATTRIBUTES ---------------------------------------------------
     private static final String QUESTION = "question";
@@ -36,7 +36,7 @@ public class QuizController {
     }
 
     @ModelAttribute("userAnswer")
-    public UserAnswer getUserAnswer(){
+    public UserAnswer getUserAnswer() {
         return new UserAnswer();
     }
 
@@ -69,9 +69,8 @@ public class QuizController {
         Collections.shuffle(answers);
 
         Boolean lastQuestion = false;
-        if(questionNr.equals(questions.size()))
-        {
-            lastQuestion=true;
+        if (questionNr.equals(questions.size())) {
+            lastQuestion = true;
         }
 
         model.addAttribute(QUESTION, question);
@@ -85,20 +84,19 @@ public class QuizController {
     @PostMapping("/{difficulty}/{questionNr}")
     public String checkAnswer(@PathVariable(value = "difficulty") final Integer difficulty,
                               @PathVariable(value = "questionNr") Integer questionNr,
-                              @SessionAttribute Map<Long,Long> sessionQuestionsAndAnswers,
+                              @SessionAttribute Map<Long, Long> sessionQuestionsAndAnswers,
                               @ModelAttribute UserAnswer userAnswer,
                               Model model,
                               SessionStatus status) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
 
-        sessionQuestionsAndAnswers.put(questions.get(questionNr-1).getId(),userAnswer.getAnswerId());
+        sessionQuestionsAndAnswers.put(questions.get(questionNr - 1).getId(), userAnswer.getAnswerId());
 
         //Last question answered
-        if(questionNr.equals(questions.size())){
+        if (questionNr.equals(questions.size())) {
             List<Answer> userAnswers = new ArrayList<>();
             Integer rightAnswers = 0;
-            for(Map.Entry<Long,Long> entry : sessionQuestionsAndAnswers.entrySet())
-            {
+            for (Map.Entry<Long, Long> entry : sessionQuestionsAndAnswers.entrySet()) {
 
                 Answer answer = answerService.findOne(entry.getValue());
                 userAnswers.add(answer);
@@ -106,21 +104,18 @@ public class QuizController {
                     rightAnswers++;
             }
 
-            model.addAttribute(USER_ANSWERS,userAnswers);
+            model.addAttribute(USER_ANSWERS, userAnswers);
             model.addAttribute(QUESTIONS, questions);
             model.addAttribute(TOTAL_NR_OF_QUESTIONS, questions.size());
-            model.addAttribute(CORRECT_ANSWERS,rightAnswers);
+            model.addAttribute(CORRECT_ANSWERS, rightAnswers);
             status.setComplete();
             return "quiz_results";
         }
 
 
-
-
         Boolean lastQuestion = false;
-        if(questionNr.equals(questions.size()))
-        {
-            lastQuestion=true;
+        if (questionNr.equals(questions.size())) {
+            lastQuestion = true;
         }
 
         Question question = questions.get(questionNr - 1);
@@ -132,11 +127,11 @@ public class QuizController {
         model.addAttribute(NEXT_QUESTION_NR, ++questionNr);
         model.addAttribute(LAST_QUESTION, lastQuestion);
 
-        return "redirect:/quiz/"+difficulty+"/"+questionNr;
+        return "redirect:/quiz/" + difficulty + "/" + questionNr;
     }
 
     @RequestMapping("/cleanSession")
-    public String cleanSession(SessionStatus status){
+    public String cleanSession(SessionStatus status) {
         status.setComplete();
         return PERIODIC_SYSTEM_REDIRECT;
     }
