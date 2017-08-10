@@ -19,6 +19,10 @@ public class HomeController {
         return PERIODIC_SYSTEM_REDIRECT;
     }
 
+    @RequestMapping("/login")
+    public String login(){
+        return"login";
+    }
 
 
 }
