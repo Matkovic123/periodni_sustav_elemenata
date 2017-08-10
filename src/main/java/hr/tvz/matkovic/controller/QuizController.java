@@ -91,14 +91,7 @@ public class QuizController {
                               SessionStatus status) {
         List<Question> questions = questionService.findAllByDifficulty(difficulty);
 
-        if(userAnswer.getAnswerId() ==null || userAnswer.getAnswerId().equals(0L)) {
-            sessionQuestionsAndAnswers.put(questions.get(questionNr - 1).getId(), -1L);
-        }
-
-        else{
-            sessionQuestionsAndAnswers.put(questions.get(questionNr-1).getId(),userAnswer.getAnswerId());
-        }
-        userAnswer=new UserAnswer();
+        sessionQuestionsAndAnswers.put(questions.get(questionNr-1).getId(),userAnswer.getAnswerId());
 
         //Last question answered
         if(questionNr.equals(questions.size())){
@@ -113,7 +106,6 @@ public class QuizController {
                     rightAnswers++;
             }
 
-            model.addAttribute(ANSWERS, answerService.findAll());
             model.addAttribute(USER_ANSWERS,userAnswers);
             model.addAttribute(QUESTIONS, questions);
             model.addAttribute(TOTAL_NR_OF_QUESTIONS, questions.size());

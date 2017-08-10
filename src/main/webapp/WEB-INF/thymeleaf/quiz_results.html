@@ -16,7 +16,7 @@
                 <div class="panel-body">
                     <div th:each="question,iterator : ${questions}">
                         <h3 th:text="${question.text}">Question</h3>
-                        <div th:each="answer : ${answers}">
+                        <div th:each="answer : ${question.answers}">
                             <div class="top-buffer-small" th:if="${answer.question == question}">
                                 <span class="btn"
                                    th:text="${answer.text}">Answer</span>
