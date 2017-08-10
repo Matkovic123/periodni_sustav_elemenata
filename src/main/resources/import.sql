@@ -6,7 +6,7 @@ INSERT INTO periodic_system.user_role (id, role) VALUES (2, 'ROLE_USER');
 INSERT INTO periodic_system.user (id, username, password, enabled)
 VALUES (1, 'Admin', '$2a$10$KgN3J87rf5kYCG3c0jCKtuessy0YgnrchxGi6ZtA7SV0NTDdShwxi', TRUE);
 INSERT INTO periodic_system.user (id, username, password, enabled)
-VALUES (2, 'User', '$2a$10$hMr9K2CX8zxgxd195uyBS.ePUWeuQb/3pfPQBJbJ0EUl3Mry2G6m6', TRUE);
+VALUES (2, 'User', '$2a$10$bnnVt3Gx4C.PZGADKRa0EeuLcJaotxkNhu7pUOUcYYOVfY0spyWMa', TRUE);
 
 --USER AND THEIR ROLES
 INSERT INTO periodic_system.user_roles (user_id, user_role_id) VALUES (1, 1);
