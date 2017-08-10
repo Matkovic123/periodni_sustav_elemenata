@@ -1,10 +1,4 @@
 
-STORY: Quizes
-# design landing page to choose questions
-# add questions & answers to database
-# create quiz implementation, somehow
--------------------------------------------------------
-
 STORY: Sprint security
 # Add spring security/ login screen
 # Design Login page

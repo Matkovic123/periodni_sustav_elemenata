@@ -29,8 +29,6 @@ public class Question implements Serializable {
     @OneToMany(mappedBy = "question")
     List<Answer> answers = new ArrayList<>();
 
-    private Answer answer;
-
     public Question() {
     }
 

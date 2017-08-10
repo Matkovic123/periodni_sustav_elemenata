@@ -25,7 +25,8 @@ public class Answer implements Serializable {
     @JoinColumn(name = "QUESTION_ID", nullable = false, updatable = false)
     private Question question;
 
-    public Answer(){}
+    public Answer() {
+    }
 
     public Answer(String text, Boolean correct, Question question) {
         this.text = text;

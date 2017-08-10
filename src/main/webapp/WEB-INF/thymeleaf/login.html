@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+<th:block th:replace="fragments/header"/>
+<div class="container">
+    <div class="jumbotron vertical-center">
+        <div class="container">
+            <form method="POST" id="login" class="form-group">
+                <div class="form-group">
+                    <h4>User:</h4>
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Username"/>
+                </div>
+                <div class="form-group">
+                    <h4>Password:</h4>
+                    <input class="form-control" onclick="checkInput()" type='password' id="password" name='password' placeholder="Password"/>
+                </div>
+
+                <input class="btn btn-primary" name="submit" value="Login" type="submit" />
+                <input class="btn btn-danger" name="reset" type="reset" />
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
