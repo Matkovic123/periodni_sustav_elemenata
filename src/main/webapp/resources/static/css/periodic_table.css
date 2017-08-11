@@ -11,6 +11,9 @@ th{
 p{
     line-height: 200%;
 }
+a{
+    color:black !important;
+}
 
 .element-cell{
     border-radius: 15px;
@@ -19,13 +22,6 @@ p{
     text-align:center;
     vertical-align:middle;
     background-color: transparent;
-}
-.element-cell a{
-    color: #0f0f0f;
-}
-
-.element-cell a:hover{
-    color: #0f0f0f;
 }
 
 .filler-cell{
@@ -54,6 +50,8 @@ p{
 }
 .bordered-box:hover{
     border:1px solid lightgrey;
+    cursor: default;
+
 }
 .box-text{
     float:left;
