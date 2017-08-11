@@ -10,12 +10,12 @@ public class GlobalExceptionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     // --- VIEW NAMES ---------------------------------------------------------
-    public static final String PERIODIC_SYSTEM_REDIRECT = "redirect:/periodic_table";
-//
-//    @ExceptionHandler(Exception.class)
-//    public String handleException(Exception ex) {
-//        LOGGER.error("Caught Exception: ", ex);
-//        return "PERIODIC_SYSTEM_REDIRECT";
-//    }
+    public static final String PERIODIC_TABLE_REDIRECT = "redirect:/periodic_table";
+
+    @ExceptionHandler(Exception.class)
+    public String handleException(Exception ex) {
+        LOGGER.error("Caught Exception: ", ex);
+        return "PERIODIC_TABLE_REDIRECT";
+    }
 
 }

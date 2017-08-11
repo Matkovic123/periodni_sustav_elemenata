@@ -36,7 +36,7 @@ public class PeriodicTableController {
     @RequestMapping("periodic_table")
     public String showPeriodicTable(Model model) {
         model.addAttribute(CHEMICAL_ELEMENTS, chemicalElementService.findAll());
-        return "periodic_system";
+        return "periodic_table";
     }
 
     @GetMapping("/element/{atomicNumber}")

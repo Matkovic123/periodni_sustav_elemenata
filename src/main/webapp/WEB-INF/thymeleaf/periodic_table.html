@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link th:href="@{/resources/static/css/periodic_system.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/static/css/periodic_table.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/resources/static/js/periodic_table.js}"></script>
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -9,10 +10,11 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Periodic system of elements</h2>
+                <h2>Periodic table of elements</h2>
             </div>
             <div class="panel-body">
-                <div class="col-lg-12" id="periodic_system">
+                <div class="row">
+                    <div class="col-lg-12" id="periodic_table">
                     <table>
                         <tbody>
                         <tr>
@@ -37,7 +39,7 @@
                             <th>18</th>
                         </tr>
                         <tr id="period_1">
-                            <td class="period-number">1</td>
+                            <td class="period-number"><strong>1</strong></td>
                             <td class="element-cell diatomic-nonmetal" id="Hydrogen" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[0].atomicNumber})}" th:title="${chemicalElements[0].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[0].symbol}">Hydrogen</div>
@@ -49,37 +51,37 @@
 
                                 <div class="col-xs-6">
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('alkali-metal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box alkali-metal"></div>
                                             <span class="box-text">Alkali metals</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('alkaline-earth-metal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box alkaline-earth-metal"></div>
                                             <span class="box-text">Alkaline-earth metal</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('transition-metal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box transition-metal"></div>
                                             <span class="box-text">Transition metal</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('post-transition-metal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box post-transition-metal"></div>
                                             <span class="box-text">Post-transition metal</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('metalloid')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box metalloid"></div>
                                             <span class="box-text">Metalloid</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('polyatomic-nonmetal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box polyatomic-nonmetal"></div>
                                             <span class="box-text">Polyatomic nonmetal</span>
                                         </div>
@@ -87,38 +89,38 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('diatomic-nonmetal')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box diatomic-nonmetal"></div>
                                             <span class="box-text">Diatomic nonmetal</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('noble-gas')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box noble-gas"></div>
                                             <span class="box-text">Noble gas</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('lanthanide')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box lanthanide"></div>
                                             <span class="box-text">Lanthanide</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('actinide')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box actinide"></div>
                                             <span class="box-text">Actinides</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 bordered-box">
+                                        <div onmouseover="highlight('unknown-type')" onmouseleave="removeHighlight()" class="col-xs-12 bordered-box">
                                             <div class="color-box unknown-type"></div>
                                             <span class="box-text">Unknown chemical properties</span>
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td colspan="5" class="filler-cell"/>
+                            <td colspan="5" class="filler-cell"></td>
                             <td class="element-cell noble-gas" id="Helium">
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[1].atomicNumber})}" th:title="${chemicalElements[1].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[1].symbol}">Helium</div>
@@ -127,7 +129,7 @@
                             </td>
                         </tr>
                         <tr id="period_2">
-                            <td class="period-number">2</td>
+                            <td class="period-number"><strong>2</strong></td>
                             <td class="element-cell" th:classappend="${chemicalElements[2].type}" id="Lithium">
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[2].atomicNumber})}" th:title="${chemicalElements[2].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[2].symbol}">Lithium</div>
@@ -179,7 +181,7 @@
                         </tr>
 
                         <tr id="period_3">
-                            <td class="period-number">3</td>
+                            <td class="period-number"><strong>3</strong></td>
                             <td class="element-cell alkali-metal" id="Sodium" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[10].atomicNumber})}" th:title="${chemicalElements[10].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[10].symbol}">Sodium</div>
@@ -230,7 +232,7 @@
                             </td>
                         </tr>
                         <tr id="period_4">
-                            <td class="period-number">4</td>
+                            <td class="period-number"><strong>4</strong></td>
                             <td class="element-cell alkali-metal" id="Potassium" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[18].atomicNumber})}" th:title="${chemicalElements[18].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[18].symbol}">Potassium</div>
@@ -341,7 +343,7 @@
                             </td>
                         </tr>
                         <tr id="period_5">
-                            <td class="period-number">5</td>
+                            <td class="period-number"><strong>5</strong></td>
                             <td class="element-cell alkali-metal" id="Rubidium" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[36].atomicNumber})}" th:title="${chemicalElements[36].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[36].symbol}">Rubidium</div>
@@ -452,7 +454,7 @@
                             </td>
                         </tr>
                         <tr id="period_6">
-                            <td class="period-number">6</td>
+                            <td class="period-number"><strong>6</strong></td>
                             <td class="element-cell alkali-metal" id="Caesium">
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[54].atomicNumber})}" th:title="${chemicalElements[54].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[54].symbol}">Caesium</div>
@@ -564,7 +566,7 @@
                             </td>
                         </tr>
                         <tr id="period_7">
-                            <td class="period-number">7</td>
+                            <td class="period-number"><strong>7</strong></td>
                             <td class="element-cell alkali-metal" id="Francium">
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[86].atomicNumber})}" th:title="${chemicalElements[86].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[86].symbol}">Francium</div>
@@ -672,7 +674,7 @@
                         </tr>
                         <tr><td><br/></td></tr>
                         <tr id="lanthanides">
-                            <td colspan="3" class="filler-cell">Lanthanides</td>
+                            <td colspan="3" class="filler-cell"><strong>Lanthanides</strong></td>
                             <td class="element-cell lanthanide" id="Cerium" >
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[57].atomicNumber})}" th:title="${chemicalElements[57].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[57].symbol}">Cerium</div>
@@ -759,7 +761,7 @@
                             </td>
                         </tr>
                         <tr id="actinide">
-                            <td colspan="3" class="filler-cell">Actinides</td>
+                            <td colspan="3" class="filler-cell"><strong>Actinides</strong></td>
                             <td class="element-cell actinide" id="Thorium">
                                 <a  th:href="@{/element/{atomicNumber}(atomicNumber=${chemicalElements[89].atomicNumber})}" th:title="${chemicalElements[89].name}">
                                     <div class="bottom-buffer-small" th:text="${chemicalElements[89].symbol}">Thorium</div>
@@ -847,6 +849,81 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-lg-12">
+                        <p>The <strong>periodic table</strong> is a tabular arrangement of the <strong>chemical
+                            elements</strong> , ordered by their atomic
+                            number (number of protons), electron configurations, and recurring chemical properties. This
+                            ordering shows periodic trends, such as elements with <strong>similar behaviour in the same
+                                column.</strong>
+                            It also shows four rectangular blocks with some approximately similar chemical properties.
+                            In general, within one row (period) the elements are metals on the left, and non-metals on
+                            the right.
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row top-buffer">
+                    <div class="col-lg-12">
+                        <p>The rows of the table are called <strong>periods</strong>; the columns are called
+                            <strong>groups.</strong> Six groups have
+                            names as well as numbers: for example, group 17 elements are the halogens; and group 18, the
+                            noble gases. The periodic table can be used to derive relationships between the properties
+                            of the elements, and predict the properties of new elements yet to be discovered or
+                            synthesized. The periodic table provides a useful framework for analyzing chemical
+                            behaviour, and is widely used in chemistry and other sciences.
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row top-buffer">
+                    <div class="col-lg-4">
+                        <img  src="resources/images/Dmitri_Mendeleev.jpg" title="Dmitri Mendeleev"/>
+                        <a target="_blank" href="https://sites.google.com/a/hinsdale86.org/chemistry-dmitri-mendeleev/dmitri-mendeleev">
+                            <small>Source</small>
+                        </a>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <p>The Russian chemist <strong>Dmitri Mendeleev (1834-1907) </strong> published the first widely
+                            recognized periodic table in
+                            <strong>1869</strong>. He developed his table to illustrate periodic trends in the
+                            properties of the
+                            then-known elements. Mendeleev also predicted some properties of then-unknown elements that
+                            would be expected to fill gaps in this table. Most of his predictions were proved correct
+                            when the elements in question were subsequently discovered. Mendeleev's periodic table has
+                            since been expanded and refined with the discovery or synthesis of further new elements and
+                            the development of new theoretical models to explain chemical behaviour.
+                        </p>
+                        <h4>How the discovery was made:</h4>
+                        <ul>
+                            <li>Mendeleev wrote all 65 known elements on note cards (properties and atomic weights)</li>
+                            <li>He fell asleep while trying to put cards in the "right" order</li>
+                            <li>When he woke up, the elements were "magically" organized (he had done it in his sleep)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row top-buffer">
+                    <div class="col-lg-12">
+                        <p>All elements from atomic numbers 1 (hydrogen) to 118 (oganesson) have been discovered or
+                            synthesized, with the most recent additions (nihonium, moscovium, tennessine, and oganesson)
+                            being confirmed by the <strong>International Union of Pure and Applied Chemistry
+                                (IUPAC)</strong> in 2015 and
+                            officially named in 2016: they complete the first seven rows of the periodic table.[1][2]
+                            The first 94 elements exist naturally, although some are found only in trace amounts and
+                            were synthesized in laboratories before being found in nature. Elements with atomic
+                            numbers from 95 to 118 have only been synthesized in laboratories or nuclear reactors.
+                            Synthesis of elements having higher atomic numbers is being pursued. Numerous synthetic
+                            radionuclides of naturally occurring elements have also been produced in laboratories.
+                        </p>
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Periodic_table">
+                            <small>Source</small>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

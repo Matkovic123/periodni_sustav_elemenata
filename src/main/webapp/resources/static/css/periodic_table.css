@@ -8,6 +8,9 @@ th{
     background-color: white !important;
     text-align: center !important;
 }
+p{
+    line-height: 200%;
+}
 
 .element-cell{
     border-radius: 15px;

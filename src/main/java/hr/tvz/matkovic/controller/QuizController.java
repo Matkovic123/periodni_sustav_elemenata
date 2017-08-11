@@ -13,7 +13,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.*;
 
-import static hr.tvz.matkovic.controller.HomeController.PERIODIC_SYSTEM_REDIRECT;
+import static hr.tvz.matkovic.controller.HomeController.PERIODIC_TABLE_REDIRECT;
 
 @Controller
 @RequestMapping("/quiz")
@@ -137,6 +137,6 @@ public class QuizController {
     @RequestMapping("/cleanSession")
     public String cleanSession(SessionStatus status) {
         status.setComplete();
-        return PERIODIC_SYSTEM_REDIRECT;
+        return PERIODIC_TABLE_REDIRECT;
     }
 }

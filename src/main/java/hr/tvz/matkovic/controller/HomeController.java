@@ -12,11 +12,11 @@ import org.springframework.web.bind.support.SessionStatus;
 public class HomeController {
 
     // --- VIEW NAMES ---------------------------------------------------------
-    public static final String PERIODIC_SYSTEM_REDIRECT = "redirect:/periodic_table";
+    public static final String PERIODIC_TABLE_REDIRECT = "redirect:/periodic_table";
 
     @RequestMapping("/")
     public String home(){
-        return PERIODIC_SYSTEM_REDIRECT;
+        return PERIODIC_TABLE_REDIRECT;
     }
 
     @RequestMapping("/login")

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link th:href="@{/resources/static/css/element_details.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/resources/static/css/periodic_system.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/static/css/periodic_table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <th:block th:replace="fragments/header"/>
@@ -39,7 +39,7 @@
                             <p th:text="${chemicalElement.electronConfiguration}">electronConfiguration</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
-                            <h3><i class="fa fa-balance-scale"></i> Atomic Mass</h3>
+                            <h3><i class="fa fa-balance-scale"></i>Relative Atomic Mass</h3>
                             <p th:text="${chemicalElement.atomicMass}">atomicMass</p>
                         </div>
                         <div class="details-box" th:classappend="${chemicalElement.type}">
