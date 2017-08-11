@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -13,9 +14,11 @@ public class GlobalExceptionHandler {
     public static final String PERIODIC_TABLE_REDIRECT = "redirect:/periodic_table";
 
     @ExceptionHandler(Exception.class)
-    public String handleException(Exception ex) {
+    public ModelAndView handleException(Exception ex) {
         LOGGER.error("Caught Exception: ", ex);
-        return "PERIODIC_TABLE_REDIRECT";
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exceptionClass", ex.getClass());
+        mav.setViewName("redirect:/");
+        return mav;
     }
-
 }
