@@ -7,19 +7,19 @@
     transition: all 0.5s ease;
 }
 
-#quiz1-btn {
+.quiz-difficulty-1{
     background-color: #cdecd2;
 }
 
-#quiz2-btn {
+.quiz-difficulty-2{
     background-color: #bfebfb;
 }
 
-#quiz3-btn {
+.quiz-difficulty-3{
     background-color: #fbc584;
 }
 
-#quiz4-btn {
+.quiz-difficulty-4{
     background-color: #f9b4b7;
 }
 

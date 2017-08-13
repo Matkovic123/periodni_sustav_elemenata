@@ -18,7 +18,7 @@
                             <div class="row top-buffer">
                                 <div class="col-lg-6">
                                     <a th:href="@{/quiz/{quizId}/1(quizId = *{quiz.id})}" class="btn btn-lg btn-block"
-                                       id="quiz1-btn">
+                                    th:classappend="*{'quiz-difficulty-'+quiz.difficulty}">
                                         <h4 th:text="*{'Quiz Nr. '+quiz.id +' : ' + quiz.name}">Start Quiz</h4>
                                     </a>
                                 </div>
@@ -30,7 +30,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

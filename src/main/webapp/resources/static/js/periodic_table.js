@@ -1,4 +1,3 @@
-
 function highlight(elementType){
     var allElements = document.getElementsByClassName('element-cell');
     var i;
