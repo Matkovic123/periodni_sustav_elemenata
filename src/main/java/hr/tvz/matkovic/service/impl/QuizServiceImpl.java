@@ -22,4 +22,9 @@ public class QuizServiceImpl implements QuizService {
 
         return quizRepository.findAllByOrderByDifficultyAsc();
     }
+
+    @Override
+    public Quiz findOne(Long quizId) {
+        return quizRepository.findOne(quizId);
+    }
 }

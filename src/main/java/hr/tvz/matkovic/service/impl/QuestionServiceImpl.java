@@ -1,6 +1,7 @@
 package hr.tvz.matkovic.service.impl;
 
 import hr.tvz.matkovic.model.Question;
+import hr.tvz.matkovic.model.Quiz;
 import hr.tvz.matkovic.repository.QuestionRepository;
 import hr.tvz.matkovic.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,9 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Question> findAllByDifficulty(Integer difficulty) {
-        return questionRepository.findAllByDifficulty(difficulty);
+    public List<Question> findAllByQuiz(Quiz quiz) {
+        return questionRepository.findAllByQuiz(quiz);
     }
+
+
 }

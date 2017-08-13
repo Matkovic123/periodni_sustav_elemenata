@@ -10,4 +10,6 @@ import java.util.List;
 public interface QuizService {
 
     List<Quiz> findAllOrderByDifficulty();
+
+    Quiz findOne(Long quizId);
 }

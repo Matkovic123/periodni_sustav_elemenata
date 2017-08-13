@@ -2,6 +2,7 @@ package hr.tvz.matkovic.controller;
 
 import hr.tvz.matkovic.model.Answer;
 import hr.tvz.matkovic.model.Question;
+import hr.tvz.matkovic.model.Quiz;
 import hr.tvz.matkovic.model.UserAnswer;
 import hr.tvz.matkovic.service.AnswerService;
 import hr.tvz.matkovic.service.QuestionService;
@@ -32,6 +33,12 @@ public class QuizController {
     private static final String CORRECT_ANSWERS = "correctAnswers";
     private static final String QUIZES = "quizes";
 
+    // --- VIEWS  -------------------------------------------------------------
+    private static final String QUIZ_START_VIEW = "quiz_start";
+    private static final String QUIZ_QUESTION_VIEW = "quiz_question";
+    private static final String QUIZ_RESULTS_VIEW = "quiz_results";
+    private static final String PERIODIC_TABLE_VIEW = "periodic_table";
+
 
     @ModelAttribute("sessionQuestionsAndAnswers")
     public Map<Long, Long> getSessionQuestionsAndAnswers() {
@@ -61,16 +68,17 @@ public class QuizController {
 
         model.addAttribute(QUIZES, quizService.findAllOrderByDifficulty());
 
-        return "quiz_start";
+        return QUIZ_START_VIEW;
     }
 
 
-    @GetMapping("/{difficulty}/{questionNr}")
-    public String quizQuestions(@PathVariable(value = "difficulty") final Integer difficulty,
+    @GetMapping("/{quizId}/{questionNr}")
+    public String quizQuestions(@PathVariable(value = "quizId") final Long quizId,
                                 @PathVariable(value = "questionNr") Integer questionNr,
                                 @SessionAttribute Map<Long,Long> sessionQuestionsAndAnswers,
                                 Model model) {
-        List<Question> questions = questionService.findAllByDifficulty(difficulty);
+        Quiz quiz = quizService.findOne(quizId);
+        List<Question> questions = questionService.findAllByQuiz(quiz);
         Question question = questions.get(questionNr - 1);
         List<Answer> answers = question.getAnswers();
         Collections.shuffle(answers);
@@ -89,17 +97,18 @@ public class QuizController {
         model.addAttribute(LAST_QUESTION, lastQuestion);
 
 
-        return "quiz_question";
+        return QUIZ_QUESTION_VIEW;
     }
 
-    @PostMapping("/{difficulty}/{questionNr}")
-    public String checkAnswer(@PathVariable(value = "difficulty") final Integer difficulty,
+    @PostMapping("/{quizId}/{questionNr}")
+    public String checkAnswer(@PathVariable(value = "quizId") final Long quizId,
                               @PathVariable(value = "questionNr") Integer questionNr,
                               @SessionAttribute Map<Long, Long> sessionQuestionsAndAnswers,
                               @ModelAttribute UserAnswer userAnswer,
                               Model model,
                               SessionStatus status) {
-        List<Question> questions = questionService.findAllByDifficulty(difficulty);
+        Quiz quiz = quizService.findOne(quizId);
+        List<Question> questions = questionService.findAllByQuiz(quiz);
 
         sessionQuestionsAndAnswers.put(questions.get(questionNr - 1).getId(), userAnswer.getAnswerId());
 
@@ -120,7 +129,7 @@ public class QuizController {
             model.addAttribute(TOTAL_NR_OF_QUESTIONS, questions.size());
             model.addAttribute(CORRECT_ANSWERS, rightAnswers);
             status.setComplete();
-            return "quiz_results";
+            return QUIZ_RESULTS_VIEW;
         }
 
 
@@ -138,7 +147,7 @@ public class QuizController {
         model.addAttribute(NEXT_QUESTION_NR, ++questionNr);
         model.addAttribute(LAST_QUESTION, lastQuestion);
 
-        return "redirect:/quiz/" + difficulty + "/" + questionNr;
+        return "redirect:/quiz/" + quizId + "/" + questionNr;
     }
 
     @RequestMapping("/cleanSession")

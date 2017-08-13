@@ -23,9 +23,6 @@ public class Question implements Serializable {
     @Column(name = "TEXT")
     private String text;
 
-    @Column(name = "DIFFICULTY")
-    private Integer difficulty;
-
     @OneToMany(mappedBy = "question")
     private List<Answer> answers = new ArrayList<>();
 
@@ -54,14 +51,6 @@ public class Question implements Serializable {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public Integer getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(Integer difficulty) {
-        this.difficulty = difficulty;
     }
 
     public Integer getNumber() {

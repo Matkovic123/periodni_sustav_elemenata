@@ -9,7 +9,7 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h1 th:text="${'Quiz ' + question.difficulty + ', Question '+ question.number}">Quiz difficulty</h1>
+                <h1 th:text="${'Quiz ' + question.quiz.difficulty + ', Question '+ question.number}">Quiz difficulty</h1>
                 <hr/>
                 <form th:object="${userAnswer}" id="quizForm" class="form-group" method="POST">
                     <h3 th:text="${question.text}">Question</h3>

@@ -23,7 +23,9 @@ public class PeriodicTableController {
     private static final String BOILING_POINT_IN_F = "boilingPointInF";
     private static final String MELTING_POINT_IN_F = "meltingPointInF";
 
-
+    // --- VIEWS  -------------------------------------------------------------
+    private static final String PERIODIC_TABLE_VIEW = "periodic_table";
+    private static final String ELEMENT_DETAIL_VIEW = "element_details";
 
 
     // --- SERVICES -----------------------------------------------------------
@@ -36,7 +38,7 @@ public class PeriodicTableController {
     @RequestMapping("periodic_table")
     public String showPeriodicTable(Model model) {
         model.addAttribute(CHEMICAL_ELEMENTS, chemicalElementService.findAll());
-        return "periodic_table";
+        return PERIODIC_TABLE_VIEW;
     }
 
     @GetMapping("/element/{atomicNumber}")
@@ -46,6 +48,6 @@ public class PeriodicTableController {
 
         model.addAttribute(CHEMICAL_ELEMENT, chemicalElement);
         model.addAttribute(KEY_ISOTOPES, keyIsotopeRepository.findAllByChemicalElement(chemicalElement));
-        return "element_details";
+        return ELEMENT_DETAIL_VIEW;
     }
 }

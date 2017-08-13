@@ -15,6 +15,7 @@
                     </ul>
                 </div>
                 <ul class="nav navbar-nav navbar-right pull-right">
+                    <li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin}">Admin panel</a></li>
                     <li sec:authorize="isAnonymous()"><a th:href="@{/login}">Login</a></li>
                     <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
 
