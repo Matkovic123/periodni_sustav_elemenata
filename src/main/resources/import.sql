@@ -913,6 +913,20 @@ VALUES
 INSERT INTO periodic_system.key_isotope (symbol, chemical_element_atomic_number)
 VALUES (U&'\00B2\2079\2074Og', 118);
 
+--QUIZES
+INSERT INTO periodic_system.quiz (description, difficulty, name)
+VALUES ('The easiest quiz. Shouldn''t be hard even without revising.', 1, 'Beginner''s quiz');
+
+INSERT INTO periodic_system.quiz (description, difficulty, name)
+VALUES ('A bit more complex. Some of the basic things learned in a high school.', 2, 'Highschool 101');
+
+INSERT INTO periodic_system.quiz (description, difficulty, name)
+VALUES ('Quite a challenge if you are not versatile with chemistry knowledge!', 3, 'Almost a pro');
+
+INSERT INTO periodic_system.quiz (description, difficulty, name)
+VALUES ('The hardest quiz regarding high school chemistry content! Good luck!', 4, 'Brainiac');
+
+
 --QUESTIONS & ANSWERS
 
 --DIFFICULTY 1

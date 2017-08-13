@@ -27,7 +27,11 @@ public class Question implements Serializable {
     private Integer difficulty;
 
     @OneToMany(mappedBy = "question")
-    List<Answer> answers = new ArrayList<>();
+    private List<Answer> answers = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "QUIZ_ID")
+    private Quiz quiz;
 
     public Question() {
     }
@@ -76,6 +80,14 @@ public class Question implements Serializable {
         this.answers = answers;
     }
 
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
     public Answer getCorrectAnswer() {
         for (Answer answer : answers) {
             if (answer.getCorrect())
@@ -83,4 +95,6 @@ public class Question implements Serializable {
         }
         return null;
     }
+
+
 }

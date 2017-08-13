@@ -51,8 +51,7 @@ public class QuizController {
     // --- MAPPINGS -----------------------------------------------------------
     @GetMapping({"/", "/start"})
     public String quizSelection(Model model) {
-        UserAnswer userAnswer = new UserAnswer();
-        model.addAttribute(USER_ANSWER, userAnswer);
+
 
         return "quiz_start";
     }
