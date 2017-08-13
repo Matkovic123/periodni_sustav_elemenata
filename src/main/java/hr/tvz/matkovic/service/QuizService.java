@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface QuizService {
 
-    List<Quiz> findAllOrederedByDifficulty(Integer difficulty);
+    List<Quiz> findAllOrderByDifficulty();
 }

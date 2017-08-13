@@ -5,6 +5,7 @@ import hr.tvz.matkovic.model.Question;
 import hr.tvz.matkovic.model.UserAnswer;
 import hr.tvz.matkovic.service.AnswerService;
 import hr.tvz.matkovic.service.QuestionService;
+import hr.tvz.matkovic.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,8 @@ public class QuizController {
     private static final String USER_ANSWERS = "userAnswers";
     private static final String TOTAL_NR_OF_QUESTIONS = "totalNrOfQuestions";
     private static final String CORRECT_ANSWERS = "correctAnswers";
+    private static final String QUIZES = "quizes";
+
 
     @ModelAttribute("sessionQuestionsAndAnswers")
     public Map<Long, Long> getSessionQuestionsAndAnswers() {
@@ -42,6 +45,10 @@ public class QuizController {
 
 
     // --- SERVICES -----------------------------------------------------------
+
+    @Autowired
+    private QuizService quizService;
+
     @Autowired
     private QuestionService questionService;
 
@@ -52,6 +59,7 @@ public class QuizController {
     @GetMapping({"/", "/start"})
     public String quizSelection(Model model) {
 
+        model.addAttribute(QUIZES, quizService.findAllOrderByDifficulty());
 
         return "quiz_start";
     }

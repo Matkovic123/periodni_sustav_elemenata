@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link th:href="@{/resources/static/css/quiz.css}" rel="stylesheet" type="text/css"/>
 </head>
@@ -14,64 +14,23 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="row top-buffer">
-                            <div class="col-lg-6" >
-                                <a th:href="@{/quiz/1/1}" class="btn btn-lg btn-block" id="quiz1-btn">
-                                    <h4>Start Quiz 1</h4>
-                                </a>
-                            </div>
-                            <div class="col-lg-6" >
-                                <p class="well">
-                                    The easiest quiz. Shouldn't be hard even without revising.
-                                </p>
+                        <div th:each="quiz : ${quizes}">
+                            <div class="row top-buffer">
+                                <div class="col-lg-6">
+                                    <a th:href="@{/quiz/{quizId}/1(quizId = *{quiz.id})}" class="btn btn-lg btn-block"
+                                       id="quiz1-btn">
+                                        <h4 th:text="*{'Quiz Nr. '+quiz.id +' : ' + quiz.name}">Start Quiz</h4>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p th:text="*{quiz.description}" class="well">
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <!--<div class="row top-buffer">-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<a th:href="@{/quiz/2/1}">-->
-                                    <!--<div class="btn btn-lg  btn-block" id="quiz2-btn">-->
-                                        <!--<h4>Start Quiz 2</h4>-->
-                                    <!--</div>-->
-                                <!--</a>-->
-                            <!--</div>-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<p class="well">-->
-                                    <!--A bit more complex. Some of the basic things learned in a high school.-->
-                                <!--</p>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-                        <!--<div class="row top-buffer">-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<a th:href="@{/quiz/3/1}">-->
-                                    <!--<div class="btn btn-lg  btn-block" id="quiz3-btn">-->
-                                        <!--<h4>Start Quiz 3</h4>-->
-                                    <!--</div>-->
-                                <!--</a>-->
-                            <!--</div>-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<p  class="well">-->
-                                    <!--Quite a challenge if you are not versatile with chemistry knowledge!-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="row top-buffer">-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<a th:href="@{/quiz/4/1}">-->
-                                    <!--<div class="btn btn-lg  btn-block" id="quiz4-btn">-->
-                                        <!--<h4>Start Quiz 4</h4>-->
-                                    <!--</div>-->
-                                <!--</a>-->
-                            <!--</div>-->
-                            <!--<div class="col-lg-6">-->
-                                <!--<p  class="well">-->
-                                    <!--The hardest quiz regarding high school chemistry content! Good luck!-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
