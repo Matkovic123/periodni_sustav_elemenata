@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,10 +28,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests().antMatchers("/*","/resources/**", "/login**", "/element/*").permitAll()
-                .anyRequest().permitAll()
-                .and()
-                .authorizeRequests().antMatchers("/quiz/*").authenticated()
+                .authorizeRequests()
+                .antMatchers("/","/periodic_table**", "/login**", "/element/**").permitAll()
+                .antMatchers("/quiz/**").hasRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
@@ -42,12 +43,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .permitAll();
-        httpSecurity.csrf().disable();
+                .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/")
+                .and()
+                .csrf().disable();
     }
 
-    @Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth)
+    @Override
+    public void configure(AuthenticationManagerBuilder auth)
             throws Exception {
 
         auth.jdbcAuthentication().dataSource(dataSource)
@@ -57,6 +61,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "INNER JOIN periodic_system.user_roles as user_roles on user_role.id=user_roles.user_role_id\n" +
                         "INNER JOIN periodic_system.user as userr on  user_roles.user_id = userr.id where username=?");
     }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web
+                .ignoring()
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+    }
+
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

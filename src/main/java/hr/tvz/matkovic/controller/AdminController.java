@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.security.RolesAllowed;
-
 /**
  * Created by tmatkovic on 13.8.2017..
  */
@@ -17,9 +15,9 @@ public class AdminController {
     // --- VIEWS  -------------------------------------------------------------
     private static final String ADD_QUIZ_VIEW = "add_quiz";
 
-//    @RolesAllowed("ROLE_ADMIN")
+
     @GetMapping("/add_quiz")
-    public String adminQuizPanel(){
+    public String adminQuizPanel() {
 
         return ADD_QUIZ_VIEW;
     }
