@@ -12,4 +12,6 @@ public interface QuestionService {
     Question findOne(Long id);
 
     List<Question> findAllByQuiz(Quiz quiz);
+
+    void save(Question question);
 }

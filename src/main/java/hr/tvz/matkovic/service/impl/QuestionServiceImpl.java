@@ -30,5 +30,10 @@ public class QuestionServiceImpl implements QuestionService {
         return questionRepository.findAllByQuiz(quiz);
     }
 
+    @Override
+    public void save(Question question) {
+        questionRepository.save(question);
+    }
+
 
 }

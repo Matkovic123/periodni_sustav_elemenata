@@ -10,10 +10,20 @@ import java.util.List;
  */
 public class NewQuestionForm implements Serializable {
 
-    @Size(min = 5, max = 512)
+    @Size(min = 5, max = 250)
     private String text;
 
-    private List<String> answersText = new ArrayList<>();
+    @Size(min = 5, max = 150)
+    private String correctAnswer;
+
+    @Size(min = 5, max = 150)
+    private String wrongAnswer1;
+
+    @Size(min = 5, max = 150)
+    private String wrongAnswer2;
+
+    @Size(min = 5, max = 150)
+    private String wrongAnswer3;
 
 
     public String getText() {
@@ -24,11 +34,35 @@ public class NewQuestionForm implements Serializable {
         this.text = text;
     }
 
-    public List<String> getAnswersText() {
-        return answersText;
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 
-    public void setAnswersText(List<String> answersText) {
-        this.answersText = answersText;
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    public String getWrongAnswer1() {
+        return wrongAnswer1;
+    }
+
+    public void setWrongAnswer1(String wrongAnswer1) {
+        this.wrongAnswer1 = wrongAnswer1;
+    }
+
+    public String getWrongAnswer2() {
+        return wrongAnswer2;
+    }
+
+    public void setWrongAnswer2(String wrongAnswer2) {
+        this.wrongAnswer2 = wrongAnswer2;
+    }
+
+    public String getWrongAnswer3() {
+        return wrongAnswer3;
+    }
+
+    public void setWrongAnswer3(String wrongAnswer3) {
+        this.wrongAnswer3 = wrongAnswer3;
     }
 }

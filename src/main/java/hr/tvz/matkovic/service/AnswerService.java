@@ -12,5 +12,8 @@ public interface AnswerService {
     Answer findOne(Long id);
 
     List<Answer> findAllByQuestion(Question question);
+
     List<Answer> findAllByQuestion_Id(Long id);
+
+    void save(Answer answer);
 }

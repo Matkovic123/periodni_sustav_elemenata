@@ -19,28 +19,32 @@
                             <div class="form-group">
                                 <label for="questionName">Question: </label>
                                 <input th:field="*{text}" type="text" class="form-control" id="questionName"
-                                       placeholder="Max 50 characters"/>
+                                       placeholder="Max 250 characters"/>
                             </div>
                             <h3>Answers: </h3>
                             <div class="form-group">
-                                <label for="questionName">Question: </label>
-                                <input th:name="*{answersText[]}" value="correctAnswer" type="text" class="form-control" id="correctAnswer"
-                                       placeholder="Max 50 characters"/>
-                            </div><div class="form-group">
-                            <!--<label for="questionName">Question: </label>-->
-                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
-                                   <!--placeholder="Max 50 characters"/>-->
-                        <!--</div><div class="form-group">-->
-                            <!--<label for="questionName">Question: </label>-->
-                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
-                                   <!--placeholder="Max 50 characters"/>-->
-                        <!--</div><div class="form-group">-->
-                            <!--<label for="questionName">Question: </label>-->
-                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
-                                   <!--placeholder="Max 50 characters"/>-->
+                                <label for="correctAnswer">Correct answer: </label>
+                                <input th:field="*{correctAnswer}" type="text" class="form-control" id="correctAnswer"
+                                       placeholder="Max 150 characters"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wrongAnswer1">Wrong answer: </label>
+                                <input th:field="*{wrongAnswer1}" type="text" class="form-control" id="wrongAnswer1"
+                                       placeholder="Max 150 characters"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wrongAnswer2">Wrong answer: </label>
+                                <input th:field="*{wrongAnswer2}" type="text" class="form-control" id="wrongAnswer2"
+                                       placeholder="Max 150 characters"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wrongAnswer3">Wrong answer: </label>
+                                <input th:field="*{wrongAnswer3}" type="text" class="form-control" id="wrongAnswer3"
+                                       placeholder="Max 150 characters"/>
+                            </div>
+
                         </div>
-                            <button type="submit" class="btn btn-primary"> Submit </button>
-                        </div>
+                        <button type="submit" class="btn btn-primary"> Submit</button>
                     </div>
                 </form>
             </div>

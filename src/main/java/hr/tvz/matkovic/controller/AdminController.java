@@ -3,6 +3,7 @@ package hr.tvz.matkovic.controller;
 import hr.tvz.matkovic.model.Quiz;
 import hr.tvz.matkovic.model.form.NewQuestionForm;
 import hr.tvz.matkovic.model.form.NewQuizForm;
+import hr.tvz.matkovic.service.AnswerService;
 import hr.tvz.matkovic.service.QuestionService;
 import hr.tvz.matkovic.service.QuizService;
 import org.slf4j.Logger;
@@ -35,6 +36,7 @@ public class AdminController {
     private static final String QUIZ_NOT_SAVED_MESSAGE = "Could not save new quiz data, please try again.";
     private static final String QUIZ_ID = "quizId";
     private static final String QUESTION_ID = "questionId";
+    private static final String USER_ANSWERS = "userAnswers";
 
 
     // --- SERVICES -----------------------------------------------------------
@@ -45,6 +47,8 @@ public class AdminController {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private AnswerService answerService;
 
     @GetMapping("/add_quiz")
     public String createNewQuiz(Model model) {
@@ -85,6 +89,20 @@ public class AdminController {
 
 
         return ADD_QUESTION_VIEW;
+    }
+
+    @PostMapping("/{quizId}/add_question")
+    public String storeQuestionAndAnswers(@PathVariable(value = "quizId") Long quizId,
+                                          @ModelAttribute(value = NEW_QUESTION_FORM) NewQuestionForm newQuestionForm,
+                                          Model model,
+                                          RedirectAttributes redirectAttributes) {
+
+
+
+
+
+
+        return "redirect:/admin/" + quizId + "/add_question";
     }
 
 }

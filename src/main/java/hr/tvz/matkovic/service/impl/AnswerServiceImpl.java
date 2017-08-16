@@ -36,4 +36,9 @@ public class AnswerServiceImpl implements AnswerService{
         return answerRepository.findAllByQuestion_Id(id);
     }
 
+    @Override
+    public void save(Answer answer) {
+        answerRepository.save(answer);
+    }
+
 }
