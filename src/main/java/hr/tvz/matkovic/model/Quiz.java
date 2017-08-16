@@ -12,7 +12,8 @@ import java.util.List;
 public class Quiz implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "QUIZ_SEQUENCE", sequenceName = "QUIZ_SEQUENCE")
     private Long id;
 
     @Column(name = "NAME", nullable = false)
@@ -30,11 +31,10 @@ public class Quiz implements Serializable {
     public Quiz() {
     }
 
-    public Quiz(String name, Integer difficulty, String description, List<Question> questions) {
+    public Quiz(String name, Integer difficulty, String description) {
         this.name = name;
         this.difficulty = difficulty;
         this.description = description;
-        this.questions = questions;
     }
 
     public Long getId() {

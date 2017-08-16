@@ -27,4 +27,9 @@ public class QuizServiceImpl implements QuizService {
     public Quiz findOne(Long quizId) {
         return quizRepository.findOne(quizId);
     }
+
+    @Override
+    public void save(Quiz quiz) {
+        quizRepository.save(quiz);
+    }
 }

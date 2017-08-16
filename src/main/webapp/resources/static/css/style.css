@@ -23,3 +23,7 @@ img{
 .top-buffer-small{
     margin-top: 15px;
 }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

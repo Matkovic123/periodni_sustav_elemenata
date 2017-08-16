@@ -44,10 +44,5 @@ public class NewQuizForm implements Serializable{
         this.difficulty = difficulty;
     }
 
-    public NewQuizForm(String name, String description, Integer difficulty) {
-
-        this.name = name;
-        this.description = description;
-        this.difficulty = difficulty;
-    }
+    public NewQuizForm() {}
 }

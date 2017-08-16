@@ -12,4 +12,6 @@ public interface QuizService {
     List<Quiz> findAllOrderByDifficulty();
 
     Quiz findOne(Long quizId);
+
+    void save(Quiz quiz);
 }
