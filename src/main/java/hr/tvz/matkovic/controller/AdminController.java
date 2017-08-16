@@ -1,7 +1,7 @@
 package hr.tvz.matkovic.controller;
 
-import hr.tvz.matkovic.exception.GlobalExceptionHandler;
 import hr.tvz.matkovic.model.Quiz;
+import hr.tvz.matkovic.model.form.NewQuestionForm;
 import hr.tvz.matkovic.model.form.NewQuizForm;
 import hr.tvz.matkovic.service.QuestionService;
 import hr.tvz.matkovic.service.QuizService;
@@ -10,13 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.validation.Valid;
 
 /**
  * Created by tmatkovic on 13.8.2017..
@@ -38,6 +33,8 @@ public class AdminController {
     private static final String NEW_QUESTION_FORM = "newQuestionForm";
     private static final String MESSAGE = "message";
     private static final String QUIZ_NOT_SAVED_MESSAGE = "Could not save new quiz data, please try again.";
+    private static final String QUIZ_ID = "quizId";
+    private static final String QUESTION_ID = "questionId";
 
 
     // --- SERVICES -----------------------------------------------------------
@@ -50,7 +47,7 @@ public class AdminController {
 
 
     @GetMapping("/add_quiz")
-    public String adminQuizPanel(Model model) {
+    public String createNewQuiz(Model model) {
         NewQuizForm newQuizForm = new NewQuizForm();
 
         model.addAttribute(NEW_QUIZ_FORM, newQuizForm);
@@ -59,24 +56,35 @@ public class AdminController {
     }
 
     @PostMapping("/add_quiz")
-    public String saveQuizAndRenderQuestionsForm(@Valid @ModelAttribute(value = NEW_QUIZ_FORM) NewQuizForm newQuizForm,
+    public String saveQuizAndRenderQuestionsForm(@ModelAttribute(value = NEW_QUIZ_FORM) NewQuizForm newQuizForm,
                                                  Model model,
-                                                 RedirectAttributes redirectAttributes){
-        String name= newQuizForm.getName();
+                                                 RedirectAttributes redirectAttributes) {
+
+        String name = newQuizForm.getName();
         String description = newQuizForm.getDescription();
         Integer difficulty = newQuizForm.getDifficulty();
 
-        Quiz quiz = new Quiz(name,difficulty,description);
-        try{
+        Quiz quiz = new Quiz(name, difficulty, description);
+        try {
             quizService.save(quiz);
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             LOGGER.debug("Could not save new quiz to database. Exception:", ex);
-            redirectAttributes.addFlashAttribute(MESSAGE,QUIZ_NOT_SAVED_MESSAGE);
-            return "redirect:/add_quiz";
+            redirectAttributes.addFlashAttribute(MESSAGE, QUIZ_NOT_SAVED_MESSAGE);
+            return "redirect:/admin/add_quiz";
         }
 
-        return "/add_questions";
+        return "redirect:/admin/" + quiz.getId() + "/add_question";
+    }
+
+    @GetMapping("/{quizId}/add_question")
+    public String addQuestionAndAnswers(@PathVariable(value = "quizId") Long quizId, Model model) {
+
+        NewQuestionForm newQuestionForm = new NewQuestionForm();
+
+        model.addAttribute(NEW_QUESTION_FORM, newQuestionForm);
+
+
+        return ADD_QUESTION_VIEW;
     }
 
 }

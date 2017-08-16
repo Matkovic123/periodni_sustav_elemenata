@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link th:href="@{/resources/static/css/element_details.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/resources/static/css/periodic_table.css}" rel="stylesheet" type="text/css"/>
-</head>
+<head></head>
 <body>
 <th:block th:replace="fragments/header"/>
 <div class="container">
@@ -16,31 +13,33 @@
                 <h3>Add a new Quiz</h3>
             </div>
             <div class="panel-body">
-                <form method="post" th:object="${newQuizForm}">
+                <form th:object="${newQuestionForm}" method="post">
                     <div class="row">
                         <div class="col-lg-6 col-centered">
                             <div class="form-group">
-                                <label for="quizName">Quiz name: </label>
-                                <input th:field="*{name}" type="text" class="form-control" id="quizName"
+                                <label for="questionName">Question: </label>
+                                <input th:field="*{text}" type="text" class="form-control" id="questionName"
                                        placeholder="Max 50 characters"/>
                             </div>
+                            <h3>Answers: </h3>
                             <div class="form-group">
-                                <label for="quizDescription">Quiz description: </label>
-                                <input th:field="*{description}" type="text" class="form-control" id="quizDescription"
-                                       placeholder="Max 250 characters"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="quizDifficulty">Quiz difficulty: </label>
-                                <select th:field="*{difficulty}" class="form-control" id="quizDifficulty">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Add questions <i
-                                    class="fa fa-arrow-right"></i>
-                            </button>
+                                <label for="questionName">Question: </label>
+                                <input th:name="*{answersText[]}" value="correctAnswer" type="text" class="form-control" id="correctAnswer"
+                                       placeholder="Max 50 characters"/>
+                            </div><div class="form-group">
+                            <!--<label for="questionName">Question: </label>-->
+                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
+                                   <!--placeholder="Max 50 characters"/>-->
+                        <!--</div><div class="form-group">-->
+                            <!--<label for="questionName">Question: </label>-->
+                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
+                                   <!--placeholder="Max 50 characters"/>-->
+                        <!--</div><div class="form-group">-->
+                            <!--<label for="questionName">Question: </label>-->
+                            <!--<input th:field="*{text}" type="text" class="form-control" id="questionName"-->
+                                   <!--placeholder="Max 50 characters"/>-->
+                        </div>
+                            <button type="submit" class="btn btn-primary"> Submit </button>
                         </div>
                     </div>
                 </form>
