@@ -34,6 +34,11 @@ public class Question implements Serializable {
     public Question() {
     }
 
+    public Question(Integer number, String text, Quiz quiz) {
+        this.number = number;
+        this.text = text;
+        this.quiz = quiz;
+    }
 
     //--- set / get methods ---------------------------------------------------
 

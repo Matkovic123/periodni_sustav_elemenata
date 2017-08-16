@@ -1,5 +1,6 @@
 package hr.tvz.matkovic.controller;
 
+import hr.tvz.matkovic.model.Question;
 import hr.tvz.matkovic.model.Quiz;
 import hr.tvz.matkovic.model.form.NewQuestionForm;
 import hr.tvz.matkovic.model.form.NewQuizForm;
@@ -96,7 +97,12 @@ public class AdminController {
                                           @ModelAttribute(value = NEW_QUESTION_FORM) NewQuestionForm newQuestionForm,
                                           Model model,
                                           RedirectAttributes redirectAttributes) {
+        Quiz quiz = quizService.findOne(quizId);
+        Integer number = quiz.getQuestions().size();
+        String questionText = newQuestionForm.getText();
+        Question question = new Question(number,questionText,quiz);
 
+        questionService.save(question);
 
 
 
