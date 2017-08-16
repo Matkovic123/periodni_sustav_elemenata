@@ -17,8 +17,8 @@ public class AdminController {
     // --- VIEWS  -------------------------------------------------------------
     private static final String ADD_QUIZ_VIEW = "add_quiz";
 
-    @RolesAllowed("ROLE_ADMIN")
-    @GetMapping(value={"/addQuiz", ""})
+//    @RolesAllowed("ROLE_ADMIN")
+    @GetMapping("/add_quiz")
     public String adminQuizPanel(){
 
         return ADD_QUIZ_VIEW;
