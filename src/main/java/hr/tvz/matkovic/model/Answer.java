@@ -9,12 +9,12 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "ANSWER", schema = "PERIODIC_SYSTEM")
-@SequenceGenerator(name = "ANSWER_SEQUENCE", sequenceName = "ANSWER_SEQUENCE",  initialValue = 500, allocationSize = 500)
+//@SequenceGenerator(name = "ANSWER_SEQUENCE", sequenceName = "ANSWER_SEQUENCE",  initialValue = 500, allocationSize = 500)
 public class Answer implements Serializable {
 
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ANSWER_SEQUENCE")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "TEXT", nullable = false, updatable = false)

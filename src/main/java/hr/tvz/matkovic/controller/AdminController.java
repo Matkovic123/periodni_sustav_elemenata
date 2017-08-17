@@ -1,5 +1,6 @@
 package hr.tvz.matkovic.controller;
 
+import hr.tvz.matkovic.model.Answer;
 import hr.tvz.matkovic.model.Question;
 import hr.tvz.matkovic.model.Quiz;
 import hr.tvz.matkovic.model.form.NewQuestionForm;
@@ -35,6 +36,7 @@ public class AdminController {
     private static final String NEW_QUESTION_FORM = "newQuestionForm";
     private static final String MESSAGE = "message";
     private static final String QUIZ_NOT_SAVED_MESSAGE = "Could not save new quiz data, please try again.";
+    private static final String QUESTION_NOT_SAVED_MESSAGE = "Could not save new question data, please try again.";
     private static final String QUIZ_ID = "quizId";
     private static final String QUESTION_ID = "questionId";
     private static final String USER_ANSWERS = "userAnswers";
@@ -102,11 +104,29 @@ public class AdminController {
         String questionText = newQuestionForm.getText();
         Question question = new Question(number,questionText,quiz);
 
-        questionService.save(question);
+        String correctAnswerText = newQuestionForm.getCorrectAnswer();
+        String wrongAnswer1Text = newQuestionForm.getWrongAnswer1();
+        String wrongAnswer2Text = newQuestionForm.getWrongAnswer2();
+        String wrongAnswer3Text = newQuestionForm.getWrongAnswer3();
+
+        Answer correctAnswer = new Answer(correctAnswerText,true,question);
+        Answer wrongAnswer1 = new Answer(wrongAnswer1Text, false, question);
+        Answer wrongAnswer2 = new Answer(wrongAnswer2Text, false, question);
+        Answer wrongAnswer3 = new Answer(wrongAnswer3Text, false, question);
 
 
-
-
+        try {
+            questionService.save(question);
+            answerService.save(correctAnswer);
+            answerService.save(wrongAnswer1);
+            answerService.save(wrongAnswer2);
+            answerService.save(wrongAnswer3);
+        }
+        catch (Exception ex){
+            LOGGER.debug("Could not save new question and answers to database. Exception:", ex);
+            redirectAttributes.addFlashAttribute(MESSAGE, QUESTION_NOT_SAVED_MESSAGE);
+            return "redirect:/admin/" + quizId + "/add_question";
+        }
 
         return "redirect:/admin/" + quizId + "/add_question";
     }
