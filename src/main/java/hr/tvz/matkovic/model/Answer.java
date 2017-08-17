@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "ANSWER", schema = "PERIODIC_SYSTEM")
-@SequenceGenerator(name = "ANSWER_SEQUENCE", sequenceName = "ANSWER_SEQUENCE", initialValue = 500, allocationSize = 500)
+@SequenceGenerator(name = "ANSWER_SEQUENCE", sequenceName = "ANSWER_SEQUENCE",  initialValue = 500, allocationSize = 500)
 public class Answer implements Serializable {
 
     @Id

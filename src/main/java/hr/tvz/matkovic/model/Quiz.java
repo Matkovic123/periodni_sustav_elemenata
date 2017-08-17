@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "QUIZ", schema = "PERIODIC_SYSTEM")
-@SequenceGenerator(name = "QUIZ_SEQUENCE", sequenceName = "QUIZ_SEQUENCE", initialValue = 5, allocationSize = 5)
+@SequenceGenerator(name = "QUIZ_SEQUENCE", sequenceName = "QUIZ_SEQUENCE",  initialValue = 5, allocationSize = 5)
 public class Quiz implements Serializable {
 
     @Id

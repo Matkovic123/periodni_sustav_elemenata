@@ -98,7 +98,7 @@ public class AdminController {
                                           Model model,
                                           RedirectAttributes redirectAttributes) {
         Quiz quiz = quizService.findOne(quizId);
-        Integer number = quiz.getQuestions().size();
+        Integer number = quiz.getQuestions().size()+1;
         String questionText = newQuestionForm.getText();
         Question question = new Question(number,questionText,quiz);
 
