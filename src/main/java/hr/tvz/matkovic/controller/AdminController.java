@@ -16,6 +16,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by tmatkovic on 13.8.2017..
  */
@@ -114,13 +117,20 @@ public class AdminController {
         Answer wrongAnswer2 = new Answer(wrongAnswer2Text, false, question);
         Answer wrongAnswer3 = new Answer(wrongAnswer3Text, false, question);
 
+        List<Answer> answers = new ArrayList<>();
+        answers.add(correctAnswer);
+        answers.add(wrongAnswer1);
+        answers.add(wrongAnswer2);
+        answers.add(wrongAnswer3);
+
 
         try {
             questionService.save(question);
-            answerService.save(correctAnswer);
-            answerService.save(wrongAnswer1);
-            answerService.save(wrongAnswer2);
-            answerService.save(wrongAnswer3);
+            for(Answer answer : answers)
+            {
+                if(!answer.getText().isEmpty())
+                    answerService.save(answer);
+            }
         }
         catch (Exception ex){
             LOGGER.debug("Could not save new question and answers to database. Exception:", ex);
