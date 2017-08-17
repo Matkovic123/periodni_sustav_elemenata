@@ -78,6 +78,8 @@ public class AdminController {
 
         Quiz quiz = new Quiz(name, difficulty, description);
         try {
+            if(quiz.getName().isEmpty())
+                throw new Exception("Quiz name can't be empty");
             quizService.save(quiz);
         } catch (Exception ex) {
             LOGGER.debug("Could not save new quiz to database. Exception:", ex);

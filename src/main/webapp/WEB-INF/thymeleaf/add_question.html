@@ -7,7 +7,7 @@
     <div class="vertical-center">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Add a new Quiz</h3>
+                <h3>Add Questions</h3>
             </div>
             <div class="panel-body">
                 <form th:object="${newQuestionForm}" method="post">
@@ -20,7 +20,7 @@
                                 <strong th:text="${messageSuccess}">Message content</strong>
                             </div>
                             <div class="form-group">
-                                <label for="questionName">Question: </label>
+                                <label for="questionName">Question (mandatory): </label>
                                 <input th:field="*{text}" type="text" class="form-control" id="questionName"
                                        placeholder="Max 250 characters"/>
                             </div>
