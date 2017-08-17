@@ -9,11 +9,12 @@ import java.util.List;
  */
 @Entity
 @Table(name = "QUIZ", schema = "PERIODIC_SYSTEM")
+@SequenceGenerator(name = "QUIZ_SEQUENCE", sequenceName = "QUIZ_SEQUENCE", initialValue = 5, allocationSize = 5)
 public class Quiz implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "QUIZ_SEQUENCE", sequenceName = "QUIZ_SEQUENCE")
+    @Column
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "QUIZ_SEQUENCE")
     private Long id;
 
     @Column(name = "NAME", nullable = false)

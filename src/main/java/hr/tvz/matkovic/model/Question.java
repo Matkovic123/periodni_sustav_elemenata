@@ -11,11 +11,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "QUESTION", schema = "PERIODIC_SYSTEM")
+@SequenceGenerator(name = "QUESTION_SEQUENCE", sequenceName = "QUESTION_SEQUENCE", initialValue = 100, allocationSize = 100)
 public class Question implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "QUESTION_SEQUENCE", sequenceName = "QUESTION_SEQUENCE")
+    @Column
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "QUESTION_SEQUENCE")
     private Long id;
 
     @Column(name = "NUMBER")
