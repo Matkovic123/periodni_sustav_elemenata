@@ -8,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AnswerRepository extends JpaRepository<Answer,Long>
-{
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
     List<Answer> findAllByQuestion(Question question);
+
     List<Answer> findAllByQuestion_Id(Long id);
+
+    void save(List <Answer> answers);
 
 }
