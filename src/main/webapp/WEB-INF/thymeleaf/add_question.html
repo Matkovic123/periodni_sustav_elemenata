@@ -6,9 +6,6 @@
 <div class="container">
     <div class="vertical-center">
         <div class="panel panel-default">
-            <div th:if="${message != null}" class="alert alert-danger">
-                <strong th:text="${message}">Message content</strong>
-            </div>
             <div class="panel-heading">
                 <h3>Add a new Quiz</h3>
             </div>
@@ -16,6 +13,12 @@
                 <form th:object="${newQuestionForm}" method="post">
                     <div class="row">
                         <div class="col-lg-6 col-centered">
+                            <div th:if="${messageDanger != null}" class="alert alert-danger">
+                                <strong th:text="${messageDanger}">Message content</strong>
+                            </div>
+                            <div th:if="${messageSuccess != null}" class="alert alert-success">
+                                <strong th:text="${messageSuccess}">Message content</strong>
+                            </div>
                             <div class="form-group">
                                 <label for="questionName">Question: </label>
                                 <input th:field="*{text}" type="text" class="form-control" id="questionName"
@@ -23,12 +26,12 @@
                             </div>
                             <h3>Answers: </h3>
                             <div class="form-group">
-                                <label for="correctAnswer">Correct answer: </label>
+                                <label for="correctAnswer">Correct answer (mandatory): </label>
                                 <input th:field="*{correctAnswer}" type="text" class="form-control" id="correctAnswer"
                                        placeholder="Max 150 characters"/>
                             </div>
                             <div class="form-group">
-                                <label for="wrongAnswer1">Wrong answer: </label>
+                                <label for="wrongAnswer1">Wrong answer (mandatory): </label>
                                 <input th:field="*{wrongAnswer1}" type="text" class="form-control" id="wrongAnswer1"
                                        placeholder="Max 150 characters"/>
                             </div>

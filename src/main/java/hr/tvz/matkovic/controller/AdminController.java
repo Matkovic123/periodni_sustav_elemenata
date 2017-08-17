@@ -37,9 +37,11 @@ public class AdminController {
     // --- MODEL ATTRIBUTES ---------------------------------------------------
     private static final String NEW_QUIZ_FORM = "newQuizForm";
     private static final String NEW_QUESTION_FORM = "newQuestionForm";
-    private static final String MESSAGE = "message";
+    private static final String MESSAGE_DANGER = "messageDanger";
+    private static final String MESSAGE_SUCCESS = "messageSuccess";
     private static final String QUIZ_NOT_SAVED_MESSAGE = "Could not save new quiz data, please try again.";
     private static final String QUESTION_NOT_SAVED_MESSAGE = "Could not save new question data, please try again.";
+    private static final String QUESTION_SAVED_MESSAGE = "Question was successfully added!";
     private static final String QUIZ_ID = "quizId";
     private static final String QUESTION_ID = "questionId";
     private static final String USER_ANSWERS = "userAnswers";
@@ -79,7 +81,7 @@ public class AdminController {
             quizService.save(quiz);
         } catch (Exception ex) {
             LOGGER.debug("Could not save new quiz to database. Exception:", ex);
-            redirectAttributes.addFlashAttribute(MESSAGE, QUIZ_NOT_SAVED_MESSAGE);
+            redirectAttributes.addFlashAttribute(MESSAGE_DANGER, QUIZ_NOT_SAVED_MESSAGE);
             return "redirect:/admin/add_quiz";
         }
 
@@ -106,11 +108,15 @@ public class AdminController {
         Integer number = quiz.getQuestions().size()+1;
         String questionText = newQuestionForm.getText();
         Question question = new Question(number,questionText,quiz);
+        try {
 
         String correctAnswerText = newQuestionForm.getCorrectAnswer();
         String wrongAnswer1Text = newQuestionForm.getWrongAnswer1();
         String wrongAnswer2Text = newQuestionForm.getWrongAnswer2();
         String wrongAnswer3Text = newQuestionForm.getWrongAnswer3();
+
+        if(correctAnswerText.isEmpty() || wrongAnswer1Text.isEmpty())
+            throw new Exception("Not enough answers provided.");
 
         Answer correctAnswer = new Answer(correctAnswerText,true,question);
         Answer wrongAnswer1 = new Answer(wrongAnswer1Text, false, question);
@@ -124,7 +130,7 @@ public class AdminController {
         answers.add(wrongAnswer3);
 
 
-        try {
+
             questionService.save(question);
             for(Answer answer : answers)
             {
@@ -134,10 +140,11 @@ public class AdminController {
         }
         catch (Exception ex){
             LOGGER.debug("Could not save new question and answers to database. Exception:", ex);
-            redirectAttributes.addFlashAttribute(MESSAGE, QUESTION_NOT_SAVED_MESSAGE);
+            redirectAttributes.addFlashAttribute(MESSAGE_DANGER, QUESTION_NOT_SAVED_MESSAGE);
             return "redirect:/admin/" + quizId + "/add_question";
         }
 
+        redirectAttributes.addFlashAttribute(MESSAGE_SUCCESS, QUESTION_SAVED_MESSAGE);
         return "redirect:/admin/" + quizId + "/add_question";
     }
 

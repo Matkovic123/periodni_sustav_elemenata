@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div th:each="quiz : ${quizes}">
-                            <div class="row top-buffer">
+                            <div th:if="*{!#lists.isEmpty(quiz.questions)}" class="row top-buffer">
                                 <div class="col-lg-6">
                                     <a th:href="@{/quiz/{quizId}/1(quizId = *{quiz.id})}" class="btn btn-lg btn-block"
                                     th:classappend="*{'quiz-difficulty-'+quiz.difficulty}">
